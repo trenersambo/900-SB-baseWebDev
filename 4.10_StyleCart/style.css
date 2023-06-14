@@ -1,0 +1,35 @@
+.card{
+border: 2px dotted Crimson;
+background-color: #bfbfbf;
+font-family: sans-serif;
+display: inline-block;
+padding: 20px;
+margin: 10px 0 0 10px;
+}
+
+.card:hover{
+opacity: .25;
+outline: 6px solid;
+}
+
+.card__title{
+margin: 0;
+margin-bottom: 20px;
+font-size: 24px;
+}
+
+.card__descr{
+margin: 0;
+margin-bottom: 10px;
+font-size: 18px;
+max-width: 70%;
+}
+
+.card__btn{
+border: 0;
+background-color: rgb(0, 0, 0);
+color: white;
+padding: 5px 10px;
+font-size: 14px;
+}
+

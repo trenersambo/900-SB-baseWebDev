@@ -1,0 +1,69 @@
+
+@font-face {
+    font-family: 'TT Polls Script';
+    /* src: url('./font/TTPollsScript-Light.eot'); */
+    src: local('TT Polls Script Light'), local(
+    
+    'TTPollsScript-Light'),
+
+        url('./font/TTPollsScript-Light.woff2') format('woff2'),
+        url('./font/TTPollsScript-Light.woff') format('woff');
+ 
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    /* swap — мнговенная отрисовка подменного шрифта и бесконечный период для замены на подгружаемый шрифт. */
+}
+
+
+
+@font-face {
+    font-family: 'TT Polls Script';
+    /* src: url('./font/TTPollsScript-Black.eot'); */
+    src: local('TT Polls Script Black'), local('TTPollsScript-Black'),
+ 
+        url('./font/TTPollsScript-Black.woff2') format('woff2'),
+        url('./font/TTPollsScript-Black.woff') format('woff');
+ 
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/* @font-face {
+    font-family: 'TT Polls Script';
+    src: url('TTPollsScript-Regular.eot');
+    src: local('TT Polls Script Regular'), local('TTPollsScript-Regular'),
+        url('TTPollsScript-Regular.eot?#iefix') format('embedded-opentype'),
+        url('TTPollsScript-Regular.woff2') format('woff2'),
+        url('TTPollsScript-Regular.woff') format('woff'),
+        url('TTPollsScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Polls Script';
+    src: url('TTPollsScript-Thin.eot');
+    src: local('TT Polls Script Thin'), local('TTPollsScript-Thin'),
+        url('TTPollsScript-Thin.eot?#iefix') format('embedded-opentype'),
+        url('TTPollsScript-Thin.woff2') format('woff2'),
+        url('TTPollsScript-Thin.woff') format('woff'),
+        url('TTPollsScript-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+} */
+
+/* @font-face {
+    font-family: 'TT Polls Script';
+    src: url('TTPollsScript-Bold.eot');
+    src: local('TT Polls Script Bold'), local('TTPollsScript-Bold'),
+        url('TTPollsScript-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TTPollsScript-Bold.woff2') format('woff2'),
+        url('TTPollsScript-Bold.woff') format('woff'),
+        url('TTPollsScript-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+} */
