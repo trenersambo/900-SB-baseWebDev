@@ -8,4 +8,4 @@
 
 Картинка проекта Lionic:
 
-![Иллюстрация проекта, 900 kB](https://github.com/trenersambo/900-SB-baseWebDev/blob/bdaa4e0281e3e0baa0fe8e935a7de9fa14ca573d/_tmp/Lionic_.png )
+![Иллюстрация проекта, 260kB](https://github.com/trenersambo/900-SB-baseWebDev/blob/ca12362d5fe4b73ea991e2bb5660e589fea2fb13/_tmp/Lionic.png)
