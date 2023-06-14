@@ -8,5 +8,4 @@
 
 Картинка проекта Lionic:
 
-![Иллюстрация к проекту](https://github.com/jon/coolproject/raw/master/image/image.png)
-
+![Иллюстрация проекта, 900 kB](https://github.com/trenersambo/900-SB-baseWebDev/blob/bdaa4e0281e3e0baa0fe8e935a7de9fa14ca573d/_tmp/Lionic_.png )
