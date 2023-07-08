@@ -50,3 +50,34 @@ color: #787878;
 .footer-item:not(:last-child){
 margin-right: 28px;
 }
+
+.footer-nav{
+margin-right: 56px;
+}
+
+.social{
+align-items: center;
+}
+
+.social-item:not(:last-child){
+margin-right: 32px;
+}
+
+.social-link{
+display: block;
+width: 24px;
+height: 24px;
+background-position: center;
+background-size: contain ;
+background-repeat: no-repeat;
+}
+
+.social-link-tw{
+background-image: url('../svg/twitter.svg');
+}
+.social-link-linkedin{
+background-image: url('../svg/linkedin.svg');
+}
+.social-link-mail{
+background-image: url('../svg/mail.svg');
+}
