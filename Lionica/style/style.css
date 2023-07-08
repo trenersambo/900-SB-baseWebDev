@@ -1,0 +1,52 @@
+
+
+
+
+
+
+
+
+/* FOOTER (модуль 6.9) */
+
+.flex{
+display: flex;
+}
+
+
+.footer{
+padding: 42px 0;
+outline: 1px solid red;
+}
+
+.footer-container{
+align-items: center;
+justify-content: space-between;
+}
+
+.footer-left,
+.footer-right{
+align-items: center;
+}
+
+.footer-logo{
+margin-right: 25px;
+}
+
+.footer-copy{
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+color: #787878;
+
+}
+  
+.footer-link{
+font-weight: 600;
+font-size: 15px;
+line-height: 20px;
+color: #787878;
+}
+
+.footer-item:not(:last-child){
+margin-right: 28px;
+}
