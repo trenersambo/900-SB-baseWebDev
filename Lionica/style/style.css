@@ -192,6 +192,40 @@ margin: 0;
 }
 
 
+/* ========= Clients ============ */
+
+.clients-item{
+flex-direction: column;
+width: 370px;
+padding: 50px 36px;
+padding-bottom: 30px;
+outline:  1px solid red;
+}
+
+.clients-item:not(:nth-child(3n)){
+margin-right: 30px;
+}
+
+.clients-item-descr{
+margin: 0;
+margin-bottom: 30px;
+}
+
+.clients-user{
+margin-top: auto; /*для прибивки юзера к низу*/
+align-items: center;
+}
+
+.clients-avatar{ /*стиль картинки аватара*/
+flex-shrink: 0;
+width: 67px;
+margin-right: 17px;
+}
+
+.clients-name{
+margin-bottom: 5px;
+}
+
 
 
 
