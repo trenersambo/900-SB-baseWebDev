@@ -113,7 +113,7 @@ margin-bottom: 14px;
 }
 
 
-/* ========= SERVICES(модуль 6.9) ============ */
+/* ========= SERVICES ============ */
 
 .services-title{
 text-align: center;
@@ -148,6 +148,51 @@ margin-bottom: 15px;
 margin: 0;
 text-align: center;
 }
+
+
+/* ========= ARTICLES ============ */
+.articles-list{
+flex-wrap: wrap;
+}
+
+.articles-item{
+width: 570px;
+margin-bottom: 30px;
+outline:  1px solid red;
+
+}
+
+
+.articles-item:not(:nth-child(2n)){
+margin-right: 30px;
+}
+
+.blog-preview-image{
+/* чтоб картинки заполнили весь свой блок */
+/* object-fit: cover; */
+aspect-ratio: 1/1;
+}
+
+.blog-preview-text{
+padding: 30px;
+}
+
+.blog-preview-time{
+display: block;
+margin-bottom: 5px;
+}
+
+.blog-preview-title{
+margin: 0;
+margin-bottom: 15px;
+}
+
+.blog-preview-descr{
+margin: 0;
+}
+
+
+
 
 
 
