@@ -1,3 +1,37 @@
+
+
+/* ====== подключение шрифтов ======= */
+
+@font-face {
+font-family: "OpenSans";
+src: local(OpenSans-Regular),
+url("../fonts/OpenSansRegular.woff2") format(woff2),
+url("../fonts/OpenSansRegular.woff") format(woff);
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {  
+font-family: "OpenSans";
+src: local(OpenSans-Ligth),
+url("../fonts/OpenSansLight.woff2") format(woff2),
+url("../fonts/OpenSansLight.woff") format(woff);
+font-weight: 300;
+font-style: normal;
+font-display: swap;
+}
+
+@font-face {   
+font-family: "OpenSans";
+src: local(OpenSans-Semibold),
+url("../fonts/OpenSansSemiBold.woff2") format(woff2),
+url("../fonts/OpenSansSemiBold.woff") format(woff);
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+}
+
 /* ==== default-style ==== */
 
 html{
@@ -21,9 +55,9 @@ max-width: 100%;
 
 body{
 min-width: 1200px;
-font-family: 'font', sans-serif;
+font-family: 'OpenSans', sans-serif;
+font-weight: 400;
 }
-
 
 /* ==== default-style: СПИСКИ, КНОПКИ, FLEX ==== */
 
@@ -69,6 +103,12 @@ padding-bottom: 160px;
 
 /* ===== шапка ======= */
 
+.header{
+padding: 36px 0;
+border-bottom: 1px solid #c4c4c4;
+background-color: #fff;
+}
+
 .header-container{
 align-items: center;
 }
@@ -85,7 +125,21 @@ margin-right: 52px;
 margin-right: 52px;
 }
 
+.header-link{
+font-weight: 600;
+color: #1c1c1c;
+font-size: 15px;
+}
 
+.btn{
+font-weight: 600;
+font-size: 15px;
+text-transform: uppercase;
+padding: 15px 35px;
+background-color: #3172b9;
+color: #fff;
+border-radius: 4px;
+}
 /* ========  HERO ========== */
 
 .hero{
