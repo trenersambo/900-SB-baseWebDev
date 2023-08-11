@@ -394,6 +394,10 @@ line-height: 180%; /* 25.2px */
 }
 
  /* ====== Contacts */
+.contacts{
+border-bottom: 1px solid #DADADA;
+}
+
 .contacts-address{
 font-style: normal;
 }
@@ -401,7 +405,23 @@ font-style: normal;
 .contacts-item{
 flex-direction: column;
 width: 370px;
-outline: 1px solid red;
+/* outline: 1px solid red; */
+background-position: left top;
+background-repeat: no-repeat;
+background-size: 29px 29px;
+padding-top: 48px;
+}
+
+.contacts-item-address{
+background-image: url(../svg/location.svg);
+}
+
+.contacts-item-call{
+background-image: url(../svg/phone.svg);
+}
+
+.contacts-item-mail{
+background-image: url(../svg/mail-top.svg);
 }
 
 .contacts-item:not(:nth-child(3n)){
@@ -410,15 +430,34 @@ margin-right: 30px;
 
 .contacts-item-caption{
 margin-bottom: 30px;
+
+color: #1C1C1C;
+font-size: 17px;
+ 
+line-height: 180%; /* 30.6px */
 }
 
 .contacts-item-text{
 margin: 0;
+max-width: 215px;
+
+color: #787878; 
+font-size: 14px; 
+ 
+line-height: 180%; /* 25.2px */
 }
 
-.contacts-item-link:not(:last-child){
-margin-bottom: 5px;
+.contacts-item-link {
+ font-size: 14px;
+ line-height: 180%;
+ color: #787878;
 }
+
+
+/* .contacts-item-link:not(:last-child){
+margin-bottom: 5px;
+} */
+
 
 
 
