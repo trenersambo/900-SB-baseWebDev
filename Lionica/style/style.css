@@ -123,6 +123,10 @@ margin-right: auto;
 margin-right: 52px;
 }
 
+.header-list-item{
+position: relative;
+}
+
 .header-list-item:not(:last-child){
 margin-right: 52px;
 }
@@ -133,15 +137,91 @@ color: #1c1c1c;
 font-size: 15px;
 }
 
+/* при клике обводит ссылку рамкой */
+.header-link:focus{
+outline-offset: 2px;
+outline: 1px solid #71A7E2;
+}
+
+/* цвет ссфлки при наведении */
+.header-link:hover{
+color: #71A7E2;
+}
+
+/* нижнее ПОДЧЕРКИВАНИЕ при клике (шаг 1, SB-видео 10.8)*/
+.header-link::after{
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 2px;
+background-color: #3474BA;
+opacity: 0;
+}
+
+/* нижнее ПОДЧЕРКИВАНИЕ при клике (шаг 2, SB-видео 10.8)*/
+.header-link:active{
+color: #3172b9;
+outline: none;
+}
+
+/* нижнее ПОДЧЕРКИВАНИЕ при клике (шаг 3, SB-видео 10.8)*/
+.header-link:active::after{
+opacity: 1;
+}
+ 
+
+
+/* ====== кнопки и стили кнопок ========= */
+
 .btn{
+position: relative;
+outline: none;
+
 font-weight: 600;
 font-size: 15px;
+font-family: inherit; /*наследование*/
 text-transform: uppercase;
 padding: 15px 35px;
 background-color: #3172b9;
 color: #fff;
 border-radius: 4px;
 }
+
+/* псевдоэлменты... */
+.btn::after{
+content: "";
+position: absolute;
+top: -3px;
+left: -3px;
+right: -3px;
+bottom: -3px;
+
+border-radius: inherit;  /*наследование от родителя = 4px*/
+border: 1px solid #3172b9;
+outline: none;
+
+opacity: 0; /*скрыт - до момента наведения / клика */
+}
+
+.btn:focus::after{
+opacity: 1;
+}
+
+.btn:hover{
+background-color: #71A7E2;
+}
+
+.btn:active{
+background-color: #0E3B6c;
+}
+
+.btn:active::after{
+opacity: 0;
+}
+
+
 /* ========  HERO ========== */
 
 .hero{
@@ -229,13 +309,28 @@ border-radius: 5px;
 
 } 
 
+/* навдение мышкой, sb 8.10 */
+.services-item:hover{
+background-color: #317289;
+background-color: #317289;
+}
+
 .services-item:not(:nth-child(4n)){
 margin-right: 30px;
 }
 
+/* svg-иконки: борцы, сердце, карты, молот */
 .services-item-icon{
+fill: #3172B9; /* включить цвет, вместо fill:none в html'e*/
+
 margin-bottom: 25px;
 }
+
+/* окрас svg-иконки в белый цвет (при наведении) */
+.services-item:hover .services-item-icon{
+fill: #fff;
+}
+
 
 .services-item-title{
 margin: 0;
@@ -246,12 +341,22 @@ line-height: 130%;
 color: #1c1c1c;
 }
 
+/* при наведении  текст станет белым */
+.services-item:hover .services-item-title{
+color: #fff;
+}
+
 .services-item-descr{
 margin: 0;
 text-align: center;
 font-size: 14px;
 line-height: 150%;
 color: #787878;
+}
+
+/* при наведении  описание станет белым */
+.services-item:hover .services-item-descr{
+color: #fff;
 }
 
 
@@ -276,6 +381,65 @@ overflow: hidden;
 border: 1px solid #e4e4e4;
 border-radius: 6px;
 }
+
+.blog-preview-link{
+display: flex;
+position: relative;
+width: 100%;
+}
+
+/* псевдоклассы hover при наведении на карточки */
+
+.blog-preview-link:hover{
+background-color: #3172B9;
+}
+
+.blog-preview-link:hover .blog-preview-title{
+color: #fff;
+}
+
+.blog-preview-link:hover .blog-preview-descr{
+color: #fff;
+}
+.blog-preview-link:hover .blog-preview-time{
+color: #fff;
+}
+
+/* псевдоклассы focus при наведении на карточки */
+
+.blog-preview-link:focus{
+background-color: #71A7E2;
+}
+
+.blog-preview-link:focus .blog-preview-title{
+color: #fff;
+}
+
+.blog-preview-link:focus .blog-preview-descr{
+color: #fff;
+}
+.blog-preview-link:focus .blog-preview-time{
+color: #fff;
+}
+
+/* псевдоклассы active при наведении на карточки */
+
+.blog-preview-link:active{
+background-color: #0E3B6c;
+}
+
+.blog-preview-link:active .blog-preview-title{
+color: #fff;
+}
+
+.blog-preview-link:active .blog-preview-descr{
+color: #fff;
+}
+.blog-preview-link:active .blog-preview-time{
+color: #fff;
+}
+
+ 
 
 .blog-preview-time{
 display: block;
