@@ -1,3 +1,7 @@
+https://trenersambo.github.io/900-SB-baseWebDev/Lionica/
+
+==========================
+
 Повторение веб-верстки по курсу SB / Старт: Июнь 2023 года
 
 #  Репозиторий:  900-SB-baseWebDev
