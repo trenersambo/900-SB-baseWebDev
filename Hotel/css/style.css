@@ -1,0 +1,1511 @@
+:root{
+    --color-redSand: #F0BF5F;
+    --color-yellowGold: #C93;
+    --color-yellowGolds: #CC9933;    
+    --color-sandBraun: #A47312;
+}
+
+ /* шрифты Muller */
+@font-face {
+	font-family: 'Muller';
+	src: local('Muller-Regular'),
+		url('../fonts/MullerRegular.woff2') format('woff2'),
+		url('../fonts/MullerRegular.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+} 
+
+@font-face {
+	font-family: 'Muller';
+	src: local('Muller-Medium'),
+		url('../fonts/MullerMedium.woff2') format('woff2'),
+		url('../fonts/MullerMedium.woff') format('woff');
+	font-display: swap;
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Muller';
+	src: local('Muller-Bold'),
+		url('../fonts/MullerBold.woff2') format('woff2'),
+		url('../fonts/MullerBold.woff') format('woff');
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.wrapper-total{
+width: 1920px;
+padding: 30px 0;
+background: #F1F1F1;
+margin: 0 auto;
+
+}
+
+.wrapper{
+width: 1170px;
+margin: 0 auto;
+outline: 1px solid red;/*временн. обознач. блока*/
+}
+
+/* global style */
+.flex{
+display: flex;
+}
+
+.reset-link{
+text-decoration: none;
+
+}
+
+
+
+/*  ===== верх Шапки ===== */
+.wrapper-header{
+margin-bottom: 70px;
+}
+
+.header-top{
+margin-bottom: 30px;
+justify-content: space-between;
+}
+
+.ht-logo{
+/* замена дефолтной обводки переходе tab */
+outline-color: var(--color-yellowGold);
+
+}
+
+.ht-logo-phone{
+align-items: center;
+column-gap: 40px;
+}
+
+.ht-telefon{
+color: #666;
+font-family: Muller;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+
+border-radius: 6px;
+padding: 3px 6px;
+
+outline: 1px solid transparent;
+outline-offset: 2px;
+
+transition: color 0.35s ease-in-out, outline-color 0.5s ease-in-out;
+}
+
+.ht-telefon:focus-visible{
+
+outline-color:var(--color-yellowGold);
+color: var(--color-sandBraun);
+}
+
+.ht-telefon:hover{
+color: var(--color-yellowGold );
+}
+
+.ht-telefon:active{
+
+outline-color:var(--color-yellowGold);
+color: var(--color-yellowGold);
+
+}
+
+.ht-arrow-right{
+width: 24px;
+transition: fill 0.3s ease-in-out;
+}
+
+.ht-cabinet{
+align-items: center; 
+width: 155px;
+border-radius: 6px;
+
+outline: 1px solid transparent;
+
+transition:  color 0.3s ease-in-out, outline-color 0.3s ease-in-out; 
+}
+
+.ht-cabinet-outline{
+display: flex;
+align-items: center;
+column-gap: 5px;
+
+/* transition: 
+color 0.35s ease-in-out,
+outline-color 0.3s ease-in-out;  */
+}
+
+.ht-cabinet:focus-visible {
+outline-color: var(--color-sandBraun, #A47312);
+color: var(--color-sandBraun, #A47312);
+}
+
+.ht-cabinet:hover .header-lk-txt{
+color: var(--color-redSand);
+}
+
+.ht-cabinet:hover .ht-arrow-right{
+fill: var(--color-redSand);
+}
+ 
+.ht-cabinet:active {
+/* outline: 1px solid var(--color-yellowGold); 
+outline-offset: 2px; */
+
+outline-color:var(--color-yellowGold); /* обводка */
+color: var(--color-yellowGold);	/* цвет шрифта */
+
+
+}
+
+.header-lk-txt{
+margin: 0 0 0 0; /* обнул. тег р */
+color: var(--color-yellowGolds, #CC9933);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+transition: color 0.5s ease-in-out;
+}
+
+
+/* ==== низ Шапки ==== */
+.header-bottom{
+height: 70px;
+justify-content: space-between;
+align-items: center;
+background-color: #fff;
+border-radius: 15px;
+}
+
+.header-bottom-menu{
+margin: 0 0 0 0;
+padding: 0 0 0 45px;
+}
+
+.hb-menu{
+margin: 0 0 0 0;
+padding: 0;
+}
+
+.hb-menu-li{
+list-style-type: none; /*убрать точки в списке*/
+}
+
+.hb-menu-li:not(:last-child){
+margin-right: 45px;
+}
+
+.menu-li-text{
+color: #666;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+padding: 3px 5px;
+border-radius: 6px;
+/* Обводка outline, в основном классе */
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 3px;/* границы обводки offset */
+
+ /*время реагирования */
+transition: color 0.5s ease-in-out, outline-color .2s ease-in-out;
+}
+
+.menu-li-text:focus-within{
+outline-color:var(--color-yellowGold);
+color: var(--color-sandBraun);
+}
+
+.menu-li-text:hover{
+color: var(--color-yellowGold); /* цвет при наведении мышкой */
+}
+
+.menu-li-text:active{
+color: var(--color-yellowGold); 	/* цвет шрифта */
+outline-color:var(--color-yellowGold);  /* обводка */
+
+/* outline: none; не сработал как надо */
+}
+
+.btn-coll-back {
+margin: 0 0 0 0; /* обнул. тег р */
+
+}
+
+.hba-btn {
+border-radius: 10px;
+border: 1px solid var(--color-yellowGold);
+padding: 13px 20px;
+    
+margin-right: 45px;
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+
+.hba-btn:focus{
+background-color: var(--color-yellowGolds, #CC9933);
+color: #FFF;
+outline-color: transparent;
+}
+
+.hba-btn:hover{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+}
+
+.hba-btn:active{
+background-color: var(--color-sandBraun);
+color: #FFF;
+}
+ 
+
+
+
+
+/* === 0. Спец.предложения ====*/
+.offer{
+margin-bottom: 70px;
+}
+
+.section-title{
+margin: 0 0 20px 0;
+padding-left: 30px;
+
+color: #333;
+font-family: Muller;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.offer-images{
+gap: 24px;
+flex-wrap: wrap; /* на случ. переполнения */
+}
+
+.offer-img{
+border-radius: 15px;
+
+/* шаг №1а для ОБВОДКИ всего блока при :focus*/
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 3px;/* границы обводки offset */
+transition: all .3s ease-in-out; /*скорость срабатывания*/
+
+position: relative;
+}
+
+.two-img{
+flex-direction: column;
+gap: 24px;
+}
+
+.img-maldiv{
+background: 
+  linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%,
+  rgba(53, 65, 83, 0.00) 65.7%), 
+  url(../img/Maldive.jpg);
+width: 573px;
+height: 258px;
+}
+
+.img-krit{
+/* background-image: url(../img/Krit.jpg); */
+background:
+  linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%,
+  rgba(53, 65, 83, 0.00) 65.7%), 
+  url(../img/Krit.jpg);
+width: 573px;
+height: 258px;
+}
+
+.img-lux{
+/* background-image: linear-gradient(градиент), url(картинка); */
+background-image: 
+/* linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%,
+ rgba(53, 65, 83, 0.00) 65.7%), */
+url(../img/lux-number.jpg); 
+width: 573px;
+height: 540px;
+display: inline-block;
+}
+
+.offer-image-descr{
+/* outline: 2px solid red; временно обозначить */
+margin: 40px 0 0 45px;
+}
+
+.offer-image-descrLux{
+margin: 212px 0 0 45px;
+}
+
+.oi-descr-title{
+margin: 0 0 15px 0;
+width: 420px;
+color: #FFF;
+font-size: 40px;
+font-family: Muller;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.oi-descr-titleLux{
+margin: 0 0 15px 0;
+width: 299px;
+color: #FFF;
+font-family: Muller;
+font-size: 60px;
+line-height: normal;
+}
+
+.oi-descr-price{
+margin: 0 0 47px 0;
+color: #FFF;
+font-size: 20px;
+font-family: Muller;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+opacity: 0.8;
+}
+
+.oi-descr-priceLux{
+margin: 0 0 47px 0;
+color: #FFF;
+font-size: 30px;
+font-family: Muller;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+opacity: 0.8;
+}
+
+/* шаг №2а для ОБВОДКИ всего блока при :focus*/
+.oi-descr-link{
+display: flex;
+column-gap: 5px;
+
+    margin: 0 0 0 0;
+    color: var(--color-redSand);
+    font-size: 16px;
+    font-family: Muller;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+
+transition: column-gap 0.5s ease-in-out; /*время реагирования */
+
+}
+
+/* шаг №3а для ОБВОДКИ всего блока при :focus*/
+.oi-descr-link:focus-within::after {
+
+content: '';
+
+position: absolute;
+outline: 2px solid var(--color-sandBraun);
+outline-offset: 5px;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+opacity: 0;
+
+border-radius: 10px;
+padding: 2px 2px;
+}
+
+/* шаги №4а для ОБВОДКИ всего блока при :focus*/
+.oi-descr-link:focus-within::after {
+opacity: 1;
+}
+
+.oi-descr-link:focus-visible{
+outline: none;
+}
+
+.oi-descr-link:hover {
+gap: 11px
+}
+
+.oi-descr-link:active {
+color: #FFF;
+}
+
+
+
+
+/* === 1. О нас ====*/
+
+.about{
+margin: 0 0 70px 0;
+}
+
+.about-descr{
+margin: 0 0 0 0;
+width: 888px;
+
+color: #000;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 200%; /* 32px */
+}
+
+
+
+
+
+/* === 2. Услуги ====*/
+.servis{
+margin: 0 0 70px 0;
+}
+
+.servises-wrapper{
+flex-wrap: wrap;
+gap: 24px;
+}
+
+.servis-item{
+width: 573px;
+min-height: 330px;
+border-radius: 15px ;
+background: #FFF;
+
+/* шаг №1-б для ОБВОДКИ всего блока при :focus*/
+
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 3px;/* границы обводки offset */
+transition: all .3s ease-in-out; /*скорость срабатывания*/
+
+position: relative;
+} 
+
+.sw-image{
+margin-bottom: 26px;
+}
+
+.sw-image-exclus{
+width: 573px;
+height: 165px;
+background-image: url(../img/servis-img-1.png);
+}
+
+.sw-image-arenda{
+width: 573px;
+height: 165px;
+background-image: url(../img/servis-img-2.png);
+}
+
+.sw-image-fitness{
+width: 573px;
+height: 165px;
+background-image: url(../img/servis-img-3.png);
+}
+
+.sw-image-avto{
+width: 573px;
+height: 165px;
+background-image: url(../img/servis-img-4.png);
+}
+
+/* шаг №2-б для ОБВОДКИ всего блока при :focus*/
+.sw-link{
+display: flex;
+gap: 5px;
+margin: 0 0 0 45px;
+max-width: fit-content; /*чтоб ссылка была только на слове*/
+
+color: var(--color-yellowGold);
+font-size: 20px;
+font-family: Muller;
+font-style: normal;
+font-weight: 500;
+line-height: 200%;
+text-decoration: none;
+
+transition: gap 0.5s ease-in-out, 0.5s ease-in-out;/*время реагирования */
+}
+
+/* шаг №3-б для ОБВОДКИ всего блока при :focus*/
+.sw-link:focus-within::after {
+
+content: '';
+
+position: absolute;
+outline: 2px solid var(--color-yellowGold);
+outline-offset: 5px;
+top: -1px;
+left: -1px;
+right: -1px;
+bottom: -1px;
+opacity: 0;
+
+border-radius: 10px;
+padding: 2px 2px;
+}
+
+/* шаги №4-б для ОБВОДКИ всего блока при :focus*/
+.sw-link:focus-within::after {
+opacity: 1;
+}
+
+.sw-link:focus-visible{
+outline: none;
+}
+
+.sw-link:hover{
+gap:15px;
+color: var(--color-redSand);
+}
+
+
+.sw-link:active {
+color: var(--color-sandBraun);
+}
+
+/* стрелка вправо > */
+.sw-link svg{
+ align-self: center;
+}
+
+.sw-link svg path{
+ stroke: var(--color-yellowGolds);
+}
+
+.sw-link:hover svg path{
+stroke: var(--color-redSand);
+}
+
+.sw-link:active svg path{
+stroke: var(--color-sandBraun);
+}
+
+ 
+.sw-text{
+width: 402px;
+margin: 0 0 0 45px;
+column-gap: 10px;
+
+color: #000;
+font-size: 16px;
+font-family: Muller;
+font-style: normal;
+font-weight: 400;
+line-height: 200%;
+}
+
+
+
+/* === 3. Преимущества ==== */
+
+.plus-list{
+/* по дом.заданию 11.12 - gap отключен */
+ display: flex;
+flex-wrap: wrap;
+/*gap: 24px;*/
+
+margin-bottom: 70px; 
+
+}
+
+
+.pl-item{
+display: flex;
+flex-direction: column;
+row-gap: 10px;
+width: 273px;
+
+padding: 40px 0 0 45px;
+margin-bottom: 24px;
+
+
+box-sizing: border-box;
+
+min-height: 276px;
+border-radius: 15px;
+background: #FFF;
+
+}
+
+/* по дом.заданию 11.12 - добавление nth-child вместо gap */
+.pl-item:not(:nth-child(4n)) {
+margin-right: 24px;
+
+}
+
+.item-descr{
+margin: 0 0 32px 0px;
+width: 189px;
+color: #000;
+font-size: 16px;
+font-family: Muller;
+font-style: normal;
+font-weight: 400;
+line-height: 200%;
+}
+
+.item-bathtub{
+background-image: url('../svg/bathtub.svg');
+width: 64px;
+height: 66px;
+}
+
+.item-hanger{
+background-image: url('../svg/hanger.svg');
+width: 66px;
+height: 66px;
+}
+
+.item-heating{
+background-image: url('../svg/heating.svg');
+width: 64px;
+height: 66px;
+}
+
+.item-key{
+background-image: url('../svg/hotel-key.svg');
+width: 66px;
+height: 66px;
+}
+
+.item-parking{
+background-image: url('../svg/parking.svg');
+width: 66px;
+height: 66px;
+}
+
+.item-reception{
+background-image: url('../svg/reception.svg');
+width: 64px;
+height: 66px;
+}
+
+.item-security{
+background-image: url('../svg/security-box.svg');
+width: 66px;
+height: 66px;
+}
+
+.item-pool{
+background-image: url('../svg/swimming-pool.svg');
+width: 64px;
+height: 66px;
+}
+ 
+/* ==== 4. Размещение===== */
+
+.place {
+  margin-bottom: 70px;
+}
+
+.place-list-wrapper {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Карточка товара */
+.place-card {
+display: flex;
+flex-direction: column;  
+width: 374px;
+min-height: 440px;
+background-color: #FFF;
+
+/* overflow: hidden; */
+border-radius: 16px;
+
+}
+
+
+
+.price-txt {
+  margin: 0 0 0 0;
+}
+
+.price-txt-from{
+color: #999;
+margin-right: 5px;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+ 
+}
+
+.price-txt-number{
+color: #000;
+margin-right: 9px;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+}
+
+.price-txt-text{
+color: #000;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+
+}
+
+.pcd-country{
+color: #999;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+
+}
+
+.pcd-location{
+max-width: 231px;
+}
+
+.pc-image {
+  margin-bottom: 35px;
+}
+
+.pc-more{
+
+/* шаг №1-в для ОБВОДКИ всего блока при :focus клавишей  tab*/
+position: relative;
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 3px;/* границы обводки offset */
+transition: all .3s ease-in-out; /*скорость срабатывания*/
+
+}
+
+.pc-image-more {
+display:flex; 
+align-items: flex-end; /*прижать ссылку линк вниз*/
+height: 100%;
+width: 374px;
+background-image: url(../img/place-more.png);
+background-size: cover;
+border-radius: 15px;
+}
+
+.pc-descr-wrapper {
+  margin-bottom: 20px;
+  padding-left: 45px;
+}
+
+.pc-descr {
+  width: 190px;
+  color: #000;
+  font-family: Muller;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+}
+
+.pc-5stars{
+margin-top: 6px;
+}
+
+/* шаг №2-в для ОБВОДКИ всего блока при :focus*/
+.more-link {
+display: flex;
+align-items: center;
+gap: 5px;
+margin: 0px 0px 27px 54px;
+
+color: #FFF;
+font-size: 20px;
+font-family: Muller;
+font-style: normal;
+font-weight: 500;
+line-height: 200%;
+text-decoration: none;
+
+transition: gap .5s ease-in-out;
+}
+
+/* шаг №3-в для ОБВОДКИ всего блока при :focus*/
+.more-link:focus-within::after {
+
+content: '';
+position: absolute;
+outline: 2px solid var(--color-yellowGold);
+outline-offset: 5px;
+top: -1px;
+left: -1px;
+right: -1px;
+bottom: -1px;
+opacity: 0;
+
+border-radius: 10px;
+padding: 2px 2px;
+}
+
+/* шаги №4-в для ОБВОДКИ всего блока при :focus*/
+.more-link:focus-within::after {
+opacity: 1;
+}
+
+.more-link:focus-visible{
+outline: none;
+}
+
+/* шаг 5-в При :hover на ссылку ==> вся картинка стала ссылкой */
+
+.more-link:hover {
+gap: 15px;
+position: absolute;
+inset: 0;
+margin: 0;
+padding: 370px 0 0 54px;
+
+outline: 2px solid var(--color-yellowGold);
+outline-offset: 5px;
+border-radius: 10px;
+}
+
+.more-link:active {
+color: #FFF;
+outline-color: transparent;
+}
+
+
+ 
+/* кнопка НОМЕРА */
+.btn-wrapper {
+  width: 100px;
+  margin-top: auto; /* Прижимаем кнопку к низу */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  padding: 13px 0px;
+  margin-left: 45px;
+	margin-bottom: 45px;
+ 
+  border-radius: 10px;
+  border: 1px solid var(--color-yellowGold);
+
+ 
+}
+
+.btn-appataments {
+  color: var(--color-yellowGold);
+  font-family: Muller;
+  font-size: 16px;
+  font-weight: 400;
+
+text-decoration: none;
+}
+
+.btn-appataments:focus{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+outline-color: transparent;
+}
+
+.btn-appataments:hover{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+}
+
+.btn-appataments:active{
+background-color: var(--color-sandBraun);
+color: #FFF;
+}
+
+
+
+/* ==== 5. Хочу тур ===== */
+
+.tour-wrapper{
+margin-bottom: 70px;
+padding: 45px 0  45px 0;
+
+border-radius: 15px;
+background: #E9E9E9;
+}
+
+.tour-wrapper .form-style{
+margin: 0 45px 0 40px;
+}
+
+.form-style{
+justify-content: flex-start;
+column-gap: 40px;
+padding: 30px 0 30px 30px;
+border-radius: 15px;
+}
+
+.form-style label{
+
+margin-bottom: 15px;
+color: #000;
+font-family: Muller;
+font-size: 12px;
+font-weight: 400;
+
+}
+
+.form-style select, input{
+border: none;
+/* margin-right: 41px; 
+outline: 1px solid red;*/
+
+}
+ 
+
+.from-city{
+flex-direction: column;
+width: 160px;
+height: 16px;
+/* margin-right: 41px; */
+font-family: Muller;
+font-size: 16px;
+}
+
+.country{
+flex-direction: column;
+width: 160px;
+height: 16px;
+font-family: Muller;
+font-size: 16px;
+}
+
+.date{
+flex-direction: column;
+width: 130px;
+height: 16px;
+font-family: Muller;
+font-size: 16px;
+}
+
+.nigth{
+flex-direction: column;
+width: 120px;
+height: 16px;
+font-family: Muller;
+font-size: 16px;
+
+/* border-bottom: 1px solid  #E9E9E9; */
+}
+
+.nigth input{
+border-bottom: 1px solid  #E9E9E9;
+}
+
+.tourist{
+flex-direction: column;
+width: 120px;
+height: 16px;
+margin-right: 20px;
+
+font-family: Muller;
+font-size: 16px;
+
+}
+
+.tourist input{
+border-bottom: 1px solid  #E9E9E9;
+}
+ 
+
+
+.form-style{
+display: flex;
+
+background: #ffffff;
+
+}
+
+.btn-search{
+margin: 0;
+
+color: var(--color-yellowGold);
+font-size: 16px;
+font-weight: 400;
+background-color: inherit;
+}
+
+.btn-search:focus{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+outline-color: transparent; /*убрать черн.рамку обводки при :focus*/
+}
+
+.btn-search:hover{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+}
+
+.btn-search:active{
+background-color: var(--color-sandBraun);
+color: #FFF;
+}
+
+
+
+/* ==== 6. Контакты ===== */
+
+.contacts{
+margin-bottom: 40px;
+
+border-radius: 15px;
+background: #FFF;
+padding: 45px;
+}
+
+/* левый блок Контактов */
+.contact-left{
+max-width: 375px;
+margin-right: 50px;
+
+/* outline: 1px solid red; */
+}
+
+/*(global) заголовок: Адрес-Тлфн-mail-График */
+.cla-title{
+min-width: 145px;
+color: #000;
+font-family: Muller;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+}
+
+/* Адресс */
+.cl-address{
+display: flex;
+min-width: 230px;
+
+margin-bottom: 25px;
+padding-bottom: 25px;
+
+border-bottom: 1px solid #E9E9E9;
+}
+
+.address-descr{
+color: #000;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+
+
+/* Телефон */
+.cl-telefon {
+display: flex;
+min-width: 230px;
+
+margin-bottom: 25px;
+padding-bottom: 25px;
+
+border-bottom: 1px solid #E9E9E9;
+}
+
+.telefon-descr{
+display: flex;
+flex-direction: column;
+
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 2px;/* границы обводки offset */
+
+transition: color 0.5s ease-in-out, outline-color .3s ease-in-out; /*время реагирования */
+
+}
+
+.telefon-descr a{
+text-decoration: none;
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+
+.telefon-descr .tel-num:focus {
+outline-color:var(--color-yellowGolds);
+}
+
+.telefon-descr .tel-num:hover {
+  color: var(--color-redSand);
+}
+
+.telefon-descr .tel-num:active  {
+color: var(--color-sandBraun);  /* цвет шрифта */
+outline: 1px solid var(--color-sandBraun);  /*обводка */
+}
+
+/* Mail */
+.cl-mail {
+display: flex;
+min-width: 230px;
+
+margin-bottom: 25px;
+padding-bottom: 25px;
+
+border-bottom: 1px solid #E9E9E9;
+}
+
+.mail-descr{
+display: flex;
+flex-direction: column;
+
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 2px;/* границы обводки offset */
+
+transition: color 0.5s ease-in-out, outline-color .3s ease-in-out; /*время реагирования */
+
+}
+
+.mail-descr a{
+text-decoration: none;
+
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+
+.mail-descr .tomail:focus {
+outline-color:var(--color-yellowGolds);
+}
+
+.mail-descr .tomail:hover {
+  color: var(--color-redSand);
+}
+
+.mail-descr .tomail:active  {
+color: var(--color-sandBraun);  /* цвет шрифта */
+outline: 1px solid var(--color-sandBraun);  /*обводка */
+}
+
+
+.md-txt{
+margin: inherit; /* временное обнуление в mail*/
+
+color: #999;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+
+
+/* График */
+
+.cl-schedule {
+display: flex;
+min-width: 230px;
+
+margin-bottom: 25px;
+padding-bottom: 25px;
+
+border-bottom: 1px solid #E9E9E9;
+}
+
+.sd-txt{
+color: #000;
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+}
+
+/* Кнопка МАРШРУТ */
+.route{
+margin-top: 35px;/*  */
+display: flex;
+
+}
+
+.btn-route{
+
+padding: 30px;
+
+border-radius: 10px;
+border: 1px solid var(--color-yellowGold);
+
+text-decoration: none;
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.btn-route:focus{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+outline-color: transparent; /*убрать черн.рамку обводки при :focus*/
+
+}
+
+.btn-route:hover{
+background-color: var(--color-yellowGolds);
+color: #FFF;
+}
+
+.btn-route:active{
+background-color: var(--color-sandBraun);
+color: #FFF;
+} 
+
+/* правый блок Контактов */
+.contact-rigth{
+width: 650px;
+}
+
+.cr-reseption img{
+border-radius: 10px;
+}
+
+/* ====== 7. ФУТЕР ===== */
+
+.footer-wrapper{
+padding: 45px;
+
+display: flex;
+justify-content: space-between;
+
+border-radius: 15px;
+background: #333;
+
+background-image: url('../img/footersun.png');
+background-repeat: no-repeat;
+background-position: 740px 110px; /* */
+/*background-position: 740px ; временно */
+
+}
+
+/* лев. блок ИНФО */
+.footer-info{
+display: flex;
+flex-direction: column;
+
+max-width: 305px;
+}
+
+.info-lagoon,
+.info-descr{
+margin-bottom: 37px;
+
+color: #FFF;
+/* color: rgb(112, 112, 108); */
+
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 190%; /* 30.4px */
+}
+
+.info-accept{
+/* Обводка outline, в основном классе */
+/*outline: 1px solid transparent; обесцвеченная обводка*/
+/* outline-offset: 3px;границы обводки offset */
+
+ /*время реагирования 
+transition: color 0.5s ease-in-out, outline-color .2s ease-in-out;
+*/
+}
+
+.info-accept a{
+text-decoration: none;
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+
+/* Обводка outline, в основном классе */
+outline: 1px solid transparent; /*обесцвеченная обводка*/
+outline-offset: 5px;/* границы обводки offset */
+
+ /*время реагирования */
+transition: color 0.5s ease-in-out, outline-color .35s ease-in-out;
+
+border-radius: 10px;
+padding: 2px 10px;
+}
+
+.info-accept a:focus{
+outline-color: var(--color-yellowGolds);
+}
+
+.info-accept a:hover{
+color: var(--color-yellowGolds);
+}
+
+.info-accept a:active{
+outline: 1px solid  var(--color-yellowGolds);
+ 
+}
+
+
+/* средн. блок АДРЕС */
+.footer-address{
+display: flex;
+flex-direction: column;
+
+max-width: 360px;
+margin-left: -90px;
+}
+
+.address-txt{
+margin-bottom: 15px;
+
+color: #FFF;
+/* color: rgb(112, 112, 108); */
+
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 187.5% */
+}
+
+.address-tel {
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+
+}
+
+.address-tel a{
+text-decoration: none;
+
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+
+max-width: fit-content;
+outline: 1px solid transparent;
+outline-offset: 2px; 
+/*время реагирования */
+transition: color 0.5s ease-in-out, outline-color .35s ease-in-out;
+
+border-radius: 10px;
+padding: 2px 10px;
+}
+
+/* ToDo: [++] убрать двойная обводка   */
+.address-tel  a:focus{
+
+/* max-width: fit-content; */
+outline-color: var(--color-yellowGolds);
+}
+
+.address-tel a:hover {
+  color: var(--color-redSand);
+}
+
+.address-tel a:active  {
+color: var(--color-sandBraun);  /* цвет шрифта */
+outline: 1px solid var(--color-sandBraun);  /*обводка */
+}
+
+ 
+.address-mail {
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+
+}
+
+/* ToDo: [--] убрать двойная обводка   */
+.address-mail a{
+text-decoration: none;
+
+color: var(--color-yellowGold);
+font-family: Muller;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+
+max-width: fit-content; /*чтоб не располз. рамка outline 'a*/
+outline: 1px solid transparent;
+outline-offset: 2px; 
+
+/*время реагирования */
+transition: color 0.5s ease-in-out, outline-color .35s ease-in-out;
+
+border-radius: 10px;
+padding: 2px 10px;
+}
+
+.address-mail a:focus {
+outline-color:var(--color-yellowGolds);
+ 
+}
+
+.address-mail a:hover {
+  color: var(--color-redSand);
+}
+
+.address-mail a:active  {
+color: var(--color-sandBraun);  /* цвет шрифта */
+outline: 1px solid var(--color-sandBraun);  /*обводка */
+}
+
+
+/* прав.блок СОЦСЕТИ */
+
+.footer-social{
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+/* Стили и псевдоклассы для svg-иконок */
+.soc-icon svg path{
+fill:#999999;
+ 
+transition: color 0.5s ease-in-out;
+
+}
+
+.soc-icon:focus svg path{
+fill:var(--color-yellowGolds);
+ }
+
+.soc-icon:hover svg path{
+fill:var(--color-yellowGolds);
+}
+
+.soc-icon:active svg path{
+fill:var(--color-sandBraun);
+ }
