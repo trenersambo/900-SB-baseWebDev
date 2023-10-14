@@ -606,7 +606,7 @@ padding-top: 48px;
 
 transition: color 0.3s ease-in-out; 
 }
-/* focus over active  для Контактов*/
+/* focus hover active  для Контактов*/
 .contacts-item-link:focus{
 outline: 1px solid #71A7E2;
 }
