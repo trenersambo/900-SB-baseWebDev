@@ -1,5 +1,7 @@
 https://trenersambo.github.io/900-SB-baseWebDev/Lionica/
 
+https://trenersambo.github.io/900-SB-baseWebDev/Hotel/
+
 ==========================
 
 Повторение веб-верстки по курсу SB / Старт: Июнь 2023 года
