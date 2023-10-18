@@ -1,2 +1,4 @@
-# aura-dev
-Репозиторий для вебинара Skillbox по сайту Aura
+# Дом. работа 
+ Работа я коллекции стикеров за криптту :)
+
+ https://trenersambo.github.io/900-SB-baseWebDev/CroptoStiker/
