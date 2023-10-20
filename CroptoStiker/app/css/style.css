@@ -334,9 +334,9 @@ body {
   padding: 5px; /*толщина окантовки кнопки "Стать автором"*/
 }
 
-.hero__btn-text { /*текст внутри обеих кнопок (зачем?)*/
+.hero__btn-text {
   position: relative;
-  z-index: 5;
+  z-index: 5; /*текст кнопки не исчезнет при :active*/
 }
 
 .hero__btn--stroke .hero__btn-text { /*черный фон кнопки "Стать автором"*/
@@ -348,7 +348,7 @@ body {
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.hero__btn::before {
+.hero__btn::before { /*для :hover (будет исчезать градиент)*/
   content: "";
   position: absolute;
   left: 0;
@@ -357,11 +357,11 @@ body {
   bottom: 0;
   border-radius: inherit;
   background-color: var(--color-primary);
-  opacity: 0;
+  opacity: 0; /*ровный цвет не виден*/
   transition: opacity 0.3s ease-in-out;
 }
 
-.hero__btn::after {
+.hero__btn::after { /*для стиля при :active (измен. фона)*/
   content: "";
   position: absolute;
   left: 0;
@@ -375,12 +375,12 @@ body {
 }
 
 .hero__btn:focus .hero__btn-text {
-  color: var(--color-dark);
-  background-color: transparent;
+  color: var(--color-dark);/*текст кнопки при :focus*/
+  background-color: transparent; /*цвет фона прозрачный при :focus*/
 }
 
 .hero__btn:focus::before {
-  opacity: 1;
+  opacity: 1; /*вместо градиента проявится ровный фон*/
 }
 
 .hero__btn--fill:hover .hero__btn-text {
@@ -389,21 +389,21 @@ body {
 }
 
 .hero__btn--fill:hover::before {
-  opacity: 1;
+  opacity: 1; /* при :hover ( исчез градиент-> фон ровный)*/
 }
 
 .hero__btn--stroke:hover .hero__btn-text {
-  color: var(--color-dark);
-  background-color: transparent;
+  color: var(--color-dark); /*текст кнопки при :hover*/
+  background-color: transparent; /*черный фон текста - исчезает*/
 }
 
 .hero__btn:active .hero__btn-text {
-  color: var(--color-dark);
-  background-color: transparent;
+  color: var(--color-dark); /*текст при :active*/
+  background-color: transparent; /*цвет фона прозрачный при :active*/
 }
 
 .hero__btn:active::after {
-  opacity: 1;
+  opacity: 1; /*проявление фона в момент клика в кнопку*/
 }
 
 /* auction-bet */
@@ -541,12 +541,12 @@ border-radius: 50%;
 .auction-timer {
   flex-grow: 1;
   border-radius: 40px;
-  padding: var(--gap);
+  padding: var(--gap); /*32px */
   max-width: 460px;
   color: var(--color-light);
   background-color: var(--color-dark);
   background-image: url("../img/clock.svg");
-  background-position: calc(100% - var(--gap)) center;
+  background-position: calc(100% - 32px) center;
   background-size: 121px 121px;
   background-repeat: no-repeat;
 }
@@ -601,12 +601,13 @@ border-radius: 50%;
   flex-wrap: wrap;
 }
 
+/* внешняя обертка карточки */
 .auction__item {
   margin-bottom: var(--gap);
-  width: calc((100% - (var(--gap) * 3)) / 4);
+  width: calc((100% - (32px* 3)) / 4); /*расчет ширин одной карточки*/
 }
 
-.auction__item:not(:nth-child(4n)) {
+.auction__item:not(:nth-child(4n)) { /*отступы для: за исключ. каждой 4-й*/
   margin-right: var(--gap);
 }
 
@@ -682,25 +683,25 @@ border-radius: 50%;
   background-repeat: no-repeat;
 }
 
-.new__slider {
+.new__slider { /*слайдер*/
   overflow: hidden;
   margin-bottom: 65px;
   width: 100%;
 }
 
-.new__pagination {
+.new__pagination { /*кнопки пагинации вынуь из абсолюта*/
   position: initial;
 }
 
 .new__stickers {
   display: flex;
 }
-
+/* стили для картинок внутри слайдера */
 .new__stickers picture:not(:last-child) {
   margin-right: 28px;
 }
 
-.swiper-pagination-bullet {
+.swiper-pagination-bullet { /*стили кнопок пагинации (текст +обводка)*/
   border: 2px solid var(--color-red);
   border-radius: 40px;
   padding: 8px 21px;
@@ -715,12 +716,12 @@ border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
 }
 
-.swiper-pagination-bullet:not(:last-child) {
+.swiper-pagination-bullet:not(:last-child) { /*расстоян. между кнопками*/
   margin-right: 20px;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--color-red);
+  background-color: var(--color-red); /*фон кнопки у активной страницы*/
 }
 
 /* subscribe */
@@ -782,7 +783,7 @@ border-radius: 50%;
   color: var(--color-light);
 }
 
-.checkbox__text::before {
+.checkbox__text::before { /*кастомное окошко чекбокса*/
   content: "";
   position: absolute;
   left: -1px;
@@ -792,14 +793,14 @@ border-radius: 50%;
   height: 14px;
 }
 
-.checkbox__text::after {
+.checkbox__text::after { /*почти кастомная галочка в окошке чекбокса*/
   content: "";
   position: absolute;
   left: -1px;
   top: -1px;
   width: 14px;
   height: 14px;
-  background-image: url("../img/check.svg");
+  background-image: url("../img/check.svg");/*галочка*/
   background-position: center;
   background-size: 65%;
   background-repeat: no-repeat;
@@ -811,7 +812,7 @@ border-radius: 50%;
   opacity: 1;
 }
 
-.checkbox__input:focus + .checkbox__text {
+.checkbox__input:focus + .checkbox__text { /*выделение текст при чекинге*/
   border-color: var(--color-light);
 }
 
@@ -887,7 +888,7 @@ border-radius: 50%;
   cursor: pointer;
 }
 
-.file__input {
+.file__input { /*Выбор каталога с картинками: accept*/
   position: absolute;
   opacity: 0;
   appearance: none;
@@ -905,7 +906,7 @@ border-radius: 50%;
   transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.file__icon::before {
+.file__icon::before {/*псевдоэлемент:  Горизонтальная палка*/
   content: "";
   position: absolute;
   left: 50%;
@@ -916,7 +917,7 @@ border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 
-.file__icon::after {
+.file__icon::after {/*Вертикальная палка*/
   content: "";
   position: absolute;
   left: 50%;
@@ -1068,26 +1069,32 @@ border-radius: 50%;
   color: var(--color-dark);
 }
 
-.footer__link::after {
+.footer__link::after { /*для анимации подчеркивания*/
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2px;
+  height: 2px; /*толщина линии подчеркивания*/
   background-color: currentColor;
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
+  transform-origin: left; /*скрыть линию*/
+  transform: scaleX(0);   /*скрыть линию*/
+  transition: transform 0.3s ease-in-out; /*скорость показа*/
 }
 
 .footer__link:focus::after {
-  transform: scaleX(1);
+  transform: scaleX(1); /*показать линию*/
 }
 
+.footer__link:hover::after {
+  transform: scaleX(1);/*показать линию*/
+}
+
+
 .footer__link:active::after {
-  background-color: var(--color-manatee);
-  transform: scaleX(1);
+  background-color: #717178;
+  transform: scaleX(1);/*показать линию*/
+  height: 5px;
 }
 
 .footer__container {
