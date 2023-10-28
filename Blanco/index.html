@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="./style/normalize.css">
+
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
   <link rel="stylesheet" href="./style/style.css">
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
   <title>_Blanco_ </title>
 </head>
@@ -112,49 +115,63 @@
  </div>
 </section>
 
+
+
+
+
 <!-- self work: slider слайдер -->
 <section class="new">
-  <div class="container container--position">
+  <div class="container  ">
 
-    <div class="new__slider">
+    <!-- Slider -->
+    <div class="swiper">
+
+      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
 
-        <!-- Слайд 1 -->
-        <div class="swiper-slide">
-          <div class="new__text">
+          <!-- Слайд 1 -->
+          <div class="swiper-slide">
+            <div class="new__text">
 
-            <img src="./svg/druk-svg.svg" alt="" class="new__svg">
+              <img src="./svg/druk-svg.svg" alt="" class="new__svg">
 
-            <p class="new__decr">
-              “Slide 1. a community of industry leading professionals.
-               Join a community of industry leading professionals.“
-            </p>
-            <p class="new__personal">Laura Paula</p>
-            <span class="personal-info">Director @Company</span>
+              <p class="new__decr">
+                “Join a community of industry leading professionals.
+                Join a community of industry leading professionals.“
+              </p>
+              <p class="new__personal">Laura Paula</p>
+              <span class="personal-info">Director @Company</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Слайд 2 -->
-        <div class="swiper-slide">
-          <div class="new__text">
-            <img src="./svg/druk-svg.svg" alt="" class="new__svg">
+          <!-- Слайд 2 -->
+          <div class="swiper-slide">
+            <div class="new__text">
+              <img src="./svg/druk-svg.svg" alt="" class="new__svg">
 
-            <p class="new__decr">
-              “Slide 2. a community of industry leading professionals.
-               Join a community of industry leading professionals.“
-            </p>
-            <p class="new__personal">Laura Paula</p>
-            <span class="personal-info">Director @Company</span>
+              <p class="new__decr">
+                “Join a community of industry leading professionals.
+                Join a community of industry leading professionals.“
+              </p>
+              <p class="new__personal">Laura Paula</p>
+              <span class="personal-info">Director @Company</span>
+            </div>
           </div>
-        </div>
 
       </div>
+
+      <!-- pagination -->
+      <div class="swiper-pagination"></div>
+
     </div>
 
-    <div class="new__pagination swiper-pagination"></div>
-
   </div>
+
 </section>
+
+
+
+
 
 </main>
 
