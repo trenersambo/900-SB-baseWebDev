@@ -6,12 +6,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/normalize.css">
   <link rel="stylesheet" href="./style/style.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
   <title>_Blanco_ </title>
 </head>
 
-<body>
+<body class="page">
+
+<header class="header header--position"> <!-- бэм блок (класс м.б. переиспользован) -->
+
+<!-- бэм блок + бэм-элемент (класс м.б. переиспользован) -->
+ <div class="container header__container">
+    <a href="#" class="logo header__logo"><!-- лого = бэм блок ( переиспользуется) -->
+      <img src="./img/logo.svg" alt="лого">
+    </a>
+
+    <a href="mailto:mail@blanko.com" class="email header__email">
+      mail@blanko.com
+    </a>
+
+    <nav class="nav header__nav"><!-- меню = бэм блок ( переиспользуется в шапке и в футере ) -->
+      <ul class="list-reset nav__list"><!-- это ЭЛЕМЕНТ ( __потомок от бэм-блока NAV ) -->
+
+        <li class="nav__item">
+          <a href="" class="nav__link">Landing</a>
+        </li>
+        <li class="nav__item"> <!-- nav__list__item  Ьак НЕЛЬЗЯ писать: элементы д. идти только от блоков -->
+          <a href="" class="nav__link">All pages</a>
+        </li>
+        <li class="nav__item">
+          <a href="" class="nav__link">Template</a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- кнопка = бэм блок ( переиспользуется на сайте еще неск. раз ) -->
+    <!-- класс btn--accent для доп. изменения (МОДИФИКАТОР ) осн. класса кнопки -->
+    <button class="btn btn--accent">
+      Purchase template
+    </button>
 
 
+
+  </div>
+
+</header>
+
+<main>
+
+<section class="hero"><!-- блок и элемент -->
+  <div class="container hero__container"><!-- блок -->
+
+    <div class="hero__wrapper">
+
+        <div class="hero__content"><!--  элемент -->
+        <h1 class="hero__title"><!--  элемент -->
+          Blanko template
+        </h1>
+        <p class="hero__descr"><!--  элемент -->
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Odio mauris porttitor amet volutpat.
+        </p>
+
+        <!-- кнопка: строчно-блочная, ссылка: блочная  -->
+        <div class="hero__btns"><!--  элемент -->
+          <button class="btn btn--big btn--dark">Purchase template</button>
+          <a href="#" class="btn btn--big">Other templates</a>
+        </div>
+      </div>
+
+    </div>
+
+    <img src="./img/main-image.png" alt="blanko" class="hero__image">
+
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <h2 class="visually-hidden">benefits</h2><!-- скрытый блок, виден только для читалок-->
+    <ul class="list-reset benefits__list">
+
+      <li class="benefits__item benefits__item--speed">
+        <div class="benefits__text">
+         <h3 class="benefits__subtitle">Speed</h3>
+         <p class="benefits__descr">Open a commercial-grade current account from anywhere</p>
+        </div>
+      </li>
+      <li class="benefits__item benefits__item--disign">
+        <div class="benefits__text">
+         <h3 class="benefits__subtitle">Design</h3>
+         <p class="benefits__descr">Open a commercial-grade current account from anywhere</p>
+        </div>
+      </li>
+      <li class="benefits__item benefits__item--modularity">
+        <div class="benefits__text">
+         <h3 class="benefits__subtitle">Modularity</h3>
+         <p class="benefits__descr">Open a commercial-grade current account from anywhere</p>
+        </div>
+      </li>
+
+    </ul>
+ </div>
+</section>
+
+<!-- self work: slider слайдер -->
+<section class="new">
+  <div class="container container--position">
+
+    <div class="new__slider">
+      <div class="swiper-wrapper">
+
+        <!-- Слайд 1 -->
+        <div class="swiper-slide">
+          <div class="new__text">
+
+            <img src="./svg/druk-svg.svg" alt="" class="new__svg">
+
+            <p class="new__decr">
+              “Slide 1. a community of industry leading professionals.
+               Join a community of industry leading professionals.“
+            </p>
+            <p class="new__personal">Laura Paula</p>
+            <span class="personal-info">Director @Company</span>
+          </div>
+        </div>
+
+        <!-- Слайд 2 -->
+        <div class="swiper-slide">
+          <div class="new__text">
+            <img src="./svg/druk-svg.svg" alt="" class="new__svg">
+
+            <p class="new__decr">
+              “Slide 2. a community of industry leading professionals.
+               Join a community of industry leading professionals.“
+            </p>
+            <p class="new__personal">Laura Paula</p>
+            <span class="personal-info">Director @Company</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="new__pagination swiper-pagination"></div>
+
+  </div>
+</section>
+
+</main>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="./js/main.js"></script>
 
 </body>
