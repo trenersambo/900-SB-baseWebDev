@@ -1,4 +1,4 @@
-
+/* сайт Lionica (самбо) . На github  */
 
 /* ====== подключение шрифтов ======= */
 
@@ -54,9 +54,15 @@ max-width: 100%;
 }
 
 body{
-min-width: 1200px;
+/* min-width: 1200px; */
+min-width: 320px; /*для адаптива*/
 font-family: 'OpenSans', sans-serif;
 font-weight: 400;
+}
+
+/* Переменные */
+:root{
+--gap: 30px; /*переменная gap = 30рх*/
 }
 
 /* ==== default-style: СПИСКИ, КНОПКИ, FLEX ==== */
@@ -79,9 +85,10 @@ display: flex;
 }
 
 .container{
-width: 1200px;
+max-width: 1200px; /*лимит по макс.ширине*/
 padding: 0 15px;
 margin: 0 auto;
+width: 100%; /* фишка: 1200рх = 100%*/
 }
 
 .section-title{
@@ -307,14 +314,23 @@ color: #1c1c1c;
 text-align: center; 
 }
 
+.services-items{
+--offsets: 3; /*кол-во отступов между 4мя карточкам*/
+gap:var(--gap);/* 30px */
+flex-wrap: wrap;
+}
+
+
+
 .services-item{
+border: 1px solid #e4e4e4;
+border-radius: 5px;
 flex-direction: column;
 align-items: center;
 padding: 60px 30px;
-width: 270px;
-/* outline:  1px solid red; */
-border: 1px solid #e4e4e4;
-border-radius: 5px;
+/* width: 270px; */ /*до применения адаптива к верстке*/
+/* width: calc((100% - (30px * 3)) / 4);*/ /* вариант 1: calc с цифрами*/
+width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1)); /* вариант 2: calc с var()*/
 
 transition: background-color  0.3s ease-in-out,  border-color 0.3s ease-in-out; /*плавность показа*/; /*плавность показа*/
 
@@ -325,11 +341,7 @@ transition: background-color  0.3s ease-in-out,  border-color 0.3s ease-in-out; 
 background-color: #317289;
 
 }
-
-.services-item:not(:nth-child(4n)){
-margin-right: 30px;
-}
-
+ 
 /* svg-иконки: борцы, сердце, карты, молот */
 .services-item-icon{
 fill: #3172B9; /* включить цвет, вместо fill:none в html'e*/
@@ -383,14 +395,21 @@ border: 1px solid #DADADA;
 
 .articles-list{ 
 flex-wrap: wrap;
+/*для адаптива 2х2 карточек*/
+--offsets: 1; /*м/у 2мя карточками 1 разрыв*/
+gap:var(--gap); /*=30px*/
 }
 
 .articles-item{
-width: 570px;
+/* width: 570px; было до адаптива*/
+width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
 margin-bottom: 30px;
-/* outline:  1px solid red; */
-
 }
+
+/* .articles-item:not(:nth-child(2n)){
+margin-right: 30px;
+} т.к. ест адаптив */
+
 
 .blog-preview{
 overflow: hidden;
@@ -491,10 +510,6 @@ line-height: 150%; /* 21px */
 transition: color 0.3s ease-in-out; /*плавность показа*/
 }
 
-.articles-item:not(:nth-child(2n)){
-margin-right: 30px;
-}
-
 .blog-preview-image{
 /* чтоб картинки заполнили весь свой блок */
 /* object-fit: cover; */
@@ -526,19 +541,27 @@ margin: 0;
 border-bottom: 1px solid #DADADA;
 }
 
+.clients-list{ /*обертка для 3х карточек*/
+--offsets: 2; /*2 промежутка м/у 3 карточками*/
+flex-wrap: wrap;
+gap: var(--gap); /*--gap === 30px*/
+}
+
 .clients-item{
 flex-direction: column;
-width: 370px;
+/*  width: 370px; т.к. вставим адаптив*/
+width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
+
 padding: 50px 36px;
 padding-bottom: 30px;
 border: 1px solid #e4e4e4;
 border-radius: 6px;
-/* outline:  1px solid red; */
+ 
 }
 
-.clients-item:not(:nth-child(3n)){
+/* .clients-item:not(:nth-child(3n)){
 margin-right: 30px;
-}
+} тк создан адаптив и это условие не нужно */
 
 .clients-item-descr{
 margin: 0;
@@ -589,15 +612,30 @@ border-bottom: 1px solid #DADADA;
 font-style: normal;
 }
 
+.contacts-list{
+flex-wrap: wrap;
+
+/*для адаптива 3 карточек в ряд*/
+--offsets: 2; /*м/у 3мя карточками 2 разрыва*/
+gap:var(--gap); /*=30px*/
+
+}
+
 .contacts-item{
 flex-direction: column;
-width: 370px;
-/* outline: 1px solid red; */
+
+/* width: 370px; т.к. прикрутили адаптивную ширину*/
+width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
+
 background-position: left top;
 background-repeat: no-repeat;
 background-size: 29px 29px;
 padding-top: 48px;
 }
+
+/* .contacts-item:not(:nth-child(3n)){
+margin-right: 30px;
+} */
 
 .contacts-item-link {
  font-size: 14px;
@@ -631,9 +669,6 @@ background-image: url(../svg/phone.svg);
 background-image: url(../svg/mail-top.svg);
 }
 
-.contacts-item:not(:nth-child(3n)){
-margin-right: 30px;
-}
 
 .contacts-item-caption{
 margin-bottom: 30px;
