@@ -58,7 +58,7 @@ a {
 --green: #97EE3F;
 --yellow-orange: #E1670E;
 --orange: #FFB84D;
---signal-orange:#F90;
+--signal-orange:#FF9900;
 
 
 /*--gap16:16px;  */
@@ -105,6 +105,11 @@ margin: 0 auto;
 outline: 1px solid red;
 }
 
+
+
+
+
+
 /* ========  шапка  =========== */
 
 .header--decor{
@@ -147,12 +152,122 @@ padding: 0px 1px 3px 0px; /*подгон по РРerfect*/
 }
 
 .heanav-link{
+position: relative;
+
+ text-decoration: none;
 color: var(--black);
 
 font-size: 18px;
 font-weight: 600;
 line-height: 36px;  /* внимание !*/
+
+outline: 2px solid transparent;
+outline-offset: 4px;
+
+transition: color 0.25s ease-in-out, outline-color 0.25s ease-in-out ;/*  */
 }
+
+.heanav-link:focus-visible{
+outline-color:var(--signal-orange);
+
+}
+
+/* плавное подчеркивание ссылки при :hover :::start*/
+.heanav-link::before  {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 100%;
+
+  transition: transform .25s ease-in-out;
+
+    transform-origin: left;
+  transform: scaleX(0); transition-delay: 0s;
+}
+
+.heanav-link:hover::before {
+outline: none;
+border-bottom: 1px solid var(--signal-orange, #F90);
+padding-bottom: 7px;
+transform: scaleX(1); transition-delay: .25s;
+}
+
+/* плавное подчеркивание ссылки при :hover :::end*/
+
+.heanav-link:hover {  /*убрать outline при :hover*/
+outline: none;
+}
+
+
+.heanav-link:active::before{
+border-color: transparent; /*убрать двойное подчеркивание */
+}
+
+.heanav-link:active{
+
+color: var(--yellow-orange, #E1670E);
+border-bottom: 1.5px solid var(--yellow-orange, #E1670E);
+padding-bottom: 3px;
+
+outline: none;
+}
+
+/*лупа*/
+
+
+.header__search-link{
+outline: 1px solid transparent;
+outline-offset: 4px;
+
+transition: outline-color 0.25s ease-in-out;
+
+}
+
+svg,
+svg path,
+svg rect {
+transition: fill .3s ease-in-out, stroke .3s ease-in-out ;
+}
+
+.header__search-link:focus-within{
+ outline-color:var(--signal-orange);/* */
+
+}
+
+.header__search-icon:hover path {
+stroke: var(--signal-orange, #F90);
+
+}
+
+
+.header__search-icon:hover rect {
+fill: var(--signal-orange, #F90); /* */
+stroke: var(--signal-orange, #F90) ;
+
+}
+
+.header__search-icon:hover .header__search-link{ /*убрать обводку при :hover*/
+ outline: none;
+}
+.header__search-link:hover {
+ outline: none;
+}
+
+
+.header__search-icon:active path{
+stroke: var(--black, #000);
+}
+
+.header__search-icon:active rect{
+fill: var(--black, #000); /* */
+stroke: var(--black, #000) ;
+}
+
+.header__search-link:active{
+ outline: none;
+}
+
+
 
 /* =============== section HERO ========== */
 .hero{
@@ -169,7 +284,7 @@ margin-bottom: 50px;
 
     min-height: 620px;
     background-size: contain;
-    /* opacity: .1; */
+  /*  opacity: .1;  */
 }
 
 .hero__content{
@@ -204,7 +319,24 @@ margin-bottom: 90px;
 background-color: var(--signal-orange, #F90) ;
 font-size: 23px;
     padding: 27px 39px;
+  outline: none;
+
+  transition: background-color .35s ease-in-out;
 }
+
+.hero__btn:focus{
+background-color: var(--orange, #FFB84D)
+}
+
+.hero__btn:hover{
+background-color: var(--orange)
+}
+
+.hero__btn:active{
+background-color: var(--yellow-orange, #E1670E)
+}
+
+
 
 
 /* =============== section ABOUT========== */
@@ -280,6 +412,22 @@ font-size: 16px;
 margin-right: 50px;
     padding: 11px 35px;
 border: 3px solid var(--signal-orange, #F90);
+outline: none;
+
+transition: background-color .3s linear;
+}
+
+.btn-detail:focus{
+background-color: var(--signal-orange, #F90);
+}
+
+.btn-detail:hover{
+background-color: var(--signal-orange, #F90);
+}
+
+.btn-detail:active{
+background-color: var(--yellow-orange, #E1670E);
+border-color: var(--yellow-orange );
 }
 
 .abbottom-right{
@@ -407,14 +555,50 @@ border-radius: 16px;
 background-color: var(--signal-orange, #F90);
 
 padding: 20px 39px 20px 38px;
+
+outline: none;
+transition: background-color .3s ease-in-out;
 }
+
+.btn-cons-detail:focus{
+background-color: var(--orange, #FFB84D);
+}
+
+.btn-cons-detail:hover{
+background-color: var(--orange);
+}
+
+.btn-cons-detail:active{
+background-color: var(--yellow-orange, #E1670E);
+}
+
 
 .btn-cons-contract{
 border-radius: 16px;
-border: 1px solid var(--black, #000);
+border: 1px solid var(--dull-gray);
 color: var(--black);
 
     padding: 19px 33px 19px 38px;
+
+outline: none;
+transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+
+.btn-cons-contract:focus{
+background-color: var(--dull-gray, #666666);
+color: var(--color-light, #FFFFFF);
+}
+
+.btn-cons-contract:hover{
+background-color: var(--dull-gray, #666);
+color: var(--color-light, #FFFFFF);
+}
+
+.btn-cons-contract:active{
+background-color: var(--black);
+border-color: var(--black);
+color: var(--color-light);
 }
 
 
@@ -494,12 +678,59 @@ font-size: 18px;
 font-weight: 600;
 line-height: 36px;
 
+outline: 2px solid transparent;
+outline-offset: 4px;
+transition: color 0.25s ease-in-out, outline-color 0.25s ease-in-out ;
 }
 
+.foonav-link:focus{
+outline-color: var(--signal-orange);
+}
+
+.foonav-link:hover{
+color: var(--signal-orange);
+outline: none;
+}
+
+.foonav-link:active{
+color: var(--yellow-orange);
+outline: none;
+}
+
+/* иконки соц.сетей */
 .footer__social{
 display: flex;
 gap: 25px;
+
 }
+
+.social-link{
+
+outline: 2px solid transparent;
+outline-offset: 4px;
+transition: outline-color 0.25s ease-in-out;
+}
+
+.social-link:focus{
+ outline-color:var(--signal-orange);/* */
+}
+
+.social-link:hover{
+outline: none;
+}
+
+.soc-icon:hover path{
+fill: var(--signal-orange);
+
+}
+
+.soc-icon:active path {
+fill: var(--yellow-orange);
+}
+
+
+
+
 
 .footer__middle{
 padding: 2px 0 0px 124px;
@@ -522,7 +753,6 @@ display: block;
 border-radius: 16px;
 resize: none;
 
-/* ToDo:  Доделать стили, наугад*/
 background-color: var(--gray-brown, #414141);
 border: none;
  color: var(--color-light);
@@ -531,8 +761,17 @@ border: none;
 
 }
 
-.user{
+.input-style:focus{
+background-color: var(--dull-gray);
+}
+.input-style:hover{
+background-color: var(--dull-gray);
+}
+.input-style:active{
+background-color: var(--dull-gray);
+}
 
+.user{
 margin-bottom: 25px;
 
 }
@@ -560,12 +799,28 @@ line-height: 32px;
 display: flex;
 gap: 12px;
 }
+
 .btn-submit{
 font-size: 16px;
 background-color: var(--signal-orange, #F90);
 
-    padding: 20px 52px 19px 52px;
+  padding: 20px 52px 19px 52px;
+
+outline: none;
 }
+
+.btn-submit:focus{
+background-color: var(--orange);
+}
+
+.btn-submit:hover{
+background-color: var(--orange);
+}
+
+.btn-submit:active{
+background-color: var(--yellow-orange);
+}
+
 
 
 .footer__right{
