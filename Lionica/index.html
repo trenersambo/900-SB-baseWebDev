@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/normalize.css">
   <link rel="stylesheet" href="./style/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/media.css">
+
   <title>проект Lionica</title>
 </head>
 
@@ -59,9 +61,16 @@
           </ul>
         </nav>
 
-        <button class="btn  header-btn  btn-reset">
-          FREE TRIAL
+        <button class="btn  header-btn  btn-reset">FREE TRIAL </button>
+
+        <!-- бургем-меню: видим только после 992рх +  тектовое меню скроем -->
+        <button class=" btn-reset burger">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
         </button>
+
+
 
       </div>
     </header><!-- .top-header:: end-->
@@ -464,16 +473,16 @@
             <ul class=" footer-list list-reset flex">
 
               <li class="footer-item">
-                <a href="#" class="footer-list flex">About</a>
+                <a href="#" class="footer-link">About us</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-list">Contact</a>
+                <a href="#" class="footer-link">Contact us</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-list">Privacy</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
               </li>
               <li class="footer-item">
-                <a href="#" class="footer-list">Terms</a>
+                <a href="#" class="footer-link">Terms Condition</a>
               </li>
 
             </ul>

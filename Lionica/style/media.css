@@ -1,0 +1,372 @@
+/* экран на devTools = 992px */
+@media (max-width: 1200px) {
+  .form-input,
+  .form-select {
+    width: 100%;
+  }
+}
+
+
+/* ======================= */
+
+
+/* экран на devTools = 768 */
+@media (max-width: 992px) {
+  /* спрячь текстовое меню */
+  .header-nav {
+    display: none;
+  }
+
+  /* кнопка Бургер для 992рх */
+  .burger {
+    position: relative;  /*для показа палочек меню */
+    border: 1px solid currentColor;/* цвет берет из color*/
+    border-radius: 3px;
+    
+    display: block;  /* показать Бургер на экран */
+    width: 40px;
+    height: 40px;
+    color: #3172B9; /* задает цвет для currentColor*/
+  }
+
+  /*Бургер: рисуем полоски  */
+  .burger__line {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%  );
+    border-radius: inherit; /*radius берет из родителя .burger*/
+    background-color: currentColor;/* цвет берет из родителя .burger*/
+  }
+
+  /*Бургер: расставить полоски друг под другом */
+  .burger__line:nth-child(1) {
+  top: 13px;
+  }
+  .burger__line:nth-child(2) {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  }
+  .burger__line:nth-child(3) {
+  bottom: 13px;
+  }
+
+  /* подгон размеров кнопки "Free Trial" под размер Бургера */
+  .header-btn {
+    margin-right: 7px;
+    padding: 11px 21px;
+  }
+
+  .hero {
+  background-position: center left;
+  }
+
+  .hero-content {
+  max-width: 75%;
+  }
+  
+  .services-item {
+  --offsets: 2; 
+  }
+
+  .clients-list {
+  --offsets: 1;   
+  }
+
+  .footer-container {
+  flex-direction: column; /* смена направления  */
+  }
+
+  .footer-left {
+    margin-bottom: var(--gap);/* отступ вниз  */
+  }
+}
+
+
+/* ======================= */
+
+
+/* экран на devTools = 576 */
+@media (max-width: 768px) {
+  .services-item {
+  --offsets: 1; 
+  }
+
+  .blog-preview-link { /*блок Article */
+    flex-direction: column;
+  }
+
+  .form { 
+  padding: 0;/* расшир. поля ввода */
+  }
+
+  .footer-item:not(:last-child) {
+  margin-right: 18px;
+  }
+}
+
+/* ======================= */
+
+/* экран на devTools = 320*/
+@media (max-width: 576px) {
+  .clients-list {
+    --offsets: 0;
+  }
+ /*  отсюда timecod: 24:10 */
+  .contacts-list {
+    --offsets: 0; 
+   gap: 30px;    /*  */
+  }
+
+  .contacts-item-caption {
+    margin-bottom: 9px;
+  }
+
+  .footer-rigth {
+    flex-direction: column;
+  }
+
+  .header-logo {
+    width: 80px;
+ 
+  }
+
+  .header {
+    padding: 15px 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero {
+    padding-top: 30px;
+  }
+
+  .hero-title {
+    margin-bottom: 16px;
+  }
+
+  .hero-descr {
+    margin-bottom: 16px;
+  }
+
+  .hero-wrapper {
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .section-offset {
+    padding: 60px 0;
+  }
+
+ /*  отсюда timecod: 31:10 */
+
+  .section-title {
+    margin-bottom: 16px;
+  }
+
+  .section-descr {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    letter-spacing: 0.01px;
+  }
+
+  :root {
+    --gap: 15px;
+  }
+
+  .services-list {
+    row-gap: 20px;
+  }
+  
+  .services-item {
+    padding: 15px; /* чтоб больше текста в 1 ряду вместилось*/
+    min-height: 222px;
+  }
+
+  .services-item-icon {
+    margin-bottom: 14px;
+    height: 42px; /* меньш. размер иконок */
+
+  }
+
+  .services-item-title {
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .services-item-descr {
+    font-size: 12px;
+    line-height: 150%;    
+  }
+
+/* Article - блок */
+
+  .articles-list {
+    --offsets: 0; 
+  }
+
+  /*  отсюда timecod: 38:20 */
+  .articles-title {
+    margin-bottom: 13px;
+  }
+
+  .blog-preview-link {
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .blog-preview {
+    min-height: 191px;
+  }
+
+  .blog-preview-image {
+    flex-shrink: 0;
+    width: 86px;  /*  сузить картинку в Article*/
+    height: 100%;
+    
+  }
+
+  .blog-preview-text {
+    padding: 15px 14px;
+  }
+
+  .blog-preview-title {
+    margin-bottom: 0;
+  }
+
+  .clients-item {
+    padding: 18px 18px;
+  }
+
+  .clients-avatar {
+    width: 69px;
+  }
+
+  .clients-name {
+    margin-bottom: 0;
+  }
+
+  .clients-title {
+    margin-bottom: 13px;
+  }
+
+  .contacts-item {
+    padding-top: 40px;
+  }
+
+  .join-us-title {
+    text-align: left;
+  }
+
+  .form-top {
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  .form-left {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .form-input,
+  .form-select {
+    padding-left: 19px;
+  }
+
+  .form-right {
+    width: 100%;
+  }
+
+  .form-textarea {
+    padding: 15px 19px;
+    height: 240px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  }
+
+  .form-btn {
+    margin-bottom: 14px;
+    width: 100%;    
+  }
+
+  .footer-container {
+    flex-direction: column-reverse;
+}
+
+  .footer-nav .footer-link {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .footer {
+    padding: 0;
+    padding-top: 30px ;
+  }
+
+  .footer-nav {
+    margin-right: 0;
+    margin-bottom: 26px;
+  }
+
+  .footer-nav .footer-list {
+    flex-wrap: wrap;
+    gap: 15px 32px;
+  }
+
+  .footer-nav .footer-item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .footer-rigth {
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .social-item:not(:last-child) {
+    margin-right: 26px;
+  }
+
+  .footer-left {
+    margin-bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    width: 80px;
+  }
+
+  .footer-copy {
+    position: relative;
+    width: 100%;
+    /* */
+    text-align: center;
+  }
+
+ .footer-copy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: calc(100% + 30px); 
+  height: 1px;
+  background-color: #c4c4c4;
+
+ }
+
+
+
+
+}
+
