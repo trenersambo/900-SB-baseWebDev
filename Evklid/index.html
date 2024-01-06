@@ -7,12 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/normalize.css">
   <link rel="stylesheet" href="./style/style.css">
+
+  <link rel="stylesheet" href="./style/media-header.css"> <!--  -->
+  <link rel="stylesheet" href="./style/media-hero.css"> <!--  -->
+  <link rel="stylesheet" href="./style/media-about.css"> <!--  -->
+  <link rel="stylesheet" href="./style/media-how.css"> <!--  -->
+  <link rel="stylesheet" href="./style/media-faq.css"> <!--  -->
+  <link rel="stylesheet" href="./style/media-footer.css"> <!--  -->
+
   <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
   <title> Evklid </title>
+
 </head>
 
 <body class="page">
-  <!-- Шапка:: start -->
+
   <header class="header header--decor">
     <div class="container header__container">
       <a href="#" class="logo header__logo">
@@ -46,7 +55,6 @@
       </button>
     </div>
   </header>
-  <!-- Шапка:: end -->
   <main>
     <section class="hero ">
       <div class="container ">
@@ -62,10 +70,11 @@
         </div>
       </div>
     </section>
+
     <section class="about">
-      <div class="container about__container">
+      <div class="container ">
         <div class="about__top">
-          <h2 class="about__title" id='about'>
+          <h2 class="about__title" id="about">
             О&nbsp;нас
           </h2>
           <p class="about__descr">
@@ -84,24 +93,24 @@
           </p>
         </div>
         <div class="about__bottom">
-          <div class=" about__bottom-left">
-            <div class="about__bottom-img">
-              <div class="about__bottom-popup">
-                <p class="about__bottom-descr">
-                  Принимая во&nbsp;внимание показатели успешности, перспективное
-                  планирование способствует подготовке и&nbsp;реализации новых принципов
-                </p>
-                <a href="#" class="btn about__btn-detail ">
-                  Подробнее
-                </a>
-              </div>
+
+          <div class="about__bottom-img">
+            <div class="about__bottom-popup">
+              <p class="about__bottom-descr">
+                Принимая во&nbsp;внимание показатели успешности, перспективное
+                планирование способствует подготовке и&nbsp;реализации новых принципов
+              </p>
+              <a href="#" class="btn about__btn-detail ">
+                Подробнее
+              </a>
             </div>
           </div>
+
           <div class="about__bottom-right">
             <div class="about__bottom-info about__bottom-info--cube">
               <div class="about__bottom-wrapper">
                 <p class="about__bottom-title ">Консультация с&nbsp;широким активом</p>
-                <p class="abinfo-descr ">
+                <p class="about__descript ">
                   А&nbsp;также свежий взгляд на&nbsp;привычные вещи&nbsp;&mdash;
                   безусловно&nbsp;открывает новые горизонты
                   для&nbsp;как&nbsp;самодостаточных, так и&nbsp;внешне зависимых концептуальных решений
@@ -111,7 +120,7 @@
             <div class="about__bottom-info about__bottom-info--gear">
               <div class="about__bottom-wrapper">
                 <p class="about__bottom-title ">В&nbsp;своём стремлении повысить</p>
-                <p class="abinfo-descr ">
+                <p class="about__descript ">
                   Качество жизни, они забывают, что сплочённость команды профессионалов
                   представляет собой интересный эксперимент проверки прогресса
                   профессионального сообщества
@@ -122,38 +131,39 @@
         </div>
       </div>
     </section>
+
     <section class="how">
       <div class="container how__container">
         <h2 class="how__title" id="how">Этапы</h2>
-        <div class="how__consult">
-          <div class="how__left">
-            <h3 class="how__left-title">Проводим консультацию</h3>
-            <div class="how__left-descr">
-              <p>
-                Влечёт за&nbsp;собой процесс внедрения и&nbsp;модернизации
-                приоритизации разума над&nbsp;эмоциями. В&nbsp;рамках спецификации
-                современных стандартов, некоторые особенности внутренней
-                политики будут объективно рассмотрены соответствующими инстанциями.
-              </p>
-              <p>
-                А&nbsp;также представители современных социальных резервов,
-                инициированные исключительно синтетически, ограничены исключительно
-                образом мышления. Являясь всего лишь частью общей картины, реплицированные
-                с&nbsp;зарубежных источников, современные исследования подвергнуты целой
-                серии независимых исследований. Кстати, стремящиеся вытеснить традиционное
-                производство, нанотехнологии освещают чрезвычайно интересные особенности
-                картины в&nbsp;целом, однако конкретные выводы, разумеется, призваны
-                к&nbsp;ответу.
-              </p>
-            </div>
-            <div class="how__action">
-              <a href="#" class="btn how__detail">Подробнее</a>
-              <a href="#" class="btn how__contract">Договор</a>
-            </div>
+        <div class="how__consult how__img">
+
+          <h3 class="how__left-title">Проводим консультацию</h3>
+          <div class="how__left-descr">
+
+            Влечёт за&nbsp;собой процесс внедрения и&nbsp;модернизации
+            приоритизации разума над&nbsp;эмоциями. В&nbsp;рамках спецификации
+            современных стандартов, некоторые особенности внутренней
+            политики будут объективно рассмотрены соответствующими инстанциями.
+            <br class="how__tag-br">
+            А&nbsp;также представители современных социальных резервов,
+            инициированные исключительно синтетически, ограничены исключительно
+            образом мышления. Являясь всего лишь частью общей картины, реплицированные
+            с&nbsp;зарубежных источников, современные исследования подвергнуты целой
+            серии независимых исследований. Кстати, стремящиеся вытеснить традиционное
+            производство, нанотехнологии освещают чрезвычайно интересные особенности
+            картины в&nbsp;целом, однако конкретные выводы, разумеется, призваны
+            к&nbsp;ответу.
+
           </div>
+          <div class="how__action">
+            <a href="#" class="btn how__detail">Подробнее</a>
+            <a href="#" class="btn how__contract">Договор</a>
+          </div>
+
         </div>
       </div>
     </section>
+
     <section class="faq">
       <div class="container faq__container">
         <h2 class="faq__title" id="faq"> Вопросы </h2>
@@ -280,7 +290,7 @@
       </div>
     </div>
   </footer>
-  <script src="./js/main.js"></script>
+
 </body>
 
 </html>

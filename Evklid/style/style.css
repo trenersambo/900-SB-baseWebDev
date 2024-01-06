@@ -1,3 +1,5 @@
+/* ========= глобальные общие стили ::: start =========== */
+
 /* сброс:: start */
 html {
   box-sizing: border-box;
@@ -60,8 +62,6 @@ a {
   --orange: #FFB84D;
   --signal-orange:#FF9900;
 
-  /*--gap16:16px;  */
-
 }
 
 .page {
@@ -92,16 +92,18 @@ a {
 }
 
 .container {
-  max-width: 1920px; /*75+ 1770 +75*/
+  max-width: 1920px; /*75 + 1770 +75*/ /*75= 2х отступы по макету; 1770 - подгон до 1920*/
   padding: 0 75px; /*обычно 15…20 рх*/
   margin: 0 auto;
-/* outline: 1px solid red; */
+/*  outline: 1px solid green;*/
 }
+/* ========= глобальные общие стили ::: end =========== */
 
-/* ========  шапка  =========== */
+
+/* =============== HEADER::: start ========== */
 
 .header--decor {
-  margin-bottom: 51px;
+  margin-bottom: 50px;
 
   border-radius: 0px 0px 32px 32px;
   background: #FFF;
@@ -114,7 +116,7 @@ a {
 
   display: flex;
   align-items: center;
-  /* outline: 1px solid red; */
+
 }
 
 .header__logo {
@@ -169,11 +171,11 @@ a {
 }
 
 .nav__top-link:hover::before {
-border-bottom: 1px solid var(--signal-orange, #F90);
-padding-bottom: 7px;
-outline: none;
+  border-bottom: 1px solid var(--signal-orange, #F90);
+  padding-bottom: 7px;
+  outline: none;
 
-transform: scaleX(1); transition-delay: .25s;
+  transform: scaleX(1); transition-delay: .25s;
 }
 
 /* плавное подчеркивание ссылки при :hover :::end*/
@@ -242,7 +244,12 @@ svg rect {
   outline: none;
 }
 
-/* =============== section HERO ========== */
+/* =============== HEADER ::: end ========== */
+
+
+
+/* =============== section HERO ::: start ========== */
+
 .hero {
   margin-bottom: 50px;
 }
@@ -254,15 +261,14 @@ svg rect {
   background-position: 0px -1px;
   background-image: url(../img/hero-balcon.png);
   background-repeat: no-repeat;
-  /* background-size: contain; */
   background-size: cover;
-  /*  opacity: .1;  */
+
 }
 
 .hero__content {
   padding: 103px 850px 100px 81px;
   margin-bottom: 24px;
-  /* max-width: 901px; */
+
 }
 
 .hero__title {
@@ -279,7 +285,7 @@ svg rect {
   color: var(--color-light);
   font-size: 24px;
   font-weight: 700;
-  /* line-height: normal; */
+
 }
 
 .hero__btn {
@@ -304,7 +310,11 @@ svg rect {
   background-color: var(--yellow-orange, #E1670E);
 }
 
-/* =============== section ABOUT========== */
+/* =============== section HERO ::: end ========== */
+
+
+/* =============== section ABOUT ::: start ========== */
+
 
 .about {
   margin-bottom: 103px;
@@ -320,6 +330,7 @@ svg rect {
   line-height: normal;
 }
 
+/* о нас: верхний текст */
 .about__descr {
   margin: 0;
   padding-top: 1px;
@@ -332,40 +343,32 @@ svg rect {
   color: var(--black, #000);
 }
 
+/* рабочая зона ===== подблок с ФотоСтроитель + 2Блока ==== */
+
+  /* разбивка на 2 секции: фото + 2блока */
 .about__bottom {
   display: flex;
   gap: 32px;
+
+  /* outline: 1px solid red; */
 }
 
-.about__bottom-left {
-/* position: relative; */
-font-size: 0; /*прибить картинку книзу*/
-}
-
+/* блок: фотоСтроитель */
 .about__bottom-img {
-  min-width: 868px;
-  min-height: 622px;
 
+  /* width: 50%; */ /*нормально */
+  width: calc(50% - 17px);  /*test под РРerfect */
+  min-height: 622px;
   display: flex;
   align-items: flex-end;
-  background-image: url("../img/about-worker.png");
-  /* background-position: 75px -1px; */
+  background: center / cover url("../img/about-worker.png");
 
-  background-repeat: no-repeat;
-  background-size: contain;
-  font-size: 0;
-
-  /* opacity: .08; */
 }
 
-.about__bottom-descr {
-  margin: 0;
-  padding-right: 105px;
-}
 
+
+/* Блок внутри внизу фото: поп-ап */
 .about__bottom-popup {
-  /* position: absolute; */
-  max-width: 868px;
 
   display: flex;
   align-items: center;
@@ -381,8 +384,13 @@ font-size: 0; /*прибить картинку книзу*/
   background-color: rgba(0,0,0,0.50);
 }
 
+.about__bottom-descr {
+  margin: 0;
+  padding-right: 105px;
+}
+
 .about__btn-detail {
-  /* margin-right: 50px; */
+
   padding: 11px 35px;
   border: 3px solid var(--signal-orange, #F90);
 
@@ -438,10 +446,6 @@ font-size: 0; /*прибить картинку книзу*/
   background-size: auto;
 }
 
-.about__bottom-wrapper {
-  /* padding-right: 75px; */
-}
-
 .about__bottom-title {
   margin: 0;
   margin-bottom: 8px;
@@ -451,7 +455,8 @@ font-size: 0; /*прибить картинку книзу*/
   font-weight: 700;
 }
 
-.abinfo-descr {
+/*текст около фотоСтроитель*/
+.about__descript {
   margin: 0;
 
   color: var(--black, #000);
@@ -460,9 +465,13 @@ font-size: 0; /*прибить картинку книзу*/
   line-height: 32px;
 }
 
-/* =============== section HOW ========== */
+/* =============== section ABOUT ::: end ========== */
+
+
+/* =============== section HOW ::: start ========== */
+
 .how {
-  margin-bottom: 94px;
+  margin-bottom: 104px;
 }
 
 .how__title {
@@ -475,45 +484,56 @@ font-size: 0; /*прибить картинку книзу*/
 }
 
 .how__consult {
-  background-position: right center;
-  min-height: 478px;
-  background-image: url(../img/how-img.png);
-  background-repeat: no-repeat;
+
+   width: 100%;
 }
 
-.how__left {
-  max-width: 758px;
+/* для адаптации текста слева и картинки справа */
+.how__img {
+  position: relative;
+  height: auto;
+  width: calc(50% - 125px);
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  padding: 15px; */
+}
+
+.how__img::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    /* рпсположить картинку под PixePerfect 1920рх */
+    left: calc(100% + 140px);
+    width: calc(100% + 110px);
+    height: calc(100% - 9px);
+
+    border-radius: 32px;
+    background: #CACACA center /cover url(../img/how-img.png);
 }
 
 
 .how__left-title {
-  margin: 0;
-  padding-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 8px;
 
-  color: var(--black, #000);
   font-size: 24px;
   font-weight: 700;
-  line-height: 32px;
+  line-height: 32px; /* 133.333% */
 }
 
 .how__left-descr {
-  padding-bottom: 18px;
-  /* max-width: 758px; */
-
-  color: var(--black, #000);
+  margin-bottom: 18px;
   font-size: 16px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 32px;
-}
-
-.how__left-descr p {
-  margin: 0;
+  line-height: 32px; /* 200% */
 }
 
 .how__action {
   display: flex;
-  gap: 32px;
-  align-items: center;
+  gap:32px;
 }
 
 .how__detail {
@@ -568,7 +588,11 @@ font-size: 0; /*прибить картинку книзу*/
   border-color: var(--black);
 }
 
-/* =============== section FAQ ========== */
+/* =============== section HOW ::: end ========== */
+
+
+/* =============== section FAQ::: start ========== */
+
 .faq {
   margin-bottom: 99px;
 }
@@ -610,10 +634,6 @@ font-size: 0; /*прибить картинку книзу*/
   line-height: 28px;
 }
 
-.faq__item-descr p {
-  /* margin: 0; */
-}
-
 .faq__item-descr {
   margin: 0;
   color: var(--black);
@@ -622,14 +642,17 @@ font-size: 0; /*прибить картинку книзу*/
   line-height: 32px;
 }
 
-/* =============== section FOOTER ========== */
+/* =============== section FAQ ::: end ========== */
+
+/* =============== footer ::: start ========== */
+
 
 .footer {
   background-color: var(--black, #000);
 }
 
 .footer__flex {
-  padding: 51px 0 50px 0;
+  padding: 51px 0 45px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -698,7 +721,7 @@ font-size: 0; /*прибить картинку книзу*/
 
 
 .footer__middle {
-  padding: 2px 1px 1px 124px;
+  padding: 2px 1px 1px 125px;
 }
 
 .footer__middle-title {
@@ -851,14 +874,14 @@ font-size: 0; /*прибить картинку книзу*/
   opacity: 1
 }
 
-/* варинат для outline */
-/* .footer__input:focus + .footer__span {
-outline-color: var(--orange);
-} */
-
 /* вариант для border */
 .footer__input:focus + .footer__span {
   border-color: var(--yellow-orange);
 }
 
+  .footer__label {
+
+  }
+
+/* =============== footer::: end ========== */
 

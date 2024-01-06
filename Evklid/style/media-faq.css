@@ -1,0 +1,125 @@
+/* для работы с @media в блоке (...name) */
+
+/* 1-поинт = 1919: по Тех.заданию */
+@media (max-width: 1919px) {
+
+  /* (повтор) отступы слева-справа = 50рх */
+  .container {
+    padding: 0 50px;
+  }
+
+  .faq__list {
+    display: flex; /*создать временный flex ( вместо block)*/
+    /* outline: 1px solid green; */
+  }
+
+}
+
+
+/* 2-поинт = 1450 */
+@media (max-width: 1450px) {
+  .faq {
+    margin-bottom: 79px;
+  }
+
+  .faq__list {
+    display: block; /*убрать временный flex - вернуть block*/
+
+  }
+
+  /* текстовые блоки */
+  .faq__item {
+    margin-right: unset;
+    margin-bottom: 30px;
+    display: block;
+    max-width: 100%;
+  }
+
+  .faq__item:nth-child(3n) {
+  margin-bottom: 0px;
+  }
+
+}
+
+/* 3-поинт = 1024: по Тех.заданию */
+@media (max-width: 1024px) {
+
+}
+
+/*4-поинт = 992*/
+@media (max-width: 992px) {
+
+  .faq {
+    margin-bottom: 78px;
+  }
+
+  .faq__item {
+    margin-bottom: 33px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-left: 39px;
+  }
+}
+
+/* 5-поинт = 768: по Тех.заданию */
+@media (max-width: 768px) {
+
+}
+
+
+/* 6-поинт = 576 */
+@media (max-width: 576px) {
+
+  /* (повтор) отступы слева-справа = 15рх */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* "Вопросы" */
+  .faq {
+    margin-bottom: 60px;
+  }
+
+  .faq__title {
+    padding-bottom: 20px;
+    /* 48px на 576 --> 24рх на 320*/
+    font-size: clamp(1.5rem, calc(-0.37rem + 9.38vw), 3rem);
+  }
+
+  /* текстовый блок: вопрос+ответ */
+  .faq__item-title {
+    padding-bottom: 5px;
+
+    /* 24px на 576 --> 18рх на 320*/
+    font-size: clamp(1.13rem, calc(0.66rem + 2.34vw), 1.5rem);
+    line-height: 22px;
+  }
+
+  .faq__item {
+    margin-bottom: 31px;
+
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 2px;
+
+    border: none;
+  }
+
+}
+
+
+/* 7-поинт = 320: по Тех.заданию  */
+@media (max-width: 320px) {
+  .faq__item-title {
+    font-weight: 500;
+  }
+
+  .faq__item-descr {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 200% */
+  }
+
+}

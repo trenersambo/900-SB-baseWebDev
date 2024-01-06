@@ -1,0 +1,175 @@
+/* для работы с @media в блоке HEADER::: start */
+
+/* 1-поинт = 1919: по Тех.заданию */
+@media (max-width: 1919px) {
+
+  /* (повтор) отступы слева-справа = 50рх */
+  .container {
+    padding: 0 50px;
+  }
+
+}
+
+/* 2-поинт = 1450 */
+@media (max-width: 1450px) {
+
+  .header--decor {
+    padding-top: 26px;
+    padding-bottom: 22px;
+    margin-bottom: 40px;
+  }
+
+  .header__logo {
+    max-width: 150px;
+  }
+
+  .header__nav {
+    margin-right: 106px;
+  }
+
+  .header__list {
+    gap: 60px;
+  }
+
+}
+
+/* 3-поинт = 1024: по Тех.заданию */
+@media (max-width: 1024px) {
+
+}
+
+/*4-поинт = 992*/
+@media (max-width: 992px) {
+  /* лого шапки */
+  .logo-style {
+    width: 110px;
+  }
+
+  /* Меню: блок и надписи */
+  .header--decor {
+    padding-top: 17px;
+    padding-bottom: 13px;
+  }
+
+  .header__nav {
+    margin-right: 44px;
+  }
+
+  .header__list {
+    gap: 40px;
+  }
+
+  .nav__top-link {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+
+}
+
+/* 5-поинт = 768: по Тех.заданию */
+@media (max-width: 768px) {
+  /*лого не должно сильно сжиматься*/
+  .logo-style {
+    width: 74%;
+  }
+
+  /* адаптивный gap между словами меню под сжимание экрана*/
+  .header__list {
+    gap: clamp(0.3125rem, -6.25rem + 18.2292vw, 2.5rem);
+  }
+
+
+  .nav__top-link {
+    /*длинные предложение центрую при переносе слов при сжиме экрана*/
+    display: flex;
+    text-align: center;
+    /* clamp = адаптивный шрифт под сжимание экрана  */
+    font-size: clamp(0.75rem, 0rem + 2.0833vw, 1rem);
+  }
+
+}
+
+
+/* 6-поинт = 576 */
+@media (max-width: 576px) {
+
+  /* (повтор) отступы слева-справа = 15рх */
+  .container {
+    padding: 0 15px;
+  }
+
+   /* смена расположения лупы и ссылок : тест-1 */
+  .header__container {
+    flex-flow: wrap;
+  }
+
+
+  .header__nav {
+    margin-right: 0;
+    padding-top: 17px;
+    padding-bottom: 26px;
+    order: 1; /*смена порядка расположения строк в шапке*/
+
+    width: auto;
+
+    min-width: calc(100% + 15px);
+    overflow-x: scroll;
+    display: -webkit-box;
+  }
+
+  .header__list {
+    padding: 0;
+    display: -webkit-box; /*как в figma (по РР): в строку+выход за границы*/
+    gap: unset;/*  */
+  }
+
+  /*отступы м/у СловамиМеню*/
+  .nav__item:not(:last-child) {
+    padding-right: 24px;
+  }
+
+  .nav__top-link {
+    font-size: 16px;
+  }
+
+  /* запретить лупе встроиться в одну линию с меню */
+  .header__search-link {
+    margin-left: 50px;
+  }
+
+   /*отступы м/у СловамиМеню*/
+  .nav__item:not(:last-child) {
+    padding-right: 50px;
+  }
+
+}
+
+
+/* 7-поинт = 320: по Тех.заданию  */
+@media (max-width: 320px) {
+
+  .header--decor {
+    margin-bottom: 22px;
+    border-radius: 0px 0px 16px 16px;
+  }
+
+  .header__logo {
+    margin: 0;
+    margin-right: auto;
+  }
+
+    /* Лупа */
+  .header__search-link {
+    margin: 0;
+    padding-top: 5px;
+  }
+
+     /*отступы м/у СловамиМеню*/
+  .nav__item:not(:last-child) {
+    padding-right: 25px;
+  }
+
+}
+/* для работы с @media в блоке HEADER::: end */

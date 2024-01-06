@@ -1,0 +1,187 @@
+/* для работы с @media в блоке HERO::: start */
+
+
+/* 1-поинт = 1919: по Тех.заданию */
+@media (max-width: 1919px) {
+
+  /* (повтор) отступы слева-справа = 50рх */
+  .container {
+    padding: 0 50px;
+  }
+
+  .hero__content {
+    padding-right: 300px;
+  }
+
+}
+
+/* 2-поинт = 1450 */
+@media (max-width: 1450px) {
+
+
+  .hero {
+    margin-bottom: 35px;
+  }
+
+  .hero__container {
+    background-image: url("../img/hero-balcon-1024.png");
+  }
+
+  .hero__content {
+    min-height: 669px;
+    padding-top: 162px;
+    padding-right: 100px;
+    padding-left: 77px;
+
+  }
+
+  .hero__title {
+    margin-top: -1px;
+    margin-bottom: 19px;
+    font-size: 60px;
+    letter-spacing: 0.7px;
+    line-height: 72px;
+  }
+
+  .hero__descr {
+    margin-bottom: 59px;
+    font-size: 20px;
+  }
+
+  .hero__btn {
+    padding: 26px 38px;
+    font-size: 23.3px;
+  }
+
+}
+
+/* 3-поинт = 1024: по Тех.заданию */
+@media (max-width: 1024px) {
+
+
+}
+
+/*4-поинт = 992*/
+@media (max-width: 992px) {
+
+}
+
+/* 5-поинт = 768: по Тех.заданию */
+@media (max-width: 768px) {
+
+  /* ФотоБалконы + текст + кнопка */
+  .hero__container {
+    background-image: url("../img/hero-balcon-768.png");
+    border-radius: 21px;
+  }
+  .hero__content {
+    padding-top: 160px;
+    padding-right: 40px;
+    padding-left: 40px;
+    min-height: 662px; /*подгон фотоБалконы по высоте*/
+  }
+
+    /* ФотоБалконы: текст */
+  .hero__title {
+
+    margin-bottom: 17px;
+
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+  }
+
+  .hero__descr {
+    font-size: 18px;
+    line-height: normal;
+  }
+
+    /* ФотоБалконы: кнопка */
+  .hero__btn {
+    padding: 25px 40px;
+    font-size: 23px;
+  }
+
+}
+
+
+/* 6-поинт = 576 */
+@media (max-width: 576px) {
+
+  /* (повтор) отступы слева-справа = 15рх */
+  .container {
+    padding: 0 15px;
+  }
+
+    /* смена картинки для 320рх */
+  .hero__container {
+    background-position: 0px -2px;
+    min-height: 308px;
+    background-image: url(../img/hero-balcon-320.png);
+    border-radius: 12px;
+  }
+
+    /* блок с текстами внутри фотоБалконы */
+  .hero__content {
+    padding-top: 59px;
+    padding-right: 21px;
+    padding-bottom: 52px;
+    padding-left: 27px;
+    min-height: 308px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* тексты внутри фотоБалконы*/
+  .hero__title {
+    font-size: 35px;
+  }
+
+  .hero__descr {
+    margin: 0;
+    margin-bottom: 33px;
+    font-size: 15px;
+  }
+
+    /* кнопка "закзать расчет" */
+  .hero__btn {
+    padding: 18px 37px;
+    font-size: 15px;
+  }
+
+}
+
+
+/* 7-поинт = 320: по Тех.заданию  */
+@media (max-width: 320px) {
+  .hero {
+    margin-bottom: 57px;
+  }
+
+
+  /*тексты внутри фотоБалконы*/
+  .hero__title {
+    margin-bottom: 6px;
+    font-size: 20px;
+
+  }
+
+  .hero__descr {
+    font-size: 12px;
+  }
+
+  /* кнопка "закзать расчет" */
+  .hero__btn {
+    padding: 15px 29px;
+    font-size: 12px;
+    line-height: 13px;
+    border-radius: 9px;
+  }
+
+}
+
+/* для работы с @media в блоке HERO::: end */

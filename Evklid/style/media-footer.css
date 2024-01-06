@@ -1,0 +1,273 @@
+/* для работы с @media в блоке footer */
+
+
+/* 1-поинт = 1919: по Тех.заданию */
+@media (max-width: 1919px) {
+
+  /* (повтор) отступы слева-справа = 50рх */
+  .container {
+    padding: 0 50px;
+  }
+
+  /* рабочие границы */
+  .footer__flex {
+    /* outline: 1px solid red; */
+  }
+
+  .footer__flex {
+    padding-bottom: 46px;
+  }
+
+  .footer__middle {
+    padding-left: 0px;
+  }
+
+  .footer__middle-title {
+    padding-left: 33px;
+  }
+
+
+  .form__input--user {
+    margin-left: 32px;
+  }
+
+  .form__input--mail {
+    margin-left: 32px;
+  }
+
+  .form__input--message {
+    margin-left: 32px;
+  }
+
+  /* ширина полей ввода */
+  .form__input {
+    width: 540px;
+  }
+
+  .form__btn {
+    margin-left: 32px;
+    padding-right: 38px;
+    padding-left: 38px;
+  }
+
+  .footer__label {
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+
+
+}
+
+/* 2-поинт = 1450 */
+@media (max-width: 1450px) {
+
+  /* сместить форму ввода вправо - вместо сркытого текста */
+  .footer__middle {
+    order: 1;
+  }
+
+  .form__input {
+    /* адаптация поля ввода: 800рх для 1450 ... 541рх для 1024*/
+    width: clamp(33.81rem, calc(-5.1rem + 60.8vw), 50rem);
+  }
+
+  /* скрыть текст (справа) */
+  .footer__right-descr {
+    display: none;
+  }
+
+}
+
+
+
+/* 3-поинт = 1024: по Тех.заданию */
+@media (max-width: 1024px) {
+
+
+}
+
+/*4-поинт = 992*/
+@media (max-width: 992px) {
+
+  /* блок с лого+соц.иконками сместил вниз */
+  .footer__flex {
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    padding-bottom: 13px;
+    padding-left: 0px;
+}
+
+  /* скрыть стрки меню */
+  .footer__nav {
+    display: none;
+  }
+
+  /* форму ввода сместил на 1 место по порядку */
+  .footer__middle {
+    order: -1;
+    padding-bottom: 49px; /*отступ до черты*/
+  }
+
+  .footer__middle-title {
+    padding-left: 0;
+  }
+
+  .form__input {
+    /* адаптация поля ввода: 800рх для 992... 541рх для 769*/
+    width: clamp(33.81rem, calc(-22.01rem + 116.14vw), 50rem);
+  }
+
+  .form__input--user {
+    margin-left: 0;
+  }
+
+  .form__input--mail {
+    margin-left: 0;
+  }
+
+  .form__input--message {
+    margin-left: 0;
+  }
+
+  .form__btn {
+    margin-left: 0;
+  }
+
+  .footer__right {
+    padding-top: 0;
+  }
+
+
+}
+
+/* 5-поинт = 768: по Тех.заданию */
+@media (max-width: 768px) {
+
+  .form__input {
+    /* адаптация поля ввода: W=541рх для 768... W=290рх для 320*/
+    width: clamp(18.13rem, calc(6.92rem + 56.03vw), 33.81rem); /* */
+  }
+
+  /* временно уменьшаем шрифт "Согласен" 15рх для 768 ... 10рх для 576 */
+  .footer__label {
+    /* font-size: clamp(0.68rem, calc(-0.40rem + 2.08vw), 0.94rem); */
+    font-size: clamp(0.63rem, calc(-0.31rem + 2.6vw), 0.94rem);
+  }
+
+}
+
+
+/* 6-поинт = 576 */
+@media (max-width: 576px) {
+
+  /* (повтор) отступы слева-справа = 15рх */
+  .container {
+    padding: 0 15px;
+  }
+
+  .footer__middle {
+    padding-bottom: 19px; /*отступ до черты*/
+  }
+
+  .footer__middle-title {
+    /* адаптация титульного текста: 48рх для 576... 24рх для 320*/
+    font-size: clamp(1.5rem, calc(-0.37rem + 9.38vw), 3rem);
+  }
+
+  /* кнопка + чекбокс */
+  .form__submit {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* вернуть размер шрифта "Согласен"  */
+  .footer__label {
+    font-size: 15px;
+  }
+
+
+}
+
+
+/* 7-поинт = 320: по Тех.заданию  */
+@media (max-width: 320px) {
+
+  .footer__flex {
+    padding-top: 29px;
+    padding-bottom: 0;
+  }
+
+  .footer__middle-title {
+    padding-bottom: 20px;
+  }
+
+
+
+  .footer__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__logo {
+    width: 131px;
+  }
+
+  /* кнопка + чекбокс */
+  .form__submit {
+    align-items: center;
+  }
+
+  .form__input {
+    padding-left: 19px;
+  }
+
+  .form__input::placeholder {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 228.571% */
+  }
+
+  .form__input--message {
+    margin-bottom: 25px;
+  }
+
+
+  .form__btn {
+    padding: 12px 19px 12px 19px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    border-radius: 8px;
+  }
+
+  .form__submit {
+    gap: 8px;
+  }
+
+  /*иконки соц.сетей*/
+  .footer__social {
+    gap: 0;
+  }
+
+  .soc__icon {
+    height: 40px;
+  }
+
+  .footer__middle {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #414141;
+  }
+
+  .footer__label {
+    padding-left: 0;
+    font-size: 15.15px;
+    letter-spacing: 0.15px;
+  }
+
+}

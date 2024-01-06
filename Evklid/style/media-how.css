@@ -1,0 +1,180 @@
+/* для работы с @media в блоке HOW */
+
+/* 1-поинт = 1919: по Тех.заданию */
+@media (max-width: 1919px) {
+
+  /* (повтор) отступы слева-справа = 50рх */
+  .container {
+    padding: 0 50px;
+  }
+
+
+
+}
+
+
+/* 2-поинт = 1450 */
+@media (max-width: 1450px) {
+  /* заголовок */
+  .how__title {
+    padding-bottom: 33px;
+  }
+
+  /* адаптив картинки по PixelPerfect */
+  .how__img {
+    width: calc(50% - 20px);
+  }
+
+  .how__img::before {
+    top: 11px;
+    left: calc(100% + 45px);
+    width: calc(100% - 5px);
+    height: calc(100% - 11px);
+    background: #fcfcfc center /cover url("../img/how-img-1024.png");
+  }
+
+  .how__left-descr {
+    margin-bottom: 25px;
+  }
+
+}
+
+/* 3-поинт = 1024: по Тех.заданию */
+@media (max-width: 1024px) {
+  .how {
+    margin-bottom: 84px;
+  }
+}
+
+/*4-поинт = 992*/
+@media (max-width: 992px) {
+  .how__title {
+    padding-bottom: 32px;
+  }
+
+
+  .how__img {
+    padding-top: 323px; /*пространство для встраивания картинки*/
+    width: 100%;
+    /* убираю излишнее пространство между картинкой и текстом */
+    gap: clamp(0rem, calc(-8.57rem + 17.86vw), 2.5rem);
+  }
+
+  .how__img:before {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 515px); /*отключение <br> влияет  на height*/
+    background: transparent center / cover url("../img/how-img-768.png");
+    border-radius: 23px;
+  }
+
+  /* убрать перенос строк при 768рх, чтоб текст попал под PixelPerfect*/
+  .how__tag-br {
+    display: none;
+  }
+
+}
+
+/* 5-поинт = 768: по Тех.заданию */
+@media (max-width: 768px) {
+
+  .how__img {
+    /* адаптация отступ текста под картинкой (От 323рх для 768 - до ~176px для 576 )*/
+    /* padding-top: clamp(10.63rem, calc(-18.21rem + 80.1vw), 20.19rem); */
+    padding-top:  clamp(11rem, calc(-16.71rem + 76.96vw), 20.19rem);
+
+  }
+
+  .how__img:before {
+    /* test: адаптация измен. высоты картинки (От Н=284рх для 768 - до H=160px для 576)*/
+    height: clamp(10rem, calc(-13.37rem + 64.92vw), 17.75rem);
+    border-radius: 14px;
+  }
+
+
+}
+
+
+/* 6-поинт = 576 */
+@media (max-width: 576px) {
+
+  /* (повтор) отступы слева-справа = 15рх */
+  .container {
+    padding: 0 15px;
+  }
+
+  .how {
+    margin-bottom: 60px;
+  }
+
+  .how__title {
+    padding-bottom: 20px;
+  }
+
+  /* подзаголовок (под картинкой)*/
+  .how__left-title {
+    font-size: 18px;
+
+    /* font-weight: 500; */
+    line-height: 32px; /* 177.778% */
+  }
+
+  /* кнопки */
+  .how__action {
+    gap: 10px;
+  }
+
+  .how__detail {
+    padding: 7px 44px 3px 44px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 30px;
+    border-radius: 8px;
+  }
+
+  .how__contract {
+    padding: 12px 32px 12px 32px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 11px;
+    border-radius: 8px;
+  }
+
+}
+
+
+
+/* 7-поинт = 320: по Тех.заданию  */
+@media (max-width: 320px) {
+
+  .how__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  /* картинка для экрана 320рх */
+  .how__img:before {
+    background: transparent center /cover url("../img/how-img-320.png");
+  }
+
+  /* тексты */
+  .how__left-title {
+    font-weight: 500;
+  }
+
+  .how__left-descr {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px; /* 200% */
+
+  }
+
+
+
+
+}
