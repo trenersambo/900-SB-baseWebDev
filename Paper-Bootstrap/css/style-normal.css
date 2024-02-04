@@ -1,0 +1,113 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/RobotoRegular.woff2'),
+    url('../fonts/RobotoRegular.woff');
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/RobotoMedium.woff2'),
+    url('../fonts/RobotoMedium.woff');
+  font-display: swap;
+  font-weight: 500;
+}
+
+
+
+body {
+  min-width: 320px;
+  font-family: 'Roboto', sans-serif;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* спец. скрывающий стиль, чтоб текст был виден читалкам */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+
+/*глобально: титульная надпись в section */
+.title {
+  margin: 0; /*сброс*/
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 100%;
+  color: var(--main-color);
+}
+
+/*глобально: класс для переиспользования в section (в текстах) */
+.descr {
+margin: 0; /*сброс*/
+
+/* стили из макета */
+font-size: 18px;
+line-height: 151%;
+color: var(--text-color);
+}
+
+/*глобально: кнопка (ссылка) */
+.link {
+display: inline-block; /*для правильной работы padding' ов кнопки*/
+padding: 22px 89px;
+border: 1px solid currentColor; /*цвет берем из умолчания: т.е. --accent-color*/
+font-size: 20px;
+line-height: 23px;
+color: var(--accent-color);
+}
+
+/* стили заголовков в секциях: Result, Scetchbook */
+.second-title {
+margin: 0; /*сброс*/
+font-weight: 400;
+font-size: 40px;
+line-height: 100%;
+color: var(--dove-gray-color);
+}

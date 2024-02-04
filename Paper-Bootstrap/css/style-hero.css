@@ -1,0 +1,18 @@
+/* time--code: 57:35 */
+/*  секция HERO */
+
+.hero {
+  padding-top: 60px;
+}
+
+.hero__descr {
+  margin-bottom: 32px; /*пихаем кнопку вниз*/
+
+}
+
+.hero__content {
+  padding-top: 70px;
+}
+
+/* Картинку (тубус с бумагой) выровняли средством bootstrp) */
+/* через  класс  самопписны flex + бутстрапный justify-content-end */

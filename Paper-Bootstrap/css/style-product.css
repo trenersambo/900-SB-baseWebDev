@@ -1,0 +1,64 @@
+/*time-code: 1-27-30*/
+/* секция PRODUCT */
+
+.porducts {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* т.к. ul-список сбил стили row ==> костыль для возврата отступов */
+.products__list {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+/* тексты друг под другом */
+.products-item {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start; /*прибить влево*/
+}
+
+.products-item__image {
+  margin-bottom: 19px;
+}
+
+/* заголовки блоков */
+.product-item__title {
+margin: 0; /*обнулить*/
+margin-bottom: 8px;
+
+font-weight: normal;
+font-size: 30px;
+line-height: 35px;
+color: var(--dove-gray-color);
+
+}
+
+/* текст под заголовком (тираж...) */
+.product-item__print {
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--bombay-color);
+}
+
+/* Текст-описание */
+.product-item__descr {
+  margin-bottom: 20px;
+  line-height: 170%; /* расстоян. м/у строками */
+}
+
+/* "Подробнее" -> */
+.product-item__link {
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--accent-color);
+}
+
+/* задать  цвет-fill svg-стрелке/ В html.svg - удалены fill */
+.product-item__link svg{
+  fill: currentColor;
+}
+

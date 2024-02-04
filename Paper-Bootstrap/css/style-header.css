@@ -1,0 +1,60 @@
+/* timecode 52:20 работа под PixePerfect */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+/* полоса под шапкой */
+.header {
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 26px;
+  padding-bottom: 25px;
+}
+
+.header__content {
+  /* центровка по центр. оси -------- */
+  align-items: center;
+}
+
+.header__logo {
+  /* центровка по центр. оси -------- */
+  display: flex;
+  align-items: center;
+
+  /* блок справа от лого - прижать вправо */
+  margin-right: auto;
+}
+
+.header__nav {
+  /* меню навигации отодвинуть от иконок  */
+  margin-right: 60px;
+}
+
+.nav__list {
+  /* центровка текста меню по центр. оси -------- */
+  align-items: center;
+}
+
+/* интервалы между словами в меню */
+.nav__item:not(:last-child) {
+  margin-right: 60px;
+}
+
+.nav__link {
+  /* текст меню шапки */
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 0px;
+  color: var(--main-color);
+}
+
+/* иконки в шапке */
+.header__btn:not(:last-child) {
+  margin-right: 30px;
+}
+
+
+

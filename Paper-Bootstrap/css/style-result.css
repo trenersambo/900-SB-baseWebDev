@@ -1,0 +1,65 @@
+/* time-code: 1-06-00 */
+/* RESULT секция */
+
+.result {
+padding-top: 90px;
+margin-bottom: 87px; /*отсутп до след.секции*/
+
+background-color: var(--bg-color); /*серый фон всего section*/
+}
+
+/* блок картинка фон + текст  */
+.result__item {
+  border-top: 1px solid #c0c0c0; /*черта над блоками*/
+
+  padding: 37px 0; /*№1. убрать обрезку фон.картинок сверху-снизу*/
+  padding-left: 190px; /*№2. сдвиг текста, освоб. место под картинку*/
+
+  /* для фонового изображения */
+  background-position: left center;
+  background-size: 160px 118px;
+  background-repeat: no-repeat;
+}
+
+/* картинки (фон) */
+.result__item--v1 {
+  background-image: url('/img/result-1.png');
+}
+
+.result__item--v2 {
+  background-image: url('/img/result-2.png');
+}
+
+.result__item--v3 {
+  background-image: url('/img/result-3.png');
+}
+
+/* стили текста */
+.result__caption {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--dove-gray-color);
+}
+
+/* для задания отступа 'верхнего' row  от 'нижнего' row*/
+.result__top {
+  margin-bottom: 72px;
+}
+
+/* чтоб двигать блоки внутри col-lg-4 => надо внутри сделать div */
+.result__content {
+  padding-top: 60px;
+}
+
+.result__subtitle {
+  margin-bottom: 15px;
+}
+
+.result__subdescr .descr {
+  line-height: 170%;
+}
+
+.result__subdescr .descr:not(:last-child) {
+  margin-bottom: 12px;
+}
