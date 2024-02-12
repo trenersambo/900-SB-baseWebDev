@@ -1,0 +1,26 @@
+/* СЕКЦИЯ SCETCHBOOK */
+/* time-code: part-2,  06-30 */
+
+.scetchbook {
+  padding-top: 90px;
+}
+/* scetchbook__content доп.класс(внутренний), что легче стилизовать */
+.scetchbook__content {
+  padding-top: 25px;
+}
+
+/* заголовок  */
+.sketchbook__title {
+  margin-bottom: 10px;
+}
+
+/* текст описательный */
+.sketchbook__descr {
+  margin-bottom: 30px;
+  line-height: 170%;
+}
+
+/* кнопка, пришлось дополнить еще стилями */
+.sketchbook__link {
+  padding: 22px 94px;
+}

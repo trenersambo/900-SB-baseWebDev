@@ -44,17 +44,137 @@
 }
 
 .nav__link {
+
+  /* для ui-kit */
+  position: relative; /*для заливки цветом р/элемента  ::after*/
+  z-index: 1;  /* ui-kit: для показа букв поверх заливки (для focus'a)*/
+
   /* текст меню шапки */
   font-size: 20px;
   font-weight: 400;
   line-height: 0px;
   color: var(--main-color);
+
+  transition: color 0.30s ease-in-out; /*чтоб при hover текст был плавным*/
 }
 
-/* иконки в шапке */
+
+/*  ======= ui-kit (для текста меню) =========== */
+
+/* time-code: 20-00: установлена js-библиотека для срабатывания focus-visible  */
+/* Важно: <html lang="ru" class="js-focus-visible" data-js-focus-visible> */
+
+/* time-code: 23-40 */
+/* для focus: псевдоэлемент для визуального ui-kit (создана сплошная заливка цветом)*/
+.nav__link::after {
+  content: "";
+  position: absolute; /*расположить заливку в этом блоке*/
+  z-index: -1; /*расположить заливку под текстом */
+
+  /* "расширяем" границы псевдоэлемента*/
+  left: -7px;
+  top: -4px;
+  right: -7px;
+  bottom: -4px;
+
+  /* заливка псевдоэлемента */
+  background-color: #dad9fb;
+
+  /* делаем невидимость псевдоэлемента (focus уберет невидомость, но outline не покажется)*/
+  opacity: 0;
+
+  /* задать плавность появления псевдоэлемента */
+  transition: opacity 0.25s ease-in-out;
+}
+
+/* делаем, чтоб работало только через focus-visible (js-библиотека с GitHub) */
+.nav__link:focus {
+  outline: none; /*принудит. отключ. outline при focus'e*/
+}
+
+/* при ТАВ на nav__link добавляется (через JS) доп. класс focus-visible*/
+.nav__link.focus-visible::after{
+  opacity: 1; /*ТАВ покжет заливку текста в меню*/
+}
+
+.nav__link:hover {
+  color: var(--accent-color);
+}
+
+.nav__link:active {
+  color: var(--active-color);
+}
+
+
+
+/* =======  иконки в шапке ======= */
 .header__btn:not(:last-child) {
   margin-right: 30px;
 }
 
+/* общий блок svg-значков в меню */
+.header__btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/*  ======= ui-kit (для svg-значков в меню: Лупа, Вход) =========== */
+/* time-code: 29-00 */
+
+/* все stroke внутри svg обнулил*/
+
+
+.header__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 1. работа с раскрашиванием svg-значков, т.к. все stroke удалил */
+  color: var(--main-color); /*родительский цвет*/
+
+  transition: color 0.35s ease-in-out;
+}
+
+.header__btn svg{
+  stroke: currentColor; /*цвет от родителя: var(--main-color)*/
+}
+
+/* п/элемент - для заливки цветом вокруг значков */
+.header__btn::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+
+  background-color: #dad9fb;
+
+  opacity: 0;
+
+  /* плавность смены ui-kit  */
+  transition: opacity 0.25s ease-in-out;
+}
+
+
+.header__btn:focus {
+  outline: none;
+}
+
+.header__btn.focus-visible::after{
+  opacity: 1;
+}
+
+.header__btn:hover {
+  color: var(--accent-color);
+}
+
+.header__btn:active {
+  color: var(--active-color);
+}
 
 

@@ -47,18 +47,13 @@ input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
 
+/* обнуление Списка ul */
 .list-reset {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.btn-reset {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
 
 /* спец. скрывающий стиль, чтоб текст был виден читалкам */
 .visually-hidden {
@@ -93,15 +88,6 @@ line-height: 151%;
 color: var(--text-color);
 }
 
-/*глобально: кнопка (ссылка) */
-.link {
-display: inline-block; /*для правильной работы padding' ов кнопки*/
-padding: 22px 89px;
-border: 1px solid currentColor; /*цвет берем из умолчания: т.е. --accent-color*/
-font-size: 20px;
-line-height: 23px;
-color: var(--accent-color);
-}
 
 /* стили заголовков в секциях: Result, Scetchbook */
 .second-title {
@@ -110,4 +96,9 @@ font-weight: 400;
 font-size: 40px;
 line-height: 100%;
 color: var(--dove-gray-color);
+}
+
+/* убрать "неизвестный" отступ-глюк  */
+.sb__space {
+  font-size: 0;
 }

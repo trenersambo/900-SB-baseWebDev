@@ -1,0 +1,38 @@
+/* part 2 */
+/*time-code: */
+/* секция PARTNERS */
+
+/* общий цвет фона для всей секции - по макету */
+.partners {
+  padding-top: 90px;
+  padding-bottom: 90px;
+
+  background-color: var(--bg-color);
+}
+
+/* т.к. сработал list-reset, то он сбил дефолт-стили row */
+/* это класс вернет стили row обратно (логотипы фирм не будут съезжать в бок)*/
+.partners__list {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* сама обертка для  img-логотипов фирм*/
+.partners__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #c4c4c4;
+  height: 135px;
+}
+
+/* задать лимиты для img-логотипов фирм*/
+/* чтоб большие картинки вдруг не сломали верстку */
+.partners__item img {
+  max-height: 90%; /*обрез по высоте*/
+  object-fit: cover; /*запихнётся внутрь вся картинка*/
+}
+
+
+

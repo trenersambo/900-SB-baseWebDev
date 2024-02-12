@@ -50,15 +50,68 @@ color: var(--dove-gray-color);
   line-height: 170%; /* расстоян. м/у строками */
 }
 
-/* "Подробнее" -> */
+
+
+
+/*  "Подробнее"  + svg-стрелки */
 .product-item__link {
+  position: relative; /*для заливки цветом р/элемента  ::after*/
+  z-index: 1; /* ui-kit: для показа букв поверх заливки (для focus'a)*/
+
   font-size: 20px;
   line-height: 23px;
-  color: var(--accent-color);
+
+  color: var(--accent-color); /*родительский цвет */
+
+  /* плавность смены ui-kit  */
+  transition: color 0.35s ease-in-out  ;
+
 }
 
-/* задать  цвет-fill svg-стрелке/ В html.svg - удалены fill */
+/* задать  цвет-fill svg-стрелке  /// В html.svg - удалены fill */
 .product-item__link svg{
+  fill: currentColor; /* применить родительский цвет из класса product-item__link*/
+}
+
+/* part 2, time-code: 37-30*/
+/* ====== UI-Kit для svg-стрелок  */
+
+/* п/элемент - для заливки цветом вокруг значков */
+.product-item__link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  left: -6px;
+  top: -6px;
+  right: -6px;
+  bottom: -6px;
+
+  background-color: #dad9fb;
+
+  opacity: 0;
+
+  /* плавность смены ui-kit  */
+  transition: opacity 0.25s ease-in-out;
+}
+
+.product-item__link svg {
   fill: currentColor;
 }
 
+.product-item__link:focus {
+  outline: none; /*убрать обводку (на всяк.случ.)*/
+}
+
+/* работа с полифилом focus-visible (взят с github, размещен внутри тега html) */
+.product-item__link.focus-visible::after {
+  opacity: 1;
+}
+
+.product-item__link:hover {
+  color: var(--active-color);
+}
+
+.product-item__link:active {
+  color: var(--active-color);
+}

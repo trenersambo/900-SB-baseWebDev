@@ -1,0 +1,49 @@
+/* Кнопки "КАТАЛОГ"   "КУПИТЬ" */
+
+/*  part 1 */
+
+/* обнуление тега button */
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* (кнопка сделана как ссылка) */
+.link {
+display: inline-block; /*для правильной работы padding' ов кнопки*/
+padding: 22px 89px;
+border: 1px solid currentColor; /*цвет берем из умолчания: т.е. --accent-color*/
+font-size: 20px;
+line-height: 23px;
+color: var(--accent-color);
+
+/* плавность смены ui-kit на кнопке */
+transition: color 0.35s ease-in-out border-color 0.35s ease-in-out background-color 0.35s ease-in-out;
+}
+
+
+/*  part 2, after time-code 34:00 UI-Kit для кнопки-ссылки*/
+
+.link:focus {
+  outline: none; /*убрать обводку (на всяк.случ.)*/
+}
+
+/* работа с полифилом focus-visible (взят с github, размещен внутри тега html) */
+.link.focus-visible {
+  color: var(--accent-color);
+  background-color: #dad9fb;
+}
+
+.link:hover {
+  color: #fff;
+  background-color: var(--accent-color);
+}
+
+.link:active {
+  border-color: var(--active-color);
+  color: #fff;
+  background-color: var(--active-color);
+}
+

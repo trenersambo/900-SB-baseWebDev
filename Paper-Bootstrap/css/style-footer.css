@@ -1,0 +1,110 @@
+/* part-2, footer, time-code: 09:40 */
+
+/* задать фон.цвет на всю ширину */
+.footer__top {
+  padding-top: 26px;
+  padding-bottom: 27px;
+  background-color: var(--main-color);
+}
+/* part-1, time-code: 11-10
+justify-content-end чтоб блок прибить вправо (только в bootstrap)
+*/
+
+/* иконки соц.сетей ( ul - тег) */
+.social {
+  display: flex;
+
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+/* отступы между иконками */
+.social__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/* сам значок иконки */
+.social__link {
+  position: relative; /*для создания/работы псведоэлемента ::after*/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff; /*Родительский цвет*/
+  transition: color 0.3s ease-in-out ;
+}
+
+/* ==== UI-Kit ===== */
+
+/* part 2, time-code: 40:40 UI-Kit для иконок соц.сетей*/
+
+/* заливочный псеводэлемент */
+.social__link::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  z-index: 0;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  opacity: 0; /*чтоб заливку без :hover - не было видно*/
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+/*  внутри svg сделал все fill="" (было по умолч. fill="white") Цель: чтоб м.б. менять через CSS*/
+.social__link svg {
+  /* задать видимость для svg-рисунка  */
+  position: relative;
+  z-index: 1;
+
+  fill: currentColor; /*цвет svg-значка берем от Родителя (#fff) */
+}
+
+.social__link:focus {
+  outline: none;  /* убрать обводку по умолчанию*/
+}
+
+/* п/элемент (заливка) появится при TAB на нем с клавиатуры*/
+.social__link.focus-visible::after {
+  opacity: 1;
+}
+
+.social__link:hover {
+  color: #dad9fb;
+}
+
+.social__link:active {
+  color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+/* ==========  стили для текста под футером ==========   */
+/* from part 1 */
+.footer__copy {
+  padding: 3px 0;
+
+  /* чтоб слово разместить по середине */
+  display: block;
+  width: 100%;
+  text-align: center;
+
+  /* из макета */
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+
