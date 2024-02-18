@@ -50,8 +50,9 @@
           </nav>
 
           <div class="header__btns">
+
             <!-- svg-кнопка Поиск -->
-            <button class="header__btn btn-reset" aria-label="Открыть поиск">
+            <button class="header__btn header__btn--search btn-reset" aria-label="Открыть поиск">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M13 19C8.58172 19 5 15.4183 5 11C5 6.58172 8.58172 3 13 3C17.4183 3 21 6.58172 21 11C21 15.4183 17.4183 19 13 19Z"
@@ -60,6 +61,21 @@
                   stroke-linejoin="round" />
               </svg>
             </button>
+
+
+            <!-- поле ввода поиск. запроса -->
+            <form action="#" method="post" class="search-form">
+              <input type="search" class="search-form__input" placeholder="Что ищем">
+
+              <button class="search-form__close btn-reset" type="button" aria-label="Найти на сайте">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="8" cy="8" r="8" fill="#D1D1E5" />
+                  <path d="M5.99961 10.35L10.3496 6" stroke="#4C5866" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10.35 10.35L6 6" stroke="#4C5866" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+
+            </form>
 
             <!-- svg-кнопка Логин -->
             <button class="header__btn btn-reset" aria-label="Залогиниться">
@@ -463,6 +479,7 @@
 
   <!-- скрипт работы с focus клавиатурой -->
   <script src="/js/focus-visible.js"></script>
+  <script src="/js/main.js"></script>
 
 </body>
 

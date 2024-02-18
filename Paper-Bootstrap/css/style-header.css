@@ -178,3 +178,85 @@
 }
 
 
+/* part 2, time-code 48:00 */
+/* ======= UI-Kit для строки поиска  ====== */
+
+  /* форма ввода поискового запроса  */
+.search-form {
+  display: none;
+  position: relative;
+
+  overflow: hidden; /*скрываем артефакт в виде проявления рамки кнопки*/
+
+  /*width: 224px; по макету figma*/
+  width: 0;
+
+  /* строка ввода запроса схлапывается вправо (зачем? Для JS: раскрывает строку ?)*/
+  /* transform-origin: right;
+  transform: scaleX(0); */
+
+  transform: translateX(-15px); /*развернутя строка поиска отодвинута на 15рх*/
+
+  transition:  width 0.35s ease-in-out;
+}
+
+/* для JS: появления / скрытия строки поиска */
+.search-form--display {
+  display: block; /* место для строки поиска  */
+
+}
+
+/* для JS: появления / скрытия строки поиска */
+.search-form--visible {
+  /*transform: scaleX(1);  развернулась строка поиска на 224рх */
+  width: 224px;
+}
+
+.search-form__input {
+  padding-right: 25px;
+
+  border: none;
+  border-bottom: 1px solid #d1d1e5; /*нижн.черта строки поиска*/
+
+  width: 100%; /*растянуть поле ввода на всю ширину form*/
+
+  height: 24px; /*чтоб при разворачивании строкапоиска не прыгала*/
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--main-color);
+
+  transition: border-color 0.35s ease-in-out;
+}
+
+.search-form__input:focus {
+  outline: none;
+  border-color: #7272f0;
+}
+
+.search-form__input::placeholder {
+  color: #d1d1e5;
+}
+
+/* svg-кнопка Крестик разместим поверх поля ввода */
+.search-form__close {
+  position: absolute;
+
+  /* задать размер кнопки + .search-form__close svg */
+  width: 16px;
+  height: 16px;
+
+  right: 0; /*svg-кнопка: прибить вправо*/
+
+  /* центровка svg-кнопки */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* задать размер кнопки (w16 + h16) */
+.search-form__close svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
