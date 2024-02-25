@@ -16,3 +16,23 @@
 
 /* Картинку (тубус с бумагой) выровняли средством bootstrp) */
 /* через  класс  самопписны flex + бутстрапный justify-content-end */
+
+
+/* ======== АДАПТИВ (@media) ========= */
+
+/* part-2, time-code: 1-21-...*/
+/* добавил в html 'е:  col-md-7, col-md-5 (было: col-lg-5, -7)*/
+
+@media(max-width: 992px){
+  .title {
+    font-size: 50px;
+    line-height: 100%;
+  }
+
+  .hero__content {
+    padding-top: 5px;
+  }
+
+
+}
+

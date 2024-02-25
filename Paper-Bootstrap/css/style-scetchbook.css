@@ -7,20 +7,55 @@
 /* scetchbook__content доп.класс(внутренний), что легче стилизовать */
 .scetchbook__content {
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 /* заголовок  */
-.sketchbook__title {
+.scetchbook__title {
   margin-bottom: 10px;
 }
 
 /* текст описательный */
-.sketchbook__descr {
+.scetchbook__descr {
   margin-bottom: 30px;
   line-height: 170%;
 }
 
 /* кнопка, пришлось дополнить еще стилями */
-.sketchbook__link {
+.scetchbook__link {
   padding: 22px 94px;
+}
+
+
+/* ======== АДАПТИВ (@media) ========= */
+
+/* part-2, time-code: 1-37-50*/
+/* добавил в html 'е:  col-md-6 (было до >992рх: col-lg-6)*/
+
+@media (max-width: 992px){
+
+  .scetchbook {
+    padding-top: 34px;
+    padding-bottom: 35px;
+
+    /* По макету - картинка выходит за пределы колонок -> делаеть фоновую картинку */
+    background-image: url("../img/sketchbook-tablet.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  /* спрячь задвоенную картинку при экране < 992px */
+  .scetchbook__img {
+    display: none;
+  }
+
+  .scetchbook__title {
+    margin-bottom: 22px;
+  }
+
+  /* Кнопка "купить" разъехалась. В файле, где прописаны стили кнопки - внес изменения */
+
+
+
+
 }

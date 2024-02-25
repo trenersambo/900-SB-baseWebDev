@@ -30,9 +30,29 @@
 /* задать лимиты для img-логотипов фирм*/
 /* чтоб большие картинки вдруг не сломали верстку */
 .partners__item img {
+  max-width: 90%;
   max-height: 90%; /*обрез по высоте*/
   object-fit: cover; /*запихнётся внутрь вся картинка*/
 }
 
 
 
+/* ======== АДАПТИВ (@media) ========= */
+
+/* part-2, time-code: 1-36-...*/
+/* добавил в html 'е:  col-md-3 (было до >992рх: col-lg-3)*/
+
+@media (max-width: 992px){
+  .partners {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .partners__item {
+    height: 80px;
+  }
+
+  .partners__item img {
+  max-width: 85%;
+  }
+}

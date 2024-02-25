@@ -102,3 +102,8 @@ color: var(--dove-gray-color);
 .sb__space {
   font-size: 0;
 }
+
+.flex-to-end {
+  display: flex;
+  align-items: flex-end;
+}

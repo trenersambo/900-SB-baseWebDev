@@ -83,7 +83,14 @@ justify-content-end чтоб блок прибить вправо (только 
   color: var(--accent-color);
 }
 
+/* ======== АДАПТИВ (@media) ========= */
 
+/* part-2, time-code: 1-42-...*/
+/* добавил в html 'е:  col-md-6 (было до >992рх: col-lg-6)*/
+
+@media (max-width: 992px){
+
+}
 
 
 

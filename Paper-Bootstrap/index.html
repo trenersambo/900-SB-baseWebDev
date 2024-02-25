@@ -105,7 +105,7 @@
         <div class="row">
 
           <!-- Блок шириной в 5 колонок Текст+кнопка: -->
-          <div class="col-lg-5">
+          <div class="col-lg-5 col-md-7">
 
             <div class="hero__content">
               <!--Блок Текст+кнопка: текст -->
@@ -124,8 +124,14 @@
           </div>
 
           <!-- Блок ТубусБумага: вставим как img (для разнообразия) | скроем от скринРидеров-->
-          <div class="col-lg-7 flex justify-content-end">
-            <img src="./img/hero-img.png" aria-hidden="true">
+          <div class="col-lg-7 flex justify-content-end col-md-5 sb__space">
+
+            <picture>
+              <source srcset="./img/hero-img-tablet.png" media="(max-width: 992px)">
+              <img src="./img/hero-img.png" aria-hidden="true">
+            </picture>
+
+
           </div>
 
         </div>
@@ -145,7 +151,7 @@
         <!-- мини-картинки = создаем фоновые -->
         <div class="row result__top">
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-4">
             <div class="result__item result__item--v1">
               <span class="result__caption">V.1</span>
               <p class="result__ddescr descr">
@@ -154,7 +160,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-4">
             <!-- доп.блок result__item - на случай если bootstrap будет отключен -->
             <div class="result__item result__item--v2">
               <span class="result__caption">V.2</span>
@@ -164,7 +170,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-4">
             <div class="result__item result__item--v3">
               <span class="result__caption">V.3</span>
               <p class="result__ddescr descr">
@@ -178,12 +184,12 @@
         <div class="row">
 
           <!-- подблок РисунокКоробки, скрыт от скринридера -->
-          <div class="col-lg-8">
+          <div class="col-lg-8 col-md-6">
             <img src="img/result-img.png" alt="" aria-hidden="true">
           </div>
 
           <!-- подблок Текст: h3 + p*2 -->
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-6">
 
             <div class="result__content">
               <h3 class="result__subtitle second-title">
@@ -218,11 +224,16 @@
         <!-- 4 блока по 3 колонки каждый (см. разметку проекта) -->
         <ul class="row list-reset products__list">
 
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-6">
             <!-- этот класс -на случай если не применить bootstrap -->
             <div class="products__item products-item flex">
-              <!-- картинка (верх) -->
-              <img src="/img/product-1.jpg" alt="Упаковка" class="products-item__image">
+
+              <!-- картинка 1 (верх) -->
+              <picture>
+                <source srcset="/img/product-1-tablet.jpg" media="(max-width: 992px)">
+                <img src="/img/product-1.jpg" alt="Упаковка" class="products-item__image">
+              </picture>
+
               <!-- титул -->
               <h3 class="product-item__title">Упаковка</h3>
               <!-- подтитул -->
@@ -243,10 +254,17 @@
             </div>
           </li>
 
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-6">
             <!-- этот класс -на случай если не применить bootstrap -->
             <div class="products__item products-item flex">
-              <img src="/img/product-2.jpg" alt="Пакеты" class="products-item__image">
+
+              <!-- картинка-2 верх -->
+              <picture>
+                <source srcset="/img/product-2-tablet.jpg" media="(max-width: 992px)">
+                <img src="/img/product-2.jpg" alt="Пакеты" class="products-item__image">
+              </picture>
+
+
 
               <h3 class="product-item__title">Пакеты</h3>
               <span class="product-item__print">Тираж от 200 штук</span>
@@ -265,10 +283,16 @@
             </div>
           </li>
 
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-6">
             <!-- этот класс -на случай если не применить bootstrap -->
             <div class="products__item products-item flex">
-              <img src="/img/product-3.jpg" alt="Кейсы" class="products-item__image">
+
+              <!-- картинка-3  -->
+              <picture>
+                <source srcset="/img/product-3-tablet.jpg" media="(max-width: 992px)">
+                <img src="/img/product-3.jpg" alt="Упаковка" class="products-item__image">
+              </picture>
+
 
               <h3 class="product-item__title">Кейсы</h3>
               <span class="product-item__print">Тираж от 30 штук</span>
@@ -287,10 +311,17 @@
             </div>
           </li>
 
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-6">
             <!-- этот класс -на случай если не применить bootstrap -->
             <div class="products__item products-item flex">
-              <img src="/img/product-4.jpg" alt="Другие изделия" class="products-item__image">
+
+              <!-- картинка-4 -->
+              <picture>
+                <source srcset="/img/product-4-tablet.jpg" media="(max-width: 992px)">
+                <img src="/img/product-4.jpg" alt="Другие изделия" class="products-item__image">
+              </picture>
+
+
               <h3 class=" product-item__title">Другие изделия</h3>
               <span class="product-item__print">Тираж от 100 штук</span>
               <p class="descr product-item__descr">
@@ -312,8 +343,6 @@
         </ul>
 
       </div>
-
-
     </section>
 
     <!-- timecode: 37-10 -->
@@ -324,28 +353,28 @@
       <div class="container">
         <ul class="row list-reset partners__list">
           <!-- бутстраповский блок, внутри баннер-ссылка -->
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-3">
             <!-- svg-баннер -->
             <a href="#" target="_blank" class="partners__item">
               <img src="img/partner-1.svg" alt="логотип фирмы-партнера">
             </a>
           </li>
           <!-- бутстраповский блок, внутри баннер-ссылка -->
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-3">
             <!-- svg-баннер -->
             <a href="#" target="_blank" class="partners__item">
               <img src="img/partner-2.svg" alt="логотип фирмы-партнера">
             </a>
           </li>
           <!-- бутстраповский блок, внутри баннер-ссылка -->
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-3">
             <!-- svg-баннер -->
             <a href="#" target="_blank" class="partners__item">
               <img src="img/partner-3.svg" alt="логотип фирмы-партнера">
             </a>
           </li>
           <!-- бутстраповский блок, внутри баннер-ссылка -->
-          <li class="col-lg-3">
+          <li class="col-lg-3 col-md-3">
             <!-- svg-баннер -->
             <a href="#" target="_blank" class="partners__item">
               <img src="img/partner-4.svg" alt="логотип фирмы-партнера">
@@ -366,26 +395,26 @@
         <div class="row">
 
           <!-- текстовое -->
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-6">
 
             <div class="scetchbook__content">
-              <h3 class="sketchbook__title second-title ">
+              <h3 class="scetchbook__title second-title ">
                 Simple скетчбук
               </h3>
-              <p class="descr sketchbook__descr">
+              <p class="descr scetchbook__descr">
                 80&nbsp;листов, твердая обложка, бумага Fabriano 200&nbsp;г/м<sup>2</sup>sup>.
                 Подойдет и&nbsp;для графики и&nbsp;для
                 акварели. Для самых смелых творческих замыслов!
               </p>
 
-              <a href="#" target="_blank" class="sketchbook__link link">Купить</a>
+              <a href="#" target="_blank" class="link scetchbook__link ">Купить</a>
             </div>
 
           </div>
 
           <!-- картинка -->
-          <div class="col-lg-8 sb__space">
-            <img src="img/sketch-img.png" alt="СкетчБук">
+          <div class="col-lg-8 sb__space flex-to-end  col-md-6">
+            <img src="img/sketch-img.png" alt="СкетчБук" class="scetchbook__img">
           </div>
 
         </div>
@@ -402,14 +431,14 @@
       <div class="container">
         <div class="row">
           <!-- типа лев. часть футера (логотип) -->
-          <div class="col-lg-6">
+          <div class="col-lg-6  col-md-6">
             <a href="#" class="logo footer__logo">
               <img src="./img/logo-footer.svg" alt="логотип Paper">
             </a>
           </div>
 
           <!-- пр.часть футера (соц.иконки) -->
-          <div class="col-lg-6 justify-content-end flex">
+          <div class="col-lg-6 justify-content-end flex  col-md-6">
             <ul class="social list-reset">
 
               <!-- facebk -->
