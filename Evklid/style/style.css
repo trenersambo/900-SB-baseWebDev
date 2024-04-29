@@ -885,3 +885,17 @@ svg rect {
 
 /* =============== footer::: end ========== */
 
+
+/* ===== При каких @media Меняем padding ====== */
+
+@media (max-width: 1919px) {
+  .container {
+    padding: 0 50px;  /* отступы слева-справа = 50рх */
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;  /*  отступы слева-справа = 15рх */
+  }
+}

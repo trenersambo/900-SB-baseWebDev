@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="./style/normalize.css">
   <link rel="stylesheet" href="./style/style.css">
 
-  <link rel="stylesheet" href="./style/media-header.css"> <!--  -->
-  <link rel="stylesheet" href="./style/media-hero.css"> <!--  -->
-  <link rel="stylesheet" href="./style/media-about.css"> <!--  -->
-  <link rel="stylesheet" href="./style/media-how.css"> <!--  -->
-  <link rel="stylesheet" href="./style/media-faq.css"> <!--  -->
-  <link rel="stylesheet" href="./style/media-footer.css"> <!--  -->
+  <link rel="stylesheet" href="./style/media-header.css">
+  <link rel="stylesheet" href="./style/media-hero.css">
+  <link rel="stylesheet" href="./style/media-about.css">
+  <link rel="stylesheet" href="./style/media-how.css">
+  <link rel="stylesheet" href="./style/media-faq.css">
+  <link rel="stylesheet" href="./style/media-footer.css">
+  <link rel="stylesheet" href="./style/access-key.css"> <!-- доступность -->
 
   <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
   <title> Evklid </title>
@@ -21,13 +22,13 @@
 </head>
 
 <body class="page">
-
   <header class="header header--decor">
+
     <div class="container header__container">
       <a href="#" class="logo header__logo">
-        <img src="./svg/Logo-header.svg" alt="Евклид" class="logo-style">
+        <img src="./svg/Logo-header.svg" alt="логтип фирмы Евклид" class="logo-style">
       </a>
-      <nav class="nav header__nav">
+      <nav class="nav header__nav" aria-label="Шапка сайта: Основная">
         <ul class="list-reset header__list">
           <li class="nav__item">
             <a href="#about" class="nav__top-link">О нас</a>
@@ -39,11 +40,11 @@
             <a href="#faq" class="nav__top-link">Вопросы</a>
           </li>
           <li class="nav__item">
-            <a href="#request" class="nav__top-link">Оставить заявку</a>
+            <a href="#username" class="nav__top-link">Оставить заявку</a>
           </li>
         </ul>
       </nav>
-      <button class="header__search-link">
+      <button class="header__search-link" aria-label="Поиск по сайту">
         <svg class="header__search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
           fill="none">
           <rect width="7.56126" height="1.89031"
@@ -56,11 +57,11 @@
     </div>
   </header>
   <main>
-    <section class="hero ">
+    <section class="hero" aria-labelledby="hero">
       <div class="container ">
         <div class="hero__container">
           <div class="hero__content">
-            <h1 class="hero__title">Проектные решения любой сложности</h1>
+            <h1 class="hero__title" id="hero">Проектные решения любой сложности</h1>
             <p class="hero__descr">
               Есть над чем задуматься: базовые сценарии поведения пользователей
               и&nbsp;по&nbsp;сей день остаются уделом проектантов
@@ -71,7 +72,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" aria-labelledby="about">
       <div class="container ">
         <div class="about__top">
           <h2 class="about__title" id="about">
@@ -132,7 +133,7 @@
       </div>
     </section>
 
-    <section class="how">
+    <section class="how" aria-labelledby="how">
       <div class="container how__container">
         <h2 class="how__title" id="how">Этапы</h2>
         <div class="how__consult how__img">
@@ -164,7 +165,7 @@
       </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" aria-labelledby="faq">
       <div class="container faq__container">
         <h2 class="faq__title" id="faq"> Вопросы </h2>
         <ul class=" list-reset faq__list">
@@ -210,9 +211,9 @@
       <div class="footer__flex">
         <div class="footer__left">
           <a href="#">
-            <img src="./svg/Logo-footer.svg" alt="" class="footer__logo">
+            <img src="./svg/Logo-footer.svg" alt="логотип фирмы Евклид" class="footer__logo">
           </a>
-          <nav class="nav footer__nav">
+          <nav class="nav footer__nav" aria-label="Подвал сайта: Основная">
             <ul class="list-reset footer__list">
               <li class="nav__item">
                 <a href="#" class="nav__ftr-link">О нас</a>
@@ -238,7 +239,7 @@
             </ul>
           </nav>
           <div class="footer__social">
-            <a href="#" class="footer__social-link soc">
+            <a href="https://ok.ru" class="footer__social-link soc" aria-label="иконка сайт Одноклассники">
               <svg class="soc__icon ok-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -249,7 +250,7 @@
                   fill="#666666" />
               </svg>
             </a>
-            <a href="#" class="footer__social-link soc">
+            <a href="https://vk.ru" class="footer__social-link soc" aria-label="иконка сайт Вконтакте">
               <svg class="soc__icon vk-icon" width="60" height="60" viewBox="0 0 60 60" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -260,12 +261,13 @@
           </div>
         </div>
         <div class="footer__middle">
-          <div class="footer__middle-title" id="request">Оставить заявку</div>
-          <form class="form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+          <div class="footer__middle-title">Оставить заявку</div>
+          <form class="form" action="https://jsonplaceholder.typicode.com/posts" method="POST"
+            aria-label="Форма из трех полей: Оставить заявку">
             <input type="text" class="form__input form__input--user" id="username"
-              placeholder="Фамилия, имя и отчество*" name="username" required>
+              placeholder="Фамилия, имя и отчество*" name="username" required aria-required="true">
             <input type="email" class="form__input form__input--mail" id="usermail" placeholder="Email*" name="usermail"
-              required>
+              required aria-required="true">
             <textarea class="form__input form__input--message" id="usermsg" placeholder="Сообщение"
               name="usermsg"></textarea>
             <div class="form__submit">
