@@ -1,0 +1,41 @@
+/* accessibility for page*/
+
+
+/* ========== HERO ========== */
+/* кнопка Закзать расчёт */
+.hero__btn:focus {
+  outline: 2px solid var(--signal-orange, #F90);
+  outline-offset: 4px;
+  transition: outline-color 0.25s ease-in-out;
+}
+
+
+/*==========  ABOUT US ========== */
+/* кнопка Подробнее (строитель) */
+.about__btn-detail:focus {
+  outline: 2px solid var(--signal-orange, #F90);
+  outline-offset: 4px;
+  transition: outline-color 0.25s ease-in-out;
+}
+
+/*==========  HOW ========== */
+/* кнопка Подробнее и Договор */
+.how__detail:focus {
+  outline: 2px solid var(--signal-orange, #F90);
+  outline-offset: 4px;
+  transition: outline-color 0.25s ease-in-out;
+}
+
+.how__contract:focus {
+  outline: 2px solid var(--dull-gray);
+  outline-offset: 4px;
+  transition: outline-color 0.25s ease-in-out;
+}
+
+/*==========  FOOTER ========== */
+/* кнопка Отправить данные*/
+.form__btn:focus {
+  outline: 2px solid var(--signal-orange, #F90);
+  outline-offset: 4px;
+  transition: outline-color 0.25s ease-in-out;
+}
