@@ -1,0 +1,327 @@
+      /* на работе - скрыть визульно */
+      .adv__image img {
+        /* opacity: 0.1; */
+      }
+
+
+
+/* ======= 1. ADV (Радиоприемник) =======   */
+
+.adv {
+  padding-top: 95px;
+  padding-bottom: 132px;
+  background: var(--light-black, #292e39);
+
+}
+
+.adv__prod {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.adv__image {
+  position: relative;
+  padding-top: 8px;
+  margin-right: 23.5px;
+
+  margin-left: -6px; /*под PixelPerfect*/
+
+  flex: 1; /*разбивка общего flex 'а пополам*/
+  flex-grow: 1.45; /*растягивание блока*/
+}
+
+.adv__new {
+  position: absolute;
+  top: 0px;
+}
+
+.adv__radio {
+
+}
+
+.adv__descript {
+  flex: 1;/*разбивка общего flex 'а пополам*/
+}
+
+.adv__slogan {
+  margin: 0;
+  margin-bottom: 17px;
+
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--promo-color);
+}
+
+/* волны под слоганом */
+.adv__decor {
+  display: block;
+  margin-bottom: 14px;
+
+}
+
+.adv__promo {
+  margin-bottom: 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 180%;
+  color: var(--white);
+
+}
+
+.adv__promo-txt {
+  margin: 0;
+
+}
+
+
+
+.adv__price {
+  margin-bottom: 27px;
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--white);
+}
+
+.adv__btn {
+  padding: 23px 12px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  border: 2px solid var(--promo-color);
+  border-radius: 100px;
+  outline: none;
+  transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
+}
+
+.adv__btn-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color:  var(--promo-color);
+  transition: color 0.35s ease-in-out;
+}
+
+/* svg-значок в кнопке */
+.adv__sphere {
+  fill: var(--promo-color, #F0D288) ;
+  transition: fill 0.35s ease-in-out;
+}
+
+.adv__flach {
+  fill: var(--black, #121723) ;
+  transition: fill 0.35s ease-in-out;
+}
+
+
+
+/* ======= 1.1. UI-Kit (focus hover active для ADV ) =======   */
+
+/* focus */
+.adv__btn:focus-visible {
+  background-color: var(--promo-color-shade, #bb973e);
+}
+
+.adv__btn:focus-visible .adv__btn-text{
+  color: var(--black, #121723);
+}
+
+
+/* hover */
+.adv__btn:hover .adv__sphere {
+  fill: var(--black, #121723) ;
+}
+
+.adv__btn:hover .adv__flach {
+  fill: var(--promo-color, #F0D288) ;
+}
+
+.adv__btn:hover {
+  background-color: var(--promo-color, #F0D288);
+
+}
+
+.adv__btn:hover .adv__btn-text{
+  color: var(--black, #121723);
+}
+
+/* active */
+
+.adv__btn:active .adv__flach {
+  fill: var(--promo-color-shade, #bb973e) ;
+}
+
+.adv__btn:active{
+  background-color: var(--promo-color-shade, #bb973e);
+  border-color: var(--promo-color-shade, #bb973e);
+
+}
+
+
+
+/* ======= 2. Адаптив для ADV =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+  .adv {
+    padding-bottom: 94px;
+  }
+
+  .adv__image {
+    padding-top: 122px;
+    margin-right: 26px;
+    margin-left: 6px;
+
+    flex-grow: 1;
+  }
+
+  .adv__new {
+    top: 117px;
+  }
+
+  .adv__decor {
+    margin-bottom: 13px;
+  }
+
+  .adv__promo {
+    padding-right: 8px;
+    margin-bottom: 28px;
+  }
+
+  .adv__price {
+    font-size: 30px;
+  }
+
+
+
+
+
+}
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+  .adv {
+    padding-top: 52px;
+  }
+
+
+  .adv__prod {
+    flex-direction: column;
+
+  }
+
+  .adv__image {
+    padding-top: 2px;
+    margin-right: 0;
+    margin-bottom: 45px;
+    margin-left: 2px;
+
+  }
+
+  .adv__new {
+    top: 2px;
+  }
+
+  .adv__slogan {
+    margin-bottom: 17px;
+    padding-right: 48px; /*подгон под PixelPerfect*/
+    padding-left: 2px;
+  }
+
+  .adv__decor {
+    padding-left: 3px;
+  }
+
+  .adv__promo {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+
+  .adv__price {
+    font-size: 30.5px;
+  }
+
+  .adv__btn {
+    padding: 22.6px 13px;
+  }
+
+
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+  .adv {
+    padding-bottom: 54px;
+  }
+
+  .adv__image {
+    margin-bottom: 32px;
+  }
+
+  .adv__new {
+    /* Автоуменьшение плашки "New": Экран 575рх = 120рх --> Экран 323рх = 62рх*/
+    width: clamp(3.88rem, calc(-0.77rem + 23.02vw), 7.5rem);
+  }
+
+  .adv__slogan {
+    padding-right: 0;
+    margin-bottom: 9px;
+    font-size: 24px;
+
+  }
+
+  .adv__decor {
+    padding-left: 1px;
+  }
+
+  .adv__promo {
+    margin-bottom: 9px;
+    font-size: 14px;
+    line-height: 159%;
+    gap: 10px;
+  }
+
+  .adv__price {
+    margin-bottom: 17px;
+    padding-left: 2px;
+    font-size: 24px;
+  }
+
+  .adv__btn {
+    padding: 13px 15px;
+  }
+
+  .adv__btn-text {
+    font-size: 16px;
+  }
+
+}
+
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+
+}
+

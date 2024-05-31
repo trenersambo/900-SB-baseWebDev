@@ -1,0 +1,399 @@
+
+
+/* ======= 1. PLAYLIST =======   */
+
+.playlist {
+  padding-top: 95px;
+  padding-bottom: 65px;
+}
+
+
+/* Общая обертка для 2х блоков: info и list */
+.playlist__content {
+  display: flex;
+}
+
+
+.playlist__info {
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+
+  /* занимает 1 колонку из 5 (1+4)*/
+  flex: 1;
+  /* растяжение flex-блока (чтоб текст вмещался) */
+  flex-grow: 1.8;
+}
+
+.playlist__title {
+  margin: 0;
+  margin-bottom: 11px;
+
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+}
+
+.playlist__descr {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  color: var(--text-gray);
+}
+
+.playlist__label {
+  margin-bottom: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 137%;
+  color: var(--text-gray);
+}
+
+.playlist__age {
+  padding: 9px 5px;
+  width: 30px;
+  height: 30px;
+
+  font-family: 'MullerMedium';
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-gray);
+  border: 1px solid var(--text-gray);
+  border-radius: 100px;
+
+}
+
+
+
+.playlist__list {
+  padding-top: 13px;
+  display: flex;
+  flex-wrap: wrap;
+
+  /* занимает 4 колонки из 5 (после 1025px будет flex: 3, 1+3)*/
+  flex: 4;
+
+}
+
+
+.playlist__item {
+  position: relative;
+  margin-bottom: 29px;
+
+  /* ширина Карточек для 3пробела 4-х колонок  */
+  width: calc((100% - (30px * 3)) / 4);
+
+  outline: 2px solid transparent;
+
+}
+
+/* отступ справа для 4-х колонок Карточек */
+.playlist__item:not(:nth-child(4n)){
+  margin-right: 30px;
+}
+
+.playlist__link {
+  outline: none;
+}
+
+/* Тест авто margin Для адаптива */
+.playlist__prod {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* border: 1px solid var(--light-color); */
+}
+
+/* флаг страны */
+.playlist__flag {
+  position: absolute;
+  right: 1px;
+  transition: opacity 0.40s ease-in-out;
+}
+
+/* картинка плашки  */
+.playlist__image {
+
+}
+
+.playlist__image img{
+
+  /*margin-bottom: -5px;*/ /*Вариант 1: Лечение разрыва картинки от нижн.блока: двигаю вверх рамку блока playlist__detail */
+  display: block; /*Вариант 2: Лечение разрыва картинки от нижн.блока*/
+
+  /* font-size: 0; */
+}
+
+
+
+/* div для обводки */
+
+.playlist__detail {
+
+  padding-top: 14px;
+  padding-right: 5px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; */
+
+  border: 1px solid var(--light-color);/*  */
+
+}
+
+
+/* ToDo: сделать рамку только для playlist__detail */
+.playlist__detail {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.playlist__name {
+  font-weight: 600;
+  font-size: 16px;
+
+  word-wrap: anywhere; /*перенос слов принудительно*/
+
+}
+
+.playlist__music {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-gray);
+
+  word-wrap: anywhere; /*перенос слов принудительно*/
+}
+
+
+/* ======= 1.1. UI-Kit (focus hover active для PLAYLIST ) =======   */
+
+/* focus */
+.playlist__item:focus-within {
+  outline-color: var(--shade-gray);
+  outline-offset: 2px;
+  transition: outline-color 0.40s ease-in-out;
+}
+
+
+/* hover */
+
+.playlist__item:hover img {
+  opacity: 0.3;
+  transition: opacity 0.40s ease-in-out;
+}
+
+.playlist__item:hover {
+  outline-color: transparent;
+  transition: outline-color 0.40s ease-in-out;
+}
+
+
+
+/* active */
+.playlist__item:active img{
+  opacity: 1;
+  transition: opacity 0.40s ease-in-out;
+}
+
+
+
+/* ======= 2. Адаптив для PLAYLIST =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+  .playlist {
+    padding-bottom: 64px;
+  }
+
+
+  .playlist__content {
+    flex-direction: column;
+  }
+
+  .playlist__info {
+    padding-left: 6px;
+    margin-bottom: 2px;
+  }
+
+  .playlist__item {
+    padding-left: 6px;
+    margin-bottom: 30px;
+    width: calc((100% - (26px * 2)) / 3);
+  }
+
+  .playlist__item:not(:nth-child(4n)) {
+    margin-right: 0;
+  }
+
+  .playlist__item:not(:nth-child(3n)) {
+    margin-right: 24px;
+  }
+
+  .playlist__prod {
+    flex-direction: row;
+  }
+
+  .playlist__flag {
+  right: unset;
+  }
+
+  .playlist__list {
+    padding-top: 29px;
+  }
+
+  .playlist__image img {
+    height: 100%; /*пригодится после 582рх*/
+    max-width: unset;
+    /* border-right: 1px solid var(--light-color); */
+    border-bottom: none;
+
+  }
+
+  .playlist__detail {
+    padding-top: 39px;
+    padding-right: 0px;
+    padding-left: 9px;
+  }
+
+  .playlist__name {
+    font-weight: 500;
+  }
+
+
+}
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+  .playlist {
+    padding-bottom: 82px;
+  }
+
+  .playlist__info {
+    padding-left: 2px;
+  }
+
+  .playlist__detail {
+    padding-left: 10px;
+  }
+
+  .playlist__name {
+    margin-bottom: -3px; /*подгон под PP*/
+  }
+
+  .playlist__item {
+    padding-left: 1px;
+    /*     margin-bottom: 27px; */
+    width: calc((100% - (30px * 1)) / 2);
+  }
+
+  .playlist__item:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+
+  .playlist__item:not(:nth-child(2n)) {
+    margin-right: 28px;
+  }
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+
+  .playlist {
+    padding-top: 56px;
+    padding-bottom: 23px;
+  }
+
+  .playlist__info {
+    margin-right: 0;
+  }
+
+  .playlist__list {
+    padding-top: 27px;
+  }
+
+  .playlist__title {
+    font-size: 24px;
+  }
+
+  .playlist__descr {
+    font-size: 12px;
+    line-height: 133%;
+  }
+
+  .playlist__label {
+    font-size: 12px;
+    line-height: 183%;
+  }
+
+
+
+  .playlist__prod {
+    flex-direction: column;
+  }
+
+  .playlist__flag {
+    right: 2px;
+  }
+
+  .playlist__item {
+    margin-bottom: 30px;
+    width: calc((100% - (28px * 1)) / 2);
+  }
+
+  .playlist__item:not(:nth-child(2n)) {
+    margin-right: 27px;
+  }
+
+  .playlist__image img {
+    width: 100%;
+    border: none;
+    /* border-bottom: 1px solid var(--light-color); */
+
+  }
+
+  .playlist__detail {
+    padding-top: 9px;
+    padding-bottom: 6px;
+  }
+
+}
+
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+  .playlist__image img {
+    width: unset;
+  }
+
+  .playlist__name {
+    margin-bottom: -3px;
+    font-size: 12px;
+  }
+
+  .playlist__music {
+    font-size: 9px;
+  }
+
+
+
+}
+
+
+
+

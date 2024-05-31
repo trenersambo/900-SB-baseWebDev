@@ -1,0 +1,502 @@
+/* ======= 1. BROADCAST =======   */
+.broadcast {
+  padding-top: 95px;
+  margin-bottom: 63px;
+}
+
+.broadcast__title {
+  margin: 0; /*обнулить*/
+  display: none; /* спрятать временно заголовок (экраны > 768рх)*/
+}
+
+.broadcast__content {
+
+  display: flex;
+}
+
+
+
+.archive {
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+
+  /*#ПереполнениеТекстомFlex*/
+  flex: 1; /*должен занять 1 часть из 4-х. У broadcast-list { flex:3 } */
+}
+
+
+.archive__title { /*Заголовок временно видимый*/
+  margin: 0; /*обнулить*/
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+}
+
+/* Блок (микрофон + кнопкаАрхив + текст) */
+.archive__box {
+  margin-top: auto; /*прибить блок вниз (сработает при flex)*/
+  margin-bottom: 30px;
+  padding-top: 113px; /*вместить микрофон (фон. картинка)*/
+}
+
+.archive__image {
+  background-image: url('../img/broadcast-mic-1110.png');
+  background-repeat: no-repeat;
+}
+
+/* Кнопка "Архив" */
+.archive__btn {
+
+  margin-bottom: 11px;
+  padding: 9px 54px;
+
+  position: relative;
+  outline: none;
+  display: inline-block;
+  border: 2px solid var(--black);
+  border-radius: 77px;
+
+  transition: background-color 0.3s ease-in-out,  border-color 0.25s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* текст внутри кнопки */
+.archive__btn-text {
+  font-weight: 500;
+  font-size: 16px;
+
+}
+
+
+/* ======= 1.1. UI-Kit секции BROADCAST (focus hover active для кнопки "Архив") =======   */
+/* focus */
+.archive__btn:focus-visible {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* hover */
+.archive__btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* active */
+.archive__btn:active {
+  background-color: var(--primary-shade);
+  border-color: var(--primary-shade);
+  color: var(--white);
+}
+
+
+
+/* текст под кнопкой */
+.archive__descr {
+  margin: 0; /*обнулить р*/
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text-gray);
+
+  /*width: 101%; */ /*Текст не мог уместить внутри блока, пока не ввел flex:1 для родителя*/
+  /* word-wrap: anywhere; */ /*запасной ПЕРЕНОС для длииных слов */
+
+}
+
+/* Общая <UL> обёртка для Карточек (список) */
+.broadcast__list {
+  padding-top: 13px;
+  display: flex;
+  flex-wrap: wrap;
+
+  /*#ПереполнениеТекстомFlex*/
+  flex: 3; /*должен занять 3 части из 4. У archive {flex: 1}*/
+}
+
+/* карточка Эфира */
+.bc-product {
+  padding-bottom: 17px;
+
+  /* #ПрибитьВнизСсылку, для прибития вниз ссылки "Подробнее" */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: nowrap;
+
+  border: 1px solid var(--light-color);
+}
+
+.bc-product__image {
+  margin-bottom: 14px;
+}
+
+.broadcast__item {
+  margin-bottom: 31px;
+  width: calc((100% - (28px * 2)) / 3); /*предотвращает слипание */
+  /* width: 255px;*/
+}
+
+.broadcast__item:not(:nth-child(3n)) {
+  margin-right: 28px;
+}
+
+.bc-product__image img {
+  width: 100%; /*растянуть картинку на всю ширину карточки*/
+
+  /*opacity: 0.1; на работе - прячу картинки*/
+}
+
+/* Описательная часть карточки */
+.bc-product__descr {
+  padding-left: 16px;
+  margin-bottom: 18px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.bc-product__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.bc-product__day {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-gray);
+}
+
+.bc-product__link {
+  position: relative;
+  /* #ПрибитьВнизСсылку, для прибития вниз ссылки "Подробнее" (Родитель= flex) */
+  margin-top: auto;
+
+  padding-left: 14px;
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  outline: none;
+  color: var(--black); /*для определения цвета svg-стрелки*/
+  transition: color 0.3s ease-in-out;
+}
+
+.bc-product__link svg {
+  /*беру цвет из bc-product__link*/ /* +сработает на :hover*/
+  fill: currentColor;
+}
+
+/* ======= 1.2. UI-Kit секции BROADCAST (focus hover active) =======   */
+
+/*focus*/
+
+.bc-product__link::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -3px; /*раздвин. границы фоновой подложки*/
+  right: 122px;
+  bottom: -3px;
+  left: 7px;
+  background-color: var(--primary-light, #aa9dfa);
+  outline: none;
+  opacity: 0; /* не видима - до активации :focus-visible*/
+  transition: opacity 0.35s ease-in-out;
+
+}
+
+.bc-product__link:focus-visible::after{
+  opacity: 1;/* вкл. видимость подложки*/
+}
+.bc-product__link:focus-visible {
+  /*при focus сменить цвет текста и svg-стреклки*/
+  color: var(--white);
+}
+
+/* hover наведение мышки */
+.bc-product__link:hover {
+  color: var(--primary);
+}
+
+.bc-product__link:hover::after {
+  /*если focus активен, то hover скрывает активную подложку*/
+  opacity: 0;
+}
+
+/* клик на элемент */
+.bc-product__link:active {
+  color: var(--primary-shade);
+}
+
+
+/* ======= 2. Адаптив для BROADCAST =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+  .broadcast {
+    margin-bottom: 62px;
+  }
+
+  .archive {
+    padding-right: 16px;
+  }
+
+  .archive__title {
+    padding-left: 6px;
+  }
+
+  .archive__box {
+    padding-top: 112px;
+    padding-left: 7px; /*подгон под PixelPerfect*/
+    margin-bottom: 33px;
+  }
+
+  .archive__image {
+    background-position-x: 6px; /*подгон под PixelPerfect*/
+  }
+
+  .broadcast__list {
+      /*#ПереполнениеТекстомFlex*/
+    flex: 2; /*блок должен уже занимать 2 из 3 колонок*/
+  }
+
+  /* карточка Эфира */
+  .broadcast__item {
+
+    width: calc((100% - (31px * 1)) / 2);
+  }
+
+  .broadcast__item:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+
+  .broadcast__item:not(:nth-child(2n)) {
+    margin-right: 29px;
+  }
+
+
+
+}
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+  .broadcast {
+    margin-bottom: 31px;
+  }
+
+
+  .broadcast__title {
+    margin-bottom: 109px;
+    padding-left: 2px;
+
+    display:block ; /* показать заголовок (экраны от 768рх и менее)*/
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 100%;
+  }
+
+  .bc-product__link {
+    gap: 3px;
+  }
+
+  .broadcast__content {
+    flex-direction: column;
+  }
+
+  .archive {
+    position: relative;
+    order: 2; /*смещение блока archive под блок broadcast__list*/
+    padding-right: 0;
+  }
+
+  /* черта над блоком archive */
+  .archive::before {
+    content: '';
+    position: absolute;
+    right: -112px; /*чтоб чертилось от края окна браузера*/
+    top: -15px;
+    border: 1px solid var(--light-color);
+    width: 100vw;
+
+  }
+
+  .archive__title {
+    display: none; /*прячем заголовок левого блока*/
+  }
+
+  .archive__box {
+    margin-top: 0; /*обнулить прибивку блока вниз*/
+    margin-bottom: 0;
+    padding-top: 16px;
+    padding-right: 0;
+    padding-left: 108px;
+
+    max-width: 380px; /*тестирую*/
+    align-self: center;
+  }
+
+  /* смена фоновой картинки */
+  .archive__image {
+    background-position-x: 18px;
+    background-position-y: 16px;
+    background-image: url('../img/broadcast-mic-768.png');
+  }
+
+  /* кнопка "Архив" */
+  .archive__btn {
+    margin-bottom: 7px;
+  }
+
+  .broadcast__list {
+    margin-bottom: 44px;
+    order: 1; /*фиксируем блок broadcast__list над блоком archive*/
+  }
+
+  .bc-product {
+    padding-bottom: 18px;
+  }
+
+  .bc-product__image {
+    margin-bottom: 13px;
+  }
+
+  .bc-product__title {
+    padding-left: 1px;
+  }
+
+
+
+
+}
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+  /* черта над блоком archive */
+  .archive::before {
+    right: -30px; /*чтоб чертилось от края окна браузера*/
+    width: 100vw;
+  }
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+  .broadcast {
+    padding-top: 55px;
+    margin-bottom: 48px;
+  }
+
+  .broadcast__title {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  .archive::before {
+    top: -18px;
+  }
+
+  .archive__box {
+    padding-top: 14px;
+    padding-left: 90px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 300px;
+
+  }
+
+  /* смена фоновой картинки */
+  .archive__image {
+
+    background-position-x: 0px;
+    width: max-content; /*растянуть блок, чтоб mic ушел влево*/
+    background-image: url('../img/broadcast-mic-320.png');
+  }
+
+  .archive__btn {
+    padding: 6px 29px; /* */
+    max-width: 110px;
+  }
+
+  .archive__descr {
+    margin-bottom: 7px;
+    font-size: 14px;
+  }
+
+  .broadcast__list {
+    margin-bottom: 16px;
+  }
+
+  .broadcast__item {
+    margin-bottom: 30px;
+  }
+
+  /*карточка архива*/
+  .broadcast__item:not(:nth-child(2n)) {
+    margin-right: 30px;
+  }
+
+  .bc-product {
+    padding-bottom: 11px;
+  }
+
+  .bc-product__image {
+    margin-bottom: 4px;
+  }
+
+  .bc-product__descr {
+    padding-left: 11px;
+    padding-right: 9px;
+    margin-bottom: 16px;
+  }
+
+  /*  под PixelPerfect из-за переноса текста, не учтенного в макете */
+  .bc-fix-mb28 {
+    margin-bottom: 28px;
+  }
+
+
+  .bc-product__title {
+    margin-bottom: 3px;
+    line-height: 100%;
+    font-size: 12px;
+  }
+
+  .bc-product__day {
+    font-size: 9px;
+  }
+
+  .bc-product__link {
+    padding-left: 10px;
+    font-size: 12px;
+    color: var(--primary);
+  }
+
+ .bc-product__link::after {
+    /*fix ( focus-vivsble для after): уменьшил правое смещение подложки при уменьшении экрана*/
+    /* при экране 575рх = 122рх, экран 320рх = 7рх */
+    right: clamp(0.44rem, calc(-8.58rem + 45.1vw), 7.63rem);
+ }
+
+
+
+}
+
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+}
+
+

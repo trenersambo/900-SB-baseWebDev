@@ -1,0 +1,265 @@
+/* ======= 1.  Header =======   */
+.head {
+  padding-top: 30px;
+  margin-bottom: 55px;
+}
+
+.head__container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /*для разнесения по разным уровням лупы и меню с 1024рх*/
+}
+
+.head__logo {
+  display: flex;
+  align-items: center;
+  margin-right: 79px;
+}
+
+.nav {
+  margin-right: auto;
+  outline: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  position: relative; /*для срабатывания .nav__link:focus-visible::after */
+  font-weight: 400;
+  font-size: 20px;
+  /* color: var(--black); */
+}
+
+.nav__item:not(:last-child) {
+  margin-right: 59px; /*отступы элементов меню друг от друга*/
+}
+
+.nav__link {
+  color: var(--black);
+  outline: none; /*в Chrom  убрать обводку по умолчанию*/
+  transition: color 0.35s ease-in-out; /*плавность эффектов */
+}
+
+/* ======= 1.1. UI-Kit для HEADER (текст Меню) =======   */
+
+.nav__link::after{
+
+  content: "";
+  position: absolute; /*.nav-item (родитель) = relative*/
+  z-index: -1;  /*заставить быть подложкой под текстом меню*/
+  top: -3px; /*раздвин. границы фоновой подложки*/
+  right: -5px;
+  bottom: -3px;
+  left: -5px;
+  /* width: 100%; height: 100%; задаёт минимальные границы подложки*/
+  background-color: var(--primary-light, #aa9dfa);
+  opacity: 0; /* не видима - до активации :focus-visible*/
+  transition: opacity 0.35s ease-in-out;
+
+}
+
+.nav__link:focus-visible::after{
+  opacity: 1;/* вкл. видимость подложки*/
+}
+
+.nav__link:focus-visible {
+  color: var(	--white, #fff); /*смена цвета текста при :focus-visible*/
+}
+
+.nav__link:hover{
+  color: var(--primary, #6d31ee);
+}
+
+.nav__link:hover::after{
+  /*если focus активен, то hover скрывает активную подложку*/
+  opacity: 0;
+}
+
+.nav__link:active{
+  color: var(--primary-shade, #4f28a5);
+}
+
+
+/* кнопка svg-лупа */
+.head__btn {
+  color: var(--primary); /*родительский цвет по умолчанию*/
+  outline: none;
+
+}
+
+.head__btn svg {
+  stroke: currentColor;
+  transition: stroke 0.5s ease-in-out;
+}
+
+
+/* ======= 1.2. UI-Kit для HEADER (лупа поиск) =======   */
+
+.head__btn:focus-visible svg {
+  stroke: var(--primary-light, #aa9dfa);
+}
+
+.head__btn:hover svg {
+  stroke: var(--primary-light, #aa9dfa);
+}
+
+.head__btn:active svg {
+  stroke: var(--primary-shade, #4f28a5);
+}
+
+
+
+
+
+/* ======= 2. Адаптив для HEADER =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+    /* теститрование Border вокург меню */
+  .head-border::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: 64px;
+    border: 1px solid var(--light-color);
+  }
+
+  .head__logo {
+    margin-right: auto;
+  }
+
+  .head__logoimg {
+    margin-bottom: 10px;
+    padding-left: 7px;
+    max-width: 70%;
+
+  }
+
+  .nav {
+    margin-top: 21px;
+    order: 3; /*перенос строки вниз*/
+    width: 100%;
+  }
+
+  .nav__list {
+    padding-top: 21px;
+    padding-bottom: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    width: 100%;
+    justify-content: space-between;
+
+    /* border: 1px solid var(--light-color); */
+  }
+
+  .head__btn {
+    padding-right: 4px;
+    order: 2;
+  }
+
+}
+
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+
+  .head-border::before {
+    height: 60px;
+  }
+
+  .head__logoimg {
+    padding-left: 3px;
+  }
+
+  .nav__list {
+    padding-left: 1px;
+    padding-right: 4px;
+  }
+
+  .nav__item {
+    font-size: 16px;
+  }
+
+  .nav__item:not(:last-child) {
+    margin-right: unset;
+  }
+
+  .nav__item--li2 { /*под РР выравниваем 2-е меню*/
+    margin-left: -7px;
+  }
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+  .head-border::before {
+    top: 55px;
+    height: 50px;
+  }
+
+  .head {
+    padding-top: 18px;
+  }
+
+  .head__logoimg {
+    margin-bottom: 9px;
+    max-width: 55%;
+  }
+
+  .nav {
+    margin-top: 4px;
+    /* overflow: scroll;     */
+  }
+
+  .nav__item:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  .head__btn {
+    padding-right: 3px;
+  }
+
+  .head__btn svg {
+    margin-top: -2px;
+  }
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+  .head {
+    margin-bottom: 0;
+  }
+
+  .nav {
+    margin-top: 6px;
+    width: auto;
+    min-width: calc(100% + 30px);
+    overflow-x: scroll;
+    display: -webkit-box;
+  }
+
+  .nav__list {
+    border: unset;
+  }
+
+}
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+}
+
+
+

@@ -1,0 +1,421 @@
+
+/* ======= 1. FOOTER =======   */
+
+.footer {
+  padding-top: 94px;
+  background-color: var(--light-black,aliceblue #292e39);
+}
+
+.footer__wrapper {
+
+}
+
+.footer__top {
+  margin-bottom: 112px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer__social {
+
+  margin-right: auto;
+
+}
+
+.footer__logo {
+
+  margin-left: -1px;
+  margin-bottom: 16px;
+  display: block;
+
+}
+
+.footer__links {
+
+  /* padding-left: 1px; */
+  display: flex;
+  align-items: center;
+
+}
+
+.footer__links-icon {
+  outline: none;
+  color: var(--shade-gray, #D2D5DD); /*родительский цвет для svg-кнопок*/
+
+}
+
+
+.footer__links-icon svg {
+  fill: currentColor; /*цвет фона svg-кнопки берем от родителя .footer__links*/
+  transition: fill 0.35s ease-in-out;
+}
+
+
+/* отступы между svg-иконками */
+.footer__links-icon:not(:nth-child(3n)) {
+  margin-right: 23px;
+}
+
+.footer__links-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+
+/* ======= 1.1. UI-Kit (focus hover active для svg-кнопок FOOTER) =======   */
+
+/* focus */
+.footer__links-icon:focus-visible svg{
+  fill: var(--primary-light, #aa9dfa);
+}
+
+/* hover */
+.footer__links-icon svg:hover {
+  fill: var(--primary, #6d31ee);
+}
+
+/* active */
+.footer__links-icon svg:active {
+  fill: var(--primary-shade, #4f28a5);
+}
+
+
+.footer__nav {
+
+  /* color: var(--white); */
+}
+
+.footer__list {
+  margin-right: -7px;  /*NB!*/
+  /* 3 колонки */
+  column-count: 3;
+  column-gap: 97px;  /*NB!*/
+}
+
+.footer__item:not(:nth-child(3n)) {
+  margin-bottom: 13px;
+}
+
+.footer__item {
+
+  column-width: 73px; /*NB!*/
+}
+
+.footer__item--ml5 {
+  /*margin-left: -5px; NB! подгон под PixelPerfect*/
+}
+
+.footer__item--ml13 {
+  margin-left: 13px; /* NB! подгон под PixelPerfect*/
+}
+
+
+
+/* ======= 1.2. UI-Kit (focus hover active для меню FOOTER) =======   */
+
+.footer__item-link {
+  position: relative;
+  outline: none;
+  z-index: 1;
+  color: var(--white);
+}
+
+
+/* focus */
+.footer__item-link::after {
+
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -3px;
+  right: -5px;
+  bottom: -3px;
+  left: -5px;
+  background-color: var(--primary-light);
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.footer__item-link:focus-visible::after {
+  opacity: 1;
+}
+
+
+/* hover */
+.footer__item-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  transition: transform .35s ease-in-out;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition-delay: 0s;
+}
+
+.footer__item-link:hover::before {
+border-bottom: 1px solid var(--primary-light );
+padding-bottom: 7px;
+outline: none;
+transform: scaleX(1);
+transition-delay: .2s;
+
+}
+
+/* почти скрыть обводку focus 'ом  (действие на ::after)*/
+.footer__item-link:hover::after {
+  opacity: 0.05;
+}
+
+
+/* active */
+.footer__item-link:active::before {
+ /* ToDo изменить толщину стрелки */
+  border-color: var(--primary);
+  color: var(--primary);
+
+}
+
+.footer__item-link:active {
+
+  color: var(--primary);
+
+}
+
+
+
+
+
+.footer__bottom {
+  padding-bottom: 9px;
+  text-align: center;
+
+}
+
+/* волна внизу футера */
+.footer--wave {
+  position: relative;
+}
+
+.footer__bottom::after{
+
+  position: absolute;
+  content: '';
+  bottom: 25px;
+
+  width: 100%;
+  height: 7%; /*при 100% под footer 'ом появляется пустота*/
+  left: 0px;
+  right: 0px;
+
+  background-image: url(../svg/footer-wave-1110.svg);
+
+
+  /*для растяжения только по оси Х  */
+  background-repeat: no-repeat;
+  background-repeat: repeat-x; /*для FireFox*/
+}
+
+
+
+.footer__span {
+
+  color: var(--text-gray, #a1a6b4);
+}
+
+
+
+
+/* ======= 1.1. UI-Kit (focus hover active для FOOTER) =======   */
+
+/* focus */
+
+
+/* hover */
+
+
+/* active */
+
+
+
+/* ======= 2. Адаптив для FOOTER =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+  .footer__logo {
+    margin-bottom: 17px;
+  }
+
+  .footer__social {
+    padding-left: 7px;
+  }
+
+  .footer__list {
+    margin-right: -4px;
+  }
+
+  .footer__bottom::after {
+
+    /* растяжение волны, чтоб на экране 1024рх - все встало под PixelPerfect */
+    /* left: -52px;
+    width: calc(100% + 52px); */
+
+    left: 0;
+    width: calc(100% + 0px);
+    background-image: url(../svg/footer-wave-1024.svg);
+  }
+
+}
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+
+  .footer__top {
+    margin-bottom: 95px;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .footer__social {
+    padding-left: unset;
+    margin-right: unset;
+    margin-bottom: 74px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__logo {
+    margin-bottom: 14px;
+  }
+
+  .footer__links-icon svg {
+    width: unset;
+    height: unset;
+  }
+
+  /* Расставляем по местам элементы навигации (в футере) */
+  .footer__nav {
+    width: 100%; /* ширина родителя*/
+  }
+
+  .footer__list {
+    margin-right: 0;
+    margin-left: 2px;
+    width: 100%; /*за основу взяли ширину родителя*/
+    column-gap: 168px;
+  }
+
+  .footer__item--ml5 {
+    margin-left: -4px;
+  }
+
+  .footer__item--ml13 {
+    margin-left: 0px;
+  }
+
+  .footer__item:not(:nth-child(3n)) {
+      margin-bottom: 24px;
+  }
+
+  .footer__bottom::after {
+    bottom: 14px;
+    left: 0;
+    width: calc(100% + 0px);
+    /* background-image: url(../svg/footer-wave-768.svg); */
+
+  }
+
+
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+
+  .footer {
+    padding-top: 54px;
+  }
+
+  .footer__top {
+    margin-bottom: 27px;
+  }
+
+  .footer__social {
+    margin-bottom: 20px;
+  }
+
+  .footer__logo {
+    margin-bottom: 15px;
+  }
+
+  .footer__nav {
+    padding-top: 60px;
+    padding-bottom: 20px;
+
+    font-size: 12px;
+
+    z-index: 1;
+  }
+
+
+
+  .footer__list {
+    column-count: 2;
+
+    /* Экран 575рх=168рх, экран 320рх=25рх */
+    column-gap: clamp(1.56rem, calc(-9.65rem + 56.08vw), 10.5rem);
+  }
+
+  /* выделение Списка другим цветом на всю ширину страницы */
+  .footer__list::after {
+    content: "";
+    position:absolute; /*.footer--wave = relative*/
+    width: 100%;
+    left: 0;
+    bottom: 53px;
+    background-color: var(--black, #121723 );
+    height: 47%;
+    z-index: -1;
+  }
+
+  .footer__item:not(:nth-child(5n)) {
+      margin-bottom: 18px;
+  }
+
+  .footer__item--ml5 {
+      margin-left: unset;
+  }
+
+  .footer__span {
+    font-size: 12px;
+  }
+
+}
+
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+  .footer__bottom::after {
+    bottom: 11px;
+    /* background-repeat-y: no-repeat;
+    background-repeat-x: repeat;
+    background-position-x: center; */
+  }
+
+}
+

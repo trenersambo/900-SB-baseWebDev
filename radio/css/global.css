@@ -1,0 +1,134 @@
+  /* временное обозначение границ блока*/
+.tmp-outline {
+  outline: 1px solid red;
+}
+
+.display-none {
+  display: none;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* шрифты */
+@font-face {
+  font-family: 'MullerBold';
+  src: url('../fonts/MullerBold.woff') format('woff'),
+       url('../fonts/MullerBold.woff2') format('woff2');
+  font-weight: bold;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'MullerLight';
+  src: url('../fonts/MullerLight.woff') format('woff'),
+       url('../fonts/MullerLight.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MullerMedium';
+  src: url('../fonts/MullerMedium.woff') format('woff'),
+       url('../fonts/MullerMedium.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MullerRegular';
+  src: url('../fonts/MullerRegular.woff') format('woff'),
+       url('../fonts/MullerRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'MullerRegularItalic';
+  src: url('../fonts/MullerRegularItalic.woff') format('woff'),
+       url('../fonts/MullerRegularItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  min-width: 320px;
+  color: var(--black);
+  font-family: 'MullerRegular',  sans-serif;
+}
+
+/* контенер-обертка */
+.container {
+  max-width: 1150px; /*1110 + 20+20 (лев. и прав. padding )*/
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* смена внутр.отступов в container */
+@media( max-width: 1025px){
+  .container {
+    padding: 0 95px;
+  }
+}
+
+@media( max-width: 991px){
+  .container {
+    padding: 0 112px;
+  }
+}
+
+@media( max-width: 767px){
+  .container {
+    padding: 0 30px;
+  }
+}
+
+
+/* обнуление Списка ul */
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* reset стилей кнопок */
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* спец. скрывающий стиль, чтоб текст был виден читалкам */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+

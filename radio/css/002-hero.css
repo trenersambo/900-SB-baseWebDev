@@ -1,0 +1,223 @@
+
+
+/* ======= 1.  ИМЯ_БЛОКА HERO =======   */
+.hero {
+  margin-bottom: 33px;
+}
+
+.hero__content {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+/* фоновая картинка */
+
+/* Заголовок h1 в секции hero */
+.hero__title {
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 59px;
+  line-height: 106%;
+  color: var(--black);
+
+  letter-spacing: 1px;
+}
+
+.hero__wwave {
+  font-family: 'MullerRegularItalic', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+/* Описание */
+.hero__descr {
+  margin: 0;
+  margin-bottom: 44px;
+
+  /* прибивка текста Описания влево (2 варианта)*/
+  /*padding-right: 500px;  */
+  max-width: 55%;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+}
+
+/* фоновая картинка Микрофон */
+.hero__image {
+  position: relative;
+}
+
+.hero__image::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: calc(100% - 355px);
+  /* width: calc(100% ); */
+  width: 354px;
+  height: calc(100% );
+  background-image: url('../img/microphone-1110.png');
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Кнопка "Слушать эфир" */
+.hero__btn {
+  padding: 21px 54px;
+  position: relative; /*про запас для focus*/
+
+  display: inline-block;
+
+  font-weight: 500;
+  font-size: 20px;
+  font-family: inherit; /* 'MullerRegular' */
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 40px;
+  line-height: 150%;
+
+  outline: 2px solid var(--primary); /*для обводки в кнопке при focus */
+  outline-offset: -2px; /*для создания обводки в кнопке при focus */
+
+  transition: background .30s ease-in-out, outline-color 0.30s ease-in-out;
+
+}
+
+/* ======= 1.1. UI-Kit кнопки  =======   */
+
+.hero__btn:focus-visible {
+  outline-color: var(--primary-shade);
+  background: var(--primary-light);
+
+}
+
+.hero__btn:hover {
+  background: var(--primary-light);
+  /* outline-color: transparent; */
+  outline-color: var(--primary-light) ;
+}
+
+.hero__btn:active {
+  background: var(--primary-shade);
+  /* outline-color: transparent; */
+  outline-color: var(--primary-shade);
+}
+
+
+
+/* ======= 2. Адаптив для  HERO  =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+  .hero {
+    margin-bottom: 29px;
+  }
+
+  .hero__content {
+    padding-top: 38px;
+    padding-left: 5px;
+  }
+
+  .hero__title {
+    margin-bottom: 10px;
+    letter-spacing: 0;
+    font-size: 60.6px;
+
+  }
+
+  .hero__wwave {
+    letter-spacing: 0;
+  }
+
+  .hero__descr {
+    margin-bottom: 19px;
+    max-width: 65%;
+  }
+
+  /* смена фоновой картинки  */
+  .hero__image::before {
+    top: 29px;
+    left: calc(100% - 263px);
+    background-image: url('../img/microphone-1024.png');
+
+  }
+
+
+}
+
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+
+  .hero {
+    margin-bottom: 89px;
+  }
+
+  .hero__wwave {
+    letter-spacing: -1px;
+  }
+
+  .hero__content {
+    padding-left: 2px;
+    padding-bottom: 0;
+  }
+
+  .hero__title {
+    margin-bottom: 11px;
+  }
+
+  .hero__descr {
+    max-width: 100%;
+  }
+  .hero__image::before {
+    background-image:none;
+    width: 0; /*иначе ломает верстку шириной >0*/
+  }
+}
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+
+ .hero__title {
+    font-size: 32px;
+    margin-bottom: 5px;
+ }
+
+  .hero__wwave {
+    letter-spacing: 0;
+  }
+
+ .hero__descr {
+    font-size: 14px;
+ }
+
+}
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+  .hero {
+    margin-bottom: 39px;
+  }
+  .hero__btn {
+    padding: 14px 46px;
+    font-size: 16px;
+  }
+
+
+}
+
+
+

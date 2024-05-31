@@ -1,0 +1,276 @@
+/* ======= 1. QUEST =======   */
+
+.quest {
+  padding-top: 95px;
+  padding-bottom: 94px;
+
+  color: var(--text-gray);
+  background-color: var(--black);
+}
+
+/* заголовок "Гости" */
+.quest__title {
+  margin: 0;
+  margin-bottom: 13px;
+
+  color: var(--white);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+
+}
+
+.quest__wehave {
+  margin: 0;
+  margin-bottom: 8px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: -0.55px;
+}
+
+.quest__who {
+  margin: 0;
+  margin-bottom: 48px;
+  padding-right: 276px;
+
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+}
+
+.quest__list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* li - карточка Гостя  */
+.quest__item {
+  display: flex;
+  flex-direction:row;
+}
+
+.quest__image {
+  margin-right: 30px;
+
+  flex-shrink: 0; /* #ЗапретитьСжатиеИзображения */
+  /* min-width: 432px; Применять если нет flex-shrink: 0*/
+
+  font-size: 0;
+}
+
+/* Для подстраховки от сжатия картинки */
+.quest__image img {
+  /* width: 100%; Заполнение ширины контейнера */
+  /* height: auto; Автоматическая высота */
+ /* max-width: 432px;  Максимальная ширина */
+}
+
+.quest__promo {
+  display: flex;  /*#ПрибитьКнопкуВниз-1*/
+  flex-direction: column;
+
+  /*flex: 1; прозапас - сколько занимать места в своем блоке*/
+}
+
+.quest__name {
+  margin: 0;
+  margin-bottom: 7px;
+
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.quest__info {
+  margin: 0;
+  padding-right: 175px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 180%;
+}
+
+/* кнопка "Эфиры с гостем" */
+.quest__btn {
+  margin-top: auto;  /*#ПрибитьКнопкуВниз-1*/
+
+  display: inline-block; /*чтоб можно применить стили*/
+  border: 2px solid var(--primary-light);
+  border-radius: 77px;
+  padding: 9px 17px;
+
+  max-width: 160px;
+  color: var(--primary-light);
+  outline: none;
+
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.quest__btn-text {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  /* color: var(--primary-light); */
+  color: currentColor;
+}
+
+
+
+/* ======= 1.1. UI-Kit секции QUEST (focus hover active для  ) =======   */
+
+/* focus */
+.quest__btn:focus-visible {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* hover */
+.quest__btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  color: var(--white);
+}
+
+/* active */
+.quest__btn:active {
+  background: var(--primary-shade);
+  border-color: var(--primary-shade);
+}
+
+
+/* ======= 2. Адаптив для QUEST =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+  .quest__title {
+    padding-left: 6px;
+  }
+
+  .quest__wehave {
+    padding-left: 6px;
+  }
+
+  .quest__who {
+    padding-left: 6px;
+  }
+
+  .quest__info {
+    padding-right: 0px;
+  }
+
+  .quest__content {
+    padding-left: 6px;
+  }
+
+}
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+  .quest {
+    padding-bottom: 93px;
+  }
+
+  .quest__title {
+    padding-left: 3px;
+  }
+
+  .quest__wehave {
+    padding-left: 3px;
+  }
+
+  .quest__who {
+    padding-right: 0;
+    padding-left: 3px;
+  }
+
+  .quest__content {
+    padding-left: 2px;
+  }
+
+  .quest__item {
+    /* перерасположить картинку над текстом */
+    flex-direction: column;
+  }
+
+  .quest__image {
+    margin-bottom: 29px;
+    margin-right: 0;
+  }
+
+  .quest__info {
+    padding-right: 175px;
+    margin-bottom: 30px;
+  }
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+  .quest__info {
+    padding-right: clamp(0rem, calc(-7.61rem + 38.03vw), 10.63rem);
+  }
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+
+  .quest {
+    padding-top: 55px;
+    padding-bottom: 53px;
+  }
+
+  .quest__wehave {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+
+  .quest__title {
+    margin-bottom: 11px;
+    font-size: 24px;
+  }
+
+  .quest__who {
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+
+  .quest__list {
+    gap: 31px;
+  }
+
+  .quest__image {
+    margin-bottom: 11px;
+  }
+
+  .quest__info {
+    margin-bottom: 31px;
+  }
+
+  .quest__btn {
+    padding: 6px 13px;
+    max-width: 151px;
+  }
+
+
+
+}
+
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+}
+
+
+
+

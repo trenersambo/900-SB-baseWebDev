@@ -1,0 +1,272 @@
+/* ======= 1. PODCAST =======   */
+.podcast {
+  padding-top: 95px;
+  padding-bottom: 64px;
+
+  background-color: var(--light-color, #E6E8EC);
+}
+
+.podcast__title {
+  margin: 0; /*обнуление*/
+  margin-bottom: 29px;
+
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+}
+
+/* ul-Обертка всех карточек подкаста */
+.podcast__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Общая обертка одной карточки */
+.podcast__item {
+  margin-bottom: 30px;
+  width: calc(50% - (30px / 2) );
+
+  outline: none;
+}
+
+.podcast__item a {
+  outline: none;
+}
+
+/* отступы между карточками */
+.podcast__item:not(:nth-child(2n)) {
+  margin-right: 30px;
+}
+
+
+/* Обертка для одного article */
+.podcast-prod {
+  position: relative;
+  display: flex;
+  background-color: var(--white, #fff);
+  font-size: 0; /*убрать глюк пробел снизу*/
+
+  outline: none;
+
+}
+
+
+/* границы картинки секции Подкасты */
+.podcast-prod__image {
+  margin-right: 29px; /*отступ вправо до текста*/
+
+  width: 112px;
+  height: 140px;
+
+}
+
+
+/* дата подкаста */
+.podcast-prod__date {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 50px;
+  min-height: 16px;
+
+  font-size: 10px;
+  background-color: var(--light-color);
+
+}
+
+
+/* время   подкаста */
+.podcast-prod__time {
+  margin-bottom: 7px;
+  font-weight: 400;
+  font-size: 12px;
+
+}
+
+/* текстовый блок PODCAST */
+.podcast-prod__info {
+  padding-top: 39px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* титул карточки  подкаста */
+.podcast-prod__title {
+  font-weight: 400;
+  font-size: 20px;
+
+}
+
+/* автор карточки  подкаста */
+.podcast-prod__author {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(	--text-gray, #a1a6b4);
+}
+
+.podcast-prod__title {
+  margin: 0;  /*обнуление*/
+}
+
+
+.podcast-prod__author {
+  margin: 0;  /*обнуление*/
+}
+
+
+
+/* ======= 1.1. UI-Kit секции Podcast (focus hover active) =======   */
+
+.podcast__item:focus-within  {
+  outline: 2px solid var(--shade-gray);
+  outline-offset: 2px;
+
+}
+
+.podcast__item:hover {
+  outline-color: transparent;
+}
+
+.podcast-prod:hover img {
+  opacity: 0.3;
+  transition: opacity 0.20s ease-in-out;
+}
+
+.podcast-prod:hover time {
+  opacity: 1;
+  transition: none;
+}
+
+.podcast-prod:active img {
+  opacity: 1;
+  transition: opacity 0.20s ease-in-out;
+}
+
+
+
+
+/* ======= 2. Адаптив для  PODCAST =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+  .podcast {
+    padding-top: 95px;
+    padding-bottom: 64px;
+  }
+
+  .podcast__title {
+    padding-left: 7px;
+  }
+
+  .podcast__list {
+    padding-left: 7px;
+    padding-right: 5px;
+  }
+
+  .podcast-prod__image {
+    margin-right: 30px;
+  }
+
+}
+
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+
+
+  .podcast__title {
+    padding-left: 2px;
+  }
+
+  .podcast__list {
+      padding-left: 2px;
+      padding-right: 0;
+  }
+
+  .podcast__item {
+    width: 100%;
+  }
+
+  /* отступы между карточками */
+  .podcast__item:not(:nth-child(2n)) {
+  margin-right: unset;
+  }
+
+
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+
+  .podcast__item {
+    margin-bottom: 30.5px;
+  }
+
+  /* 2.1. ПОДКАСТЫ: примерные наброски расположения картинки над текстом */
+  .podcast-prod {
+    padding-bottom: 28px;
+    flex-direction: column;
+  }
+
+  .podcast__title {
+    margin-bottom: 19px;
+    padding-left: 2px;
+    font-size: 24px;
+  }
+
+  /* плашка дата подкаста */
+  .podcast-prod__date {
+    top: 0;
+    bottom: unset;
+  }
+
+  .podcast-prod__image {
+    margin-right: 0;
+    display: contents;
+
+  }
+
+  .podcast-prod__info {
+    padding-top: 29px;
+    padding-left: 16px;
+  }
+
+  .podcast-prod__time {
+    margin-bottom: 6px;
+  }
+
+  .podcast-prod__title {
+    margin-bottom: 3px;
+    font-size: 16px;
+  }
+
+  .podcast-prod__author {
+    font-size: 12px;
+  }
+
+
+
+}
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+  .podcast {
+    padding-top: 55px;
+    padding-bottom: 24px;
+  }
+}

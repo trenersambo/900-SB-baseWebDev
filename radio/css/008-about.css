@@ -1,0 +1,543 @@
+      /* на работе - скрыть визульно */
+      /*  img {
+        opacity: 0.1;
+      }
+      */
+
+
+
+/* ======= 1. ABOUT (О нас) =======   */
+.about {
+  padding-top: 95px;
+  padding-bottom: 92px;
+  background: var(--black);
+}
+
+.about__present {
+  position: relative; /*для картинки СпиральЗвезда*/
+  margin-bottom: 29px;
+
+/* Экран 1159: 649рх, экран 1026: 522рх */
+  width: clamp(32.63rem, calc(-28.61rem + 95.49vw), 40.56rem);
+}
+
+.about__present::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(100% + 15px);
+  width: 445px;
+  height: 100%;
+
+  background-image: url('../img/about-decor-1110.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.about__title {
+  margin: 0;
+  margin-bottom: 12px;
+
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--white);
+}
+
+.about__posttitle {
+  margin: 0;
+  margin-bottom: 8px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--text-gray);
+
+  letter-spacing: 0.09px;
+}
+
+.about__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 160%;
+  color: var(--text-gray);
+}
+
+/* Карточки экспертов (ul-список) */
+.about__list {
+  padding-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.about__item {
+  /* автоширина для 4х карточек */
+  width: calc((100% - (31px * 3)) / 4);
+}
+
+.about__item:not(:nth-child(4n)) {
+  margin-right: 30.5px;
+}
+
+
+.about-expert {
+}
+
+.about-expert__img {
+  margin-bottom: 25px;
+  display: block;
+}
+
+.about-expert__img img{
+  width: 100%;
+}
+
+.about-expert__intro {
+}
+
+.about-expert__name {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.about-expert__txt {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text-gray);
+}
+
+/* Формы обратной связи */
+.form {
+  max-width: 920px; /*для адаптивности*/
+}
+
+.form__input {
+  padding-right: 20px;
+  display: block;
+  border: 1px solid var(--white);
+
+  resize: none;
+  background-color: var(--black) ;
+
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--white);
+
+  outline: none;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out  ;
+
+}
+
+
+
+/* верхнее поле ввода */
+.form__input--message {
+  padding-top: 29px;
+  padding-left: 30px;
+  margin-bottom: 30px;
+
+  border-radius: 30px;
+  width: 100%;
+  height: 150px;
+}
+
+/* поля: Имя, Email */
+.form__input--data {
+  padding-left: 30px;
+  display: inline-block;
+  border-radius: 40px;
+  height: 70px;
+
+  /* автоширина для 2х полей ввода (inline-block !) */
+  width: calc((100% - (34px * 1)) / 2);
+}
+
+.form__input--data:nth-child(2n) {
+  margin-right: 30px;
+  margin-bottom: 30px; /*отодвинуть кнопку вниз*/
+}
+
+
+
+/* ======= 1.1. UI-Kit (focus hover active input-формы для About) =======   */
+
+/* focus */
+.form__input:focus-visible {
+  border-color: var(--primary-light);
+  background-color: var(--light-black);
+}
+
+
+
+
+/* hover */
+.form__input:hover {
+  background-color: var(--light-black);
+}
+
+/* active */
+.form__input:active {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+
+/* Для срабатывания ошибки в поле ввода "Имя" */
+
+/* JS:  класс ошибки ввода в поле "Имя" */
+.form__nameerror {
+  border-color: var(--red,  #ff6f6f);
+  transition: border-color 0.4s ease-in-out;
+}
+
+/* окрашивание border в режиме онлайн при ошибке ввода */
+.form__nameerror:focus-visible  {
+    border-color: var(--red,  #ff6f6f);
+}
+
+.form__labelerror {
+  position: relative;
+}
+
+.form__labelerror-txt {
+  position: absolute;
+  display: none;
+
+  top: -21px;
+  left: 31px;
+  color: var(--red,  #ff6f6f);
+
+}
+
+
+
+/* Кнопка ОТПРАВИТЬ */
+
+.form__btn {
+  margin-bottom: 30px;
+  padding: 25px 54px 22px 54px;
+  display: inline-block;
+  border-radius: 40px;
+  background-color: var(--primary);
+
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--white);
+  outline: none;
+
+  transition: background-color .4s ease-in-out,  color .4s ease-in-out;
+
+}
+
+/* ======= 1.2. UI-Kit (focus hover active для Кнопки "Отправить" About, нет в ТЗ) =======   */
+
+/* focus */
+.form__btn:focus-visible {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* hover */
+.form__btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--shade-gray);
+
+}
+
+/* active */
+.form__btn:active {
+  background-color: var(--primary-shade);
+  border-color: var(--primary-shade);
+  color: var(--white);
+}
+
+
+
+/* Чекбокс */
+.form__label {
+  padding-top: 2px;
+  display: flex; /* (border-?) чтоб встала под кнопкой а не рядом*/
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--white);
+  cursor: pointer;
+
+}
+
+.form__input[type="checkbox"] {
+  position: absolute;
+  z-index: -5;
+  width: 0;
+  height: 0;
+}
+
+.form__span {
+  position: relative;
+  margin-top: -3px; /*подгон рамки ручного чекбокса под PixelPerfect*/
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+  border: 1px solid var(--white);
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 0.2s ease-in-out;
+}
+
+.form__span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center/ contain url('../svg/form-check-V.svg');
+  opacity: 0;
+}
+
+/* ======= 1.3. UI-Kit (focus hover active для чекбокса About) =======   */
+
+.form__input:checked + .form__span:after {
+  opacity: 1
+}
+
+
+/* вариант для border */
+.form__input:focus-visible + .form__span {
+  border-color: var(--primary-light);
+
+}
+
+
+/* ======= 2. Адаптив для ADV =======   */
+
+/* для размеров экрана от 1025рх (макс.) ... 992рх (мин.) */
+@media( max-width: 1025px){
+
+  .about__present {
+    margin-bottom: 29px;
+    padding-left: 6px;
+    width: clamp(33rem, calc(-29rem + 100vw), 35rem);
+  }
+
+  .about__present::after {
+    top: 48px;
+    width: 255px;
+    background-image: url('../img/about-decor-1024.png');
+  }
+
+
+
+  /* Карточки Экспертов (ul-список) */
+  .about__list {
+    padding-bottom: 0;
+    padding-left: 6px;
+  }
+
+  .about__item {
+    margin-bottom: 30px;
+    /* автоширина для 4х карточек */
+    width: calc((100% - (34px * 1)) / 2);
+  }
+
+  .about__item:not(:nth-child(4n)) {
+    margin-right: 0;
+  }
+  .about__item:not(:nth-child(2n)) {
+    margin-right: 30px;
+  }
+
+  .form {
+    padding-left: 6px;
+    padding-right: 4px;
+  }
+
+}
+
+
+/* для размеров экрана от 991(макс.) ... 768 (мин.) */
+@media( max-width: 991px){
+  .about {
+    padding-top: 95px;
+    padding-bottom: 93px;
+  }
+  .about__present {
+
+    padding-left: 2px;
+    /* padding-bottom: 140px; */
+    padding-bottom: clamp(8.75rem, calc(-0.01rem + 15.15vw), 9.38rem); /*убрать наслоение пружины на картинки*/
+
+    width: unset;
+    max-width: 100%;
+  }
+
+  .about__present::after {
+
+    background-image: url('../img/about-decor22-768.png');
+    left: -241px;
+    top: unset;
+    background-position-x: 0px;
+    background-position-y: 27px;
+    width: calc(100% + 239px);
+    height: 45%;
+
+  }
+
+  .about__title {
+    margin-bottom: 14px;
+  }
+
+  .about__list {
+    padding-left: 2px;
+  }
+
+  .about__item {
+    width: calc((100% - (32px * 1)) / 2);
+  }
+
+  .about-expert__img {
+    margin-bottom: 24px;
+  }
+
+  .about-expert__name {
+    margin-bottom: 6px;
+  }
+
+  /* поля: Имя, Email */
+  .form__input--data {
+    /*  ширина для 2х полей ввода (inline-block !) */
+    width: 100%;
+  }
+
+  .form__input--data:nth-child(2n) {
+    margin-right: 0; /*справа отступ убрать*/
+    /*margin-bottom: 30px; сделать отступ вниз*/
+  }
+
+  .form__input--data:nth-child(3n) {
+
+    margin-bottom: 30px; /*сдвинуть вниз Кнопку*/
+  }
+
+  .form {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+}
+
+
+/* для размеров экрана от 767 (макс.) ... 576 (мин.) */
+@media( max-width: 767px){
+
+
+}
+
+
+/* для размеров экрана от 575(макс.) ... 323(мин.) */
+@media( max-width: 575px){
+  .about {
+    padding-top: 55px;
+    padding-bottom: 54px;
+  }
+
+  .about__present {
+    padding-bottom: 1px;
+  }
+
+  .about__present::after {
+    /* убрать картинку СпиральЗвезда */
+    background-image: none;
+    width: 0;
+    height: 0;
+  }
+
+  .about__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .about__posttitle {
+    margin-bottom: 5px;
+    padding-right: 13px;
+    font-size: 14px;
+    font-weight: unset;
+  }
+
+  .about__text {
+    padding-right: 9px;
+    font-size: 14px;
+    line-height: 157%;
+  }
+
+  .about__item {
+    margin-bottom: 29px;
+  }
+
+  .about-expert__img {
+    margin-bottom: -6px;
+  }
+
+  .about-expert__name {
+    margin-bottom: 5px;
+    padding-right: 5px;
+    font-size: 14px;
+    line-height: 128%;
+
+  }
+
+  .about-expert__txt {
+    font-size: 12px;
+    line-height: 133%;
+  }
+
+  .form__input {
+    font-size: 16px;
+  }
+
+  .form__input--message {
+    padding-top: 15px;
+    padding-left: 23px;
+    border-radius: 20px;
+  }
+
+  .form__input--data {
+    padding-left: 23px;
+    height: 50px;
+  }
+
+
+  .form__labelerror-txt {
+    top: -14px;
+    left: 24px;
+    font-size: 13px;
+  }
+
+  .form__btn {
+    margin-bottom: 20px;
+    padding: 16px 44px 16px 45px;
+    font-size: 16px;
+  }
+
+  .form__label {
+    font-size: 9px;
+  }
+
+}
+
+
+/* для размеров экрана от 322(макс.) ... 320  */
+@media( max-width: 322px){
+
+
+}
+
